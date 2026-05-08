@@ -1,0 +1,63 @@
+{
+  "$$id": "86c76c187ac1",
+  "data": [
+    {
+      "label": "登记索赔",
+      "value": "登记索赔",
+      "$$id": "b0a1725b109b"
+    },
+    {
+      "label": "查件中",
+      "value": "查件中",
+      "$$id": "888765085906"
+    },
+    {
+      "label": "等待资料",
+      "value": "等待资料",
+      "$$id": "7262c0dfdccb"
+    },
+    {
+      "label": "已有资料",
+      "value": "已有资料",
+      "$$id": "2d48a6a39b32"
+    },
+    {
+      "label": "索赔中",
+      "value": "索赔中",
+      "$$id": "2f113d9ca76b"
+    },
+    {
+      "label": "索赔成功",
+      "value": "索赔成功",
+      "$$id": "28a948e2c4df"
+    },
+    {
+      "label": "无法索赔",
+      "value": "无法索赔",
+      "$$id": "2d384c3d550f"
+    },
+    {
+      "label": "缺少资料",
+      "value": "缺少资料",
+      "$$id": "b99b16ee4ff4"
+    },
+    {
+      "label": "无法索赔",
+      "value": "无法索赔",
+      "$$id": "c78a13d867a7"
+    },
+    {
+      "label": "已签收",
+      "value": "已签收",
+      "$$id": "a8caf3d68a35"
+    }
+  ],
+  "msg": "",
+  "status": 0,
+  "id": "u:43b44bd355d0",
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "e190883600a4"
+  }
+}

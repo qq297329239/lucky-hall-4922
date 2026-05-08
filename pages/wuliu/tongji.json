@@ -1,0 +1,942 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "id": "u:4ca90e902bbc",
+      "type": "container",
+      "$$id": "887779ebc525",
+      "perPageAvailable": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ],
+      "size": "none",
+      "body": [
+        {
+          "id": "setvalue_text",
+          "label": "日期范围",
+          "name": "Date",
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "ajax",
+                  "api": "post:/wuliutongji_huizong?StartDate=${DATERANGESPLIT(${Date},0,'YYYY-MM-DD 00:00:00')}&EndDate=${DATERANGESPLIT(${Date},1,'YYYY-MM-DD 23:59:59')}",
+                  "ignoreError": false,
+                  "options": {
+                    "silent": true,
+                    "$$id": "d9ee25042a24"
+                  },
+                  "outputVar": "huizong",
+                  "$$id": "8eaf97e0805e"
+                },
+                {
+                  "actionType": "setValue",
+                  "args": {
+                    "value": "${itemTotal}",
+                    "$$id": "858bc4a960f7"
+                  },
+                  "componentId": "itemTotal-text",
+                  "$$id": "f3ead3f45a3c",
+                  "groupType": "component"
+                },
+                {
+                  "actionType": "setValue",
+                  "args": {
+                    "value": "${num}",
+                    "$$id": "b1103de2756a"
+                  },
+                  "componentId": "num-text",
+                  "$$id": "c52f2fe7238c",
+                  "groupType": "component"
+                },
+                {
+                  "actionType": "setValue",
+                  "args": {
+                    "value": "${ROUND(${quantity},0)}",
+                    "$$id": "a1ad3d9296d6"
+                  },
+                  "componentId": "quantity-text",
+                  "$$id": "d9fdc31d3aea",
+                  "groupType": "component"
+                },
+                {
+                  "actionType": "setValue",
+                  "args": {
+                    "value": "${ROUND(itemTotal/num,4)}",
+                    "$$id": "128d9f208a96"
+                  },
+                  "componentId": "price-text",
+                  "$$id": "7af5b71cf389",
+                  "groupType": "component"
+                }
+              ],
+              "$$id": "d0f6092ee739",
+              "weight": 0
+            },
+            "$$id": "160286ff0049"
+          },
+          "placeholder": "请选择日期范围",
+          "type": "input-date-range",
+          "value": "${DATETOSTR(DATEMODIFY(STARTOF(NOW(), 'week'), -7, 'day'), 'X')},${DATETOSTR(DATEMODIFY(STARTOF(NOW(), 'week'), -1, 'day'), 'X')}",
+          "maxDuration": "92days",
+          "shortcuts": [
+            "yesterday",
+            {
+              "label": "上周",
+              "startDate": "${DATETOSTR(DATEMODIFY(STARTOF(NOW(), 'week'), -7, 'day'), 'X')}",
+              "endDate": "${DATETOSTR(DATEMODIFY(STARTOF(NOW(), 'week'), -1, 'day'), 'X')}",
+              "$$id": "63c607be3ba1"
+            },
+            "thismonth",
+            "prevmonth",
+            "prevquarter"
+          ],
+          "embed": false,
+          "$$tempLabel": "日期范围",
+          "clearable": false,
+          "mode": "horizontal",
+          "$$id": "5be23c7a75cc"
+        }
+      ],
+      "style": {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "$$id": "d3f7ddcb4d8a",
+        "flexWrap": "nowrap",
+        "position": "relative",
+        "flexDirection": "column",
+        "inset": "auto"
+      },
+      "wrapperBody": false,
+      "isFixedHeight": false,
+      "isFixedWidth": false
+    },
+    {
+      "id": "u:c3ec4419ba38",
+      "type": "divider",
+      "direction": "horizontal",
+      "style": {
+        "borderWidth": "var(--sizes-size-2)",
+        "$$id": "12cd595689f4"
+      },
+      "$$id": "2a0e55a70ce2",
+      "reverse": false,
+      "lineStyle": "solid",
+      "rotate": 0
+    },
+    {
+      "columns": [
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "id": "u:ca01dcc9173c",
+                  "inline": true,
+                  "tpl": "订单金额(CNY)",
+                  "type": "tpl",
+                  "$$id": "9e2e2c2aa0bb",
+                  "wrapperComponent": ""
+                },
+                {
+                  "id": "itemTotal-text",
+                  "label": false,
+                  "name": "itemTotal",
+                  "static": true,
+                  "type": "input-text",
+                  "value": "-",
+                  "$$id": "60449f7845c3",
+                  "disabled": false,
+                  "readOnly": false
+                }
+              ],
+              "style": {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "$$id": "088f9c77d7e7",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "position": "relative"
+              },
+              "type": "container",
+              "$$id": "9d81dfed1538",
+              "id": "u:4ebc24e778b2",
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "size": "none",
+              "themeCss": {
+                "baseControlClassName": {
+                  "border:default": {
+                    "bottom-border-style": "var(--borders-style-2)",
+                    "bottom-border-width": "var(--borders-width-2)",
+                    "left-border-style": "var(--borders-style-2)",
+                    "left-border-width": "var(--borders-width-2)",
+                    "right-border-style": "var(--borders-style-2)",
+                    "right-border-width": "var(--borders-width-2)",
+                    "top-border-style": "var(--borders-style-2)",
+                    "top-border-width": "var(--borders-width-2)",
+                    "$$id": "e1ae011043ce"
+                  },
+                  "radius:default": {
+                    "bottom-left-border-radius": "var(--borders-radius-6)",
+                    "bottom-right-border-radius": "var(--borders-radius-6)",
+                    "top-left-border-radius": "var(--borders-radius-6)",
+                    "top-right-border-radius": "var(--borders-radius-6)",
+                    "$$id": "a027826d0007"
+                  },
+                  "$$id": "371527acd165"
+                },
+                "$$id": "2408198a2f17"
+              },
+              "wrapperBody": false
+            }
+          ],
+          "id": "u:c963d1cedebb",
+          "$$id": "bd483f562802"
+        },
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "id": "u:f47f5b55d1ad",
+                  "inline": true,
+                  "tpl": "发货订单数量",
+                  "type": "tpl",
+                  "$$id": "b73df6b35c77",
+                  "wrapperComponent": ""
+                },
+                {
+                  "id": "num-text",
+                  "label": false,
+                  "name": "num",
+                  "static": true,
+                  "type": "input-text",
+                  "value": "-",
+                  "$$id": "219874271782"
+                }
+              ],
+              "style": {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "$$id": "afa8c7a9c6f1",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "position": "relative"
+              },
+              "type": "container",
+              "$$id": "8fdf309186c9",
+              "id": "u:70b2a92c69ba",
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "size": "none",
+              "themeCss": {
+                "baseControlClassName": {
+                  "border:default": {
+                    "bottom-border-style": "var(--borders-style-2)",
+                    "bottom-border-width": "var(--borders-width-2)",
+                    "left-border-style": "var(--borders-style-2)",
+                    "left-border-width": "var(--borders-width-2)",
+                    "right-border-style": "var(--borders-style-2)",
+                    "right-border-width": "var(--borders-width-2)",
+                    "top-border-style": "var(--borders-style-2)",
+                    "top-border-width": "var(--borders-width-2)",
+                    "$$id": "08e74fb8ff1f"
+                  },
+                  "radius:default": {
+                    "bottom-left-border-radius": "var(--borders-radius-6)",
+                    "bottom-right-border-radius": "var(--borders-radius-6)",
+                    "top-left-border-radius": "var(--borders-radius-6)",
+                    "top-right-border-radius": "var(--borders-radius-6)",
+                    "$$id": "9204e08209f6"
+                  },
+                  "$$id": "c209887ad8f4"
+                },
+                "$$id": "202c5d2d6073"
+              },
+              "wrapperBody": false
+            }
+          ],
+          "id": "u:653f111c2911",
+          "$$id": "34285c3b3b93"
+        },
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "id": "u:512d4c862132",
+                  "inline": true,
+                  "tpl": "发货产品数",
+                  "type": "tpl",
+                  "$$id": "c59a57c3862a",
+                  "wrapperComponent": ""
+                },
+                {
+                  "id": "quantity-text",
+                  "label": false,
+                  "name": "quantity",
+                  "static": true,
+                  "type": "input-text",
+                  "value": "-",
+                  "$$id": "e93c2ab9b574"
+                }
+              ],
+              "style": {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "$$id": "523a52ee9bb2",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "position": "relative"
+              },
+              "type": "container",
+              "$$id": "8c59234b5efd",
+              "id": "u:4cf170164db9",
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "size": "none",
+              "themeCss": {
+                "baseControlClassName": {
+                  "border:default": {
+                    "bottom-border-style": "var(--borders-style-2)",
+                    "bottom-border-width": "var(--borders-width-2)",
+                    "left-border-style": "var(--borders-style-2)",
+                    "left-border-width": "var(--borders-width-2)",
+                    "right-border-style": "var(--borders-style-2)",
+                    "right-border-width": "var(--borders-width-2)",
+                    "top-border-style": "var(--borders-style-2)",
+                    "top-border-width": "var(--borders-width-2)",
+                    "$$id": "058c2fd6da4a"
+                  },
+                  "radius:default": {
+                    "bottom-left-border-radius": "var(--borders-radius-6)",
+                    "bottom-right-border-radius": "var(--borders-radius-6)",
+                    "top-left-border-radius": "var(--borders-radius-6)",
+                    "top-right-border-radius": "var(--borders-radius-6)",
+                    "$$id": "1a0233c9e432"
+                  },
+                  "$$id": "a428b40ac1f8"
+                },
+                "$$id": "34115d40805c"
+              },
+              "wrapperBody": false
+            }
+          ],
+          "id": "u:25641d5daa41",
+          "$$id": "479a05fdc619"
+        },
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "id": "u:36fdb37f8c30",
+                  "inline": true,
+                  "tpl": "平均客单价(CNY)",
+                  "type": "tpl",
+                  "$$id": "247d4007feb6",
+                  "wrapperComponent": ""
+                },
+                {
+                  "id": "price-text",
+                  "label": false,
+                  "name": "price",
+                  "static": true,
+                  "type": "input-text",
+                  "value": "-",
+                  "$$id": "fdb941ad412c"
+                }
+              ],
+              "style": {
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "justifyContent": "center",
+                "$$id": "0bf889c0821d",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "position": "relative"
+              },
+              "type": "container",
+              "$$id": "739075683dd4",
+              "id": "u:823f9c07d367",
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "size": "none",
+              "themeCss": {
+                "baseControlClassName": {
+                  "border:default": {
+                    "bottom-border-style": "var(--borders-style-2)",
+                    "bottom-border-width": "var(--borders-width-2)",
+                    "left-border-style": "var(--borders-style-2)",
+                    "left-border-width": "var(--borders-width-2)",
+                    "right-border-style": "var(--borders-style-2)",
+                    "right-border-width": "var(--borders-width-2)",
+                    "top-border-style": "var(--borders-style-2)",
+                    "top-border-width": "var(--borders-width-2)",
+                    "$$id": "27052caf55ea"
+                  },
+                  "radius:default": {
+                    "bottom-left-border-radius": "var(--borders-radius-6)",
+                    "bottom-right-border-radius": "var(--borders-radius-6)",
+                    "top-left-border-radius": "var(--borders-radius-6)",
+                    "top-right-border-radius": "var(--borders-radius-6)",
+                    "$$id": "314efedd454d"
+                  },
+                  "$$id": "c23a8859c287"
+                },
+                "$$id": "44bdde9a352b"
+              },
+              "wrapperBody": false
+            }
+          ],
+          "id": "u:37007657e8ef",
+          "$$id": "33e59f395786"
+        }
+      ],
+      "id": "u:b6113742090d",
+      "type": "grid",
+      "$$id": "a25bce7d03f7"
+    },
+    {
+      "direction": "horizontal",
+      "id": "u:86828e981d69",
+      "style": {
+        "borderWidth": "var(--sizes-size-2)",
+        "$$id": "7ae60ac8eee3"
+      },
+      "type": "divider",
+      "$$id": "d2724fbd6fa5",
+      "lineStyle": "solid",
+      "rotate": 0
+    },
+    {
+      "align": "center",
+      "columns": [
+        {
+          "body": [
+            {
+              "type": "chart",
+              "api": "post:/wuliutongji_skuxiaoliang?StartDate=${DATERANGESPLIT(${Date},0,'YYYY-MM-DD 00:00:00')}&EndDate=${DATERANGESPLIT(${Date},1,'YYYY-MM-DD 23:59:59')}",
+              "initFetch": true,
+              "config": {
+                "grid": {
+                  "left": "0px",
+                  "right": "0px",
+                  "bottom": "0%",
+                  "containLabel": true,
+                  "show": false,
+                  "top": "20px",
+                  "$$id": "a98083f2047d"
+                },
+                "xAxis": {
+                  "type": "value",
+                  "axisLine": {
+                    "show": false,
+                    "$$id": "03f83f242b57"
+                  },
+                  "splitLine": {
+                    "show": false,
+                    "$$id": "3b90542544f2"
+                  },
+                  "$$id": "a1ddf75904eb",
+                  "axisTick": {
+                    "show": false,
+                    "$$id": "8f5b5161d99e"
+                  },
+                  "axisLabel": {
+                    "show": false,
+                    "$$id": "71c30ca772aa"
+                  }
+                },
+                "yAxis": {
+                  "type": "category",
+                  "data": "${sku || []}",
+                  "axisLine": {
+                    "show": false,
+                    "$$id": "3f5d32d53170"
+                  },
+                  "splitLine": {
+                    "show": false,
+                    "$$id": "63426a44d50e"
+                  },
+                  "axisLabel": {
+                    "overflow": "none",
+                    "fontSize": 10,
+                    "$$id": "bae771b71cf0"
+                  },
+                  "$$id": "532283942603"
+                },
+                "legend": {
+                  "data": [
+                    "SKU销量"
+                  ],
+                  "$$id": "398cd50a640f"
+                },
+                "series": [
+                  {
+                    "name": "SKU销量",
+                    "type": "bar",
+                    "data": "${pcs || []}",
+                    "label": {
+                      "show": true,
+                      "position": "right",
+                      "$$id": "d65eb2bfa123"
+                    },
+                    "$$id": "e339c46ebcd4"
+                  }
+                ],
+                "$$id": "e93e38734075"
+              },
+              "id": "u:100b932d7355",
+              "onEvent": {
+                "click": {
+                  "actions": [
+                    {
+                      "actionType": "reload",
+                      "componentId": "zhuzhuangtu1",
+                      "data": {
+                        "TUz": "${event.data.name}",
+                        "TUa": "stockWarehouseName",
+                        "TUb": "quantity",
+                        "TUt": "stockSku",
+                        "$$id": "cfd530352320"
+                      },
+                      "$$id": "3070e2a4a6d9",
+                      "ignoreError": false
+                    }
+                  ],
+                  "$$id": "1db96bdb4329"
+                },
+                "$$id": "f56ae3158109"
+              },
+              "width": "100%",
+              "$$id": "13bd158cb413",
+              "height": "330px",
+              "dataFilter": "",
+              "name": "",
+              "replaceChartOption": false
+            }
+          ],
+          "id": "u:bdf3052ceb67",
+          "md": 4,
+          "$$id": "ee0f5a282f64"
+        },
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "api": "post:/wuliutongji_dianpuxiaoliang?StartDate=${DATERANGESPLIT(${Date},0,'YYYY-MM-DD 00:00:00')}&EndDate=${DATERANGESPLIT(${Date},1,'YYYY-MM-DD 23:59:59')}",
+                  "columns": [
+                    {
+                      "align": "center",
+                      "children": [
+                        {
+                          "name": "id",
+                          "title": "排序",
+                          "type": "tpl",
+                          "width": "10%",
+                          "$$id": "73d8d450d517",
+                          "id": "店铺销量_id",
+                          "placeholder": "-",
+                          "align": "center"
+                        },
+                        {
+                          "name": "name",
+                          "title": "店铺",
+                          "type": "tpl",
+                          "width": "30%",
+                          "$$id": "19ba906fb5d7",
+                          "id": "店铺销量_name",
+                          "placeholder": "-",
+                          "align": "center"
+                        },
+                        {
+                          "name": "amount",
+                          "title": "订单金额",
+                          "type": "tpl",
+                          "width": "20%",
+                          "$$id": "a59d9c6d8f15",
+                          "id": "店铺销量_amount",
+                          "placeholder": "-",
+                          "align": "center"
+                        },
+                        {
+                          "name": "num",
+                          "title": "订单数",
+                          "type": "tpl",
+                          "width": "20%",
+                          "$$id": "3989eda738d4",
+                          "id": "店铺销量_num",
+                          "placeholder": "-",
+                          "align": "center"
+                        },
+                        {
+                          "name": "area",
+                          "title": "平台",
+                          "type": "tpl",
+                          "width": "15%",
+                          "$$id": "218cb9fa5c99",
+                          "id": "店铺销量_area",
+                          "placeholder": "-",
+                          "align": "center"
+                        }
+                      ],
+                      "name": "店铺销量",
+                      "title": "店铺销量",
+                      "$$id": "3fe41c5c305d"
+                    }
+                  ],
+                  "id": "u:71706c6ec821",
+                  "mode": "table2",
+                  "onEvent": {
+                    "rowClick": {
+                      "actions": [
+                        {
+                          "actionType": "reload",
+                          "componentId": "zhuzhuangtu1",
+                          "data": {
+                            "TUz": "${event.data.item.name}",
+                            "TUa": "stockWarehouseName",
+                            "TUb": "quantity",
+                            "TUt": "shopName",
+                            "$$id": "118639cd8954"
+                          },
+                          "$$id": "ad9237c7bafc",
+                          "ignoreError": false,
+                          "dataMergeMode": "merge"
+                        }
+                      ],
+                      "$$id": "0a0e8b9992bb",
+                      "weight": 0
+                    },
+                    "$$id": "dfa89713f0e2"
+                  },
+                  "type": "crud2",
+                  "tableLayout": "fixed",
+                  "width": "100%",
+                  "fixedHeader": true,
+                  "$$id": "bca975450a6e",
+                  "dsType": "api",
+                  "primaryField": "id",
+                  "syncLocation": false,
+                  "editorSetting": {
+                    "mock": {
+                      "enable": false,
+                      "maxDisplayRows": -1,
+                      "$$id": "16005b730622"
+                    },
+                    "$$id": "8b2aad7b3b34"
+                  }
+                }
+              ],
+              "id": "u:8cf858bf8ccc",
+              "style": {
+                "height": "330px",
+                "$$id": "d5f0745890ef",
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "overflowX": "visible",
+                "overflowY": "scroll",
+                "position": "relative",
+                "width": "100%"
+              },
+              "type": "container",
+              "$$id": "d02b70b1d1b6",
+              "isFixedHeight": true,
+              "isFixedWidth": true,
+              "size": "none",
+              "wrapperBody": false,
+              "onEvent": {
+                "$$id": "14c23c3def2f"
+              }
+            }
+          ],
+          "id": "u:073a0b441ef8",
+          "md": 5,
+          "$$id": "fe689271fce9"
+        },
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "api": "post:/wuliutongji_cangkuxiaoliang?StartDate=${DATERANGESPLIT(${Date},0,'YYYY-MM-DD 00:00:00')}&EndDate=${DATERANGESPLIT(${Date},1,'YYYY-MM-DD 23:59:59')}",
+                  "columns": [
+                    {
+                      "align": "center",
+                      "children": [
+                        {
+                          "name": "id",
+                          "title": "排序",
+                          "type": "tpl",
+                          "$$id": "dfc39747da98",
+                          "id": "仓库销量_id",
+                          "align": "center",
+                          "placeholder": "-"
+                        },
+                        {
+                          "name": "tongtoolname",
+                          "title": "仓库",
+                          "type": "tpl",
+                          "$$id": "de00dc05b5f1",
+                          "id": "仓库销量_tongtoolname",
+                          "align": "center",
+                          "placeholder": "-"
+                        },
+                        {
+                          "name": "quantity",
+                          "title": "发货数量",
+                          "type": "tpl",
+                          "$$id": "0d706ea575e1",
+                          "id": "仓库销量_quantity",
+                          "align": "center",
+                          "placeholder": "-"
+                        },
+                        {
+                          "name": "pcs",
+                          "title": "库存数量",
+                          "type": "tpl",
+                          "$$id": "da9be2651b7c",
+                          "id": "仓库销量_pcs",
+                          "align": "center",
+                          "placeholder": "-"
+                        },
+                        {
+                          "name": "${CONCATENATE(${ROUND(quantity/pcs*100,2)},'%')}",
+                          "title": "百分比",
+                          "type": "tpl",
+                          "$$id": "cbe9d3da0aef",
+                          "id": "仓库销量_${concatenate(${round(quantity/pcs*100,2)},'%')}",
+                          "align": "center",
+                          "placeholder": "-"
+                        }
+                      ],
+                      "name": "仓库销量",
+                      "title": "仓库销量",
+                      "$$id": "c083f43bda5c"
+                    }
+                  ],
+                  "id": "u:2113bab6b9f6",
+                  "mode": "table2",
+                  "onEvent": {
+                    "rowClick": {
+                      "actions": [
+                        {
+                          "actionType": "reload",
+                          "componentId": "zhuzhuangtu1",
+                          "data": {
+                            "TUa": "shopName",
+                            "TUb": "quantity",
+                            "TUt": "stockWarehouseName",
+                            "TUz": "${event.data.item.tongtoolname}",
+                            "$$id": "6657a6f66dc7"
+                          },
+                          "$$id": "06cf44ed7ba0",
+                          "dataMergeMode": "override",
+                          "ignoreError": false
+                        }
+                      ],
+                      "$$id": "25e935b9d48e",
+                      "weight": 0
+                    },
+                    "$$id": "54a673bf43b6"
+                  },
+                  "type": "crud2",
+                  "$$id": "91c033b32958",
+                  "dsType": "api",
+                  "editorSetting": {
+                    "mock": {
+                      "enable": false,
+                      "maxDisplayRows": -1,
+                      "$$id": "f2aad0ab2e21"
+                    },
+                    "$$id": "a4def647aab3"
+                  },
+                  "headerToolbar": [],
+                  "placeholder": "暂无数据",
+                  "primaryField": "id",
+                  "syncLocation": false
+                }
+              ],
+              "id": "u:d19ac1465b44",
+              "style": {
+                "height": "330px",
+                "$$id": "ba0f991160f0",
+                "alignItems": "center",
+                "display": "flex",
+                "flexDirection": "column",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "justifyContent": "flex-start",
+                "overflowX": "visible",
+                "overflowY": "auto",
+                "position": "relative"
+              },
+              "type": "container",
+              "$$id": "339087759119",
+              "isFixedHeight": true,
+              "isFixedWidth": false,
+              "size": "none",
+              "wrapperBody": false,
+              "onEvent": {
+                "$$id": "f2c7423f0b18"
+              }
+            }
+          ],
+          "id": "u:9a690863b443",
+          "md": 3,
+          "$$id": "e7ba5fbbd9ff"
+        }
+      ],
+      "gap": "none",
+      "id": "u:e93862f8cfce",
+      "type": "grid",
+      "valign": "middle",
+      "className": "h-[30%]",
+      "$$id": "e8fd2684520d",
+      "themeCss": {
+        "baseControlClassName": {
+          "padding-and-margin:default": {
+            "marginBottom": "var(--sizes-size-0)",
+            "marginLeft": "var(--sizes-size-0)",
+            "marginRight": "var(--sizes-size-0)",
+            "marginTop": "var(--sizes-size-0)",
+            "paddingBottom": "var(--sizes-size-0)",
+            "paddingLeft": "var(--sizes-size-0)",
+            "paddingRight": "var(--sizes-size-0)",
+            "paddingTop": "var(--sizes-size-0)",
+            "$$id": "5e096738468a"
+          },
+          "$$id": "0b063ce06cf1"
+        },
+        "$$id": "535e57234d03"
+      }
+    },
+    {
+      "body": [
+        {
+          "api": {
+            "method": "post",
+            "url": "/wuliutongji_shujutu?TUa=${TUa}&TUb=${TUb}&TUt=${TUt}&TUz=${TUz}&StartDate=${DATERANGESPLIT(${Date},0,'YYYY-MM-DD 00:00:00')}&EndDate=${DATERANGESPLIT(${Date},1,'YYYY-MM-DD 23:59:59')}",
+            "sendOn": "TUa!=''",
+            "$$id": "d05c650b74b6"
+          },
+          "config": {
+            "series": [
+              {
+                "data": "${ZB || []}",
+                "label": {
+                  "position": "top",
+                  "show": true,
+                  "$$id": "d4fbe6e57c3b"
+                },
+                "type": "bar",
+                "$$id": "415aeabeea8a"
+              }
+            ],
+            "xAxis": {
+              "axisLabel": {
+                "rotate": -20,
+                "interval": 0,
+                "$$id": "651ee97508e2",
+                "height": 20
+              },
+              "data": "${ZA || []}",
+              "axisLine": {
+                "show": false,
+                "$$id": "059b2e5d1f59"
+              },
+              "axisTick": {
+                "show": false,
+                "$$id": "edcef5e4829f"
+              },
+              "$$id": "040e987ba4f0"
+            },
+            "yAxis": {
+              "axisLine": {
+                "show": false,
+                "$$id": "dcf110f692c3"
+              },
+              "axisTick": {
+                "show": false,
+                "$$id": "c10d0adb0558"
+              },
+              "axisLabel": {
+                "show": false,
+                "$$id": "bb7e0bab5177"
+              },
+              "splitLine": {
+                "show": false,
+                "$$id": "c913081896dc"
+              },
+              "$$id": "024a0a95596a"
+            },
+            "grid": {
+              "bottom": "50px",
+              "left": "0px",
+              "right": "0px",
+              "top": "50px",
+              "containLabel": true,
+              "$$id": "98022fec977a"
+            },
+            "$$id": "835023ccc017"
+          },
+          "id": "zhuzhuangtu1",
+          "initFetch": false,
+          "name": "数据表1",
+          "type": "chart",
+          "className": "h-[100%]",
+          "width": "100%",
+          "$$id": "5192859375ec",
+          "dataFilter": "",
+          "height": "360px"
+        }
+      ],
+      "id": "u:10f8cd2b6808",
+      "style": {
+        "width": "100%",
+        "height": "360px",
+        "$$id": "7d3798f58bda",
+        "display": "block",
+        "overflowX": "visible",
+        "position": "static",
+        "textAlign": "center",
+        "overflowY": "auto"
+      },
+      "type": "container",
+      "$$id": "5821f11db53d",
+      "isFixedHeight": true,
+      "isFixedWidth": true,
+      "size": "none",
+      "wrapperBody": false
+    }
+  ],
+  "regions": [
+    "body"
+  ],
+  "$$id": "7627b2e3247d",
+  "id": "u:d6f6280f4687",
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "bf9cb1672b3a"
+  },
+  "title": "销售数据一览",
+  "className": "",
+  "asideResizor": false
+}

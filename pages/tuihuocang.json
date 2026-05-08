@@ -1,0 +1,38 @@
+{
+    "status": 0,
+    "msg": "",
+    "data": [
+        {
+            "label": "Refurbishbox波兰售后点",
+            "value": "Refurbishbox波兰售后点"
+        },
+        {
+            "label": "Refurbishbox美国售后点",
+            "value": "Refurbishbox美国售后点"
+        },
+        {
+            "label": "DHL官方快递",
+            "value": "DHL官方快递"
+        },
+        {
+            "label": "ASUK英国售后点",
+            "value": "ASUK英国售后点"
+        },
+        {
+            "label": "万邑通澳洲仓",
+            "value": "万邑通澳洲仓"
+        },
+        {
+            "label": "万邑通美东仓",
+            "value": "万邑通美东仓"
+        },
+        {
+            "label": "万邑通美西仓",
+            "value": "万邑通美西仓"
+        },      
+        {
+            "label": "ISW加拿大售后点",
+            "value": "ISW加拿大售后点"
+        }
+    ]
+}

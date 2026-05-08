@@ -1,0 +1,265 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "api": {
+        "adaptor": "",
+        "messages": {
+          "$$id": "f137267712ff"
+        },
+        "method": "post",
+        "requestAdaptor": "",
+        "url": "/yonghu_list",
+        "$$id": "39787e3edd26"
+      },
+      "bulkActions": [],
+      "columns": [
+        {
+          "id": "id",
+          "label": "用户ID",
+          "name": "ID",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "d8cbb0b23056"
+        },
+        {
+          "id": "username",
+          "label": "账号",
+          "name": "username",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "b39f5d7c74ef"
+        },
+        {
+          "id": "name",
+          "label": "姓名",
+          "name": "name",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "9a9791fab34c"
+        },
+        {
+          "id": "mail",
+          "label": "邮箱",
+          "name": "mail",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "9777cac3a7c0"
+        },
+        {
+          "id": "roles_name",
+          "label": "角色名称",
+          "name": "roles_name",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "903da03daca6"
+        },
+        {
+          "id": "vx_id",
+          "label": "企微账号",
+          "name": "vx_ID",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "f6b9de7ace5b"
+        },
+        {
+          "id": "login_time",
+          "label": "最后登录时间",
+          "name": "login_time",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "61f6e0583fe7"
+        },
+        {
+          "falseValue": "0",
+          "id": "status_name",
+          "label": "账号状态",
+          "name": "status_name",
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "ajax",
+                  "api": {
+                    "adaptor": "",
+                    "messages": {
+                      "$$id": "0c3938c8d7ba"
+                    },
+                    "method": "get",
+                    "requestAdaptor": "",
+                    "url": "/yonghu_zhaungtai?ID=${ID}&status_name=${status_name}",
+                    "$$id": "abc379108412"
+                  },
+                  "ignoreError": false,
+                  "options": {
+                    "$$id": "f5e8f74b41af"
+                  },
+                  "outputVar": "responseResult",
+                  "$$id": "a7d047827d8e"
+                }
+              ],
+              "weight": 0,
+              "$$id": "6e355f566ff2"
+            },
+            "$$id": "4084c6a65761"
+          },
+          "placeholder": "-",
+          "trueValue": "1",
+          "type": "switch",
+          "$$id": "9e50a90fa6eb"
+        },
+        {
+          "id": "time",
+          "label": "注册时间",
+          "name": "time",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "c01a84e9921d"
+        }
+      ],
+      "defaultParams": {
+        "perPage": "15",
+        "$$id": "0700b14a42b0"
+      },
+      "filter": {
+        "actions": [
+          {
+            "disabledOnAction": false,
+            "id": "",
+            "label": "搜索",
+            "primary": true,
+            "type": "submit",
+            "$$id": "37bdc9e4b941"
+          }
+        ],
+        "body": [
+          {
+            "clearable": true,
+            "id": "status_name",
+            "inline": false,
+            "label": "账号状态",
+            "multiple": false,
+            "name": "status_name",
+            "options": [
+              {
+                "label": "启用",
+                "value": "启用",
+                "$$id": "fec2655636b7"
+              },
+              {
+                "label": "禁用",
+                "value": "禁用",
+                "$$id": "28c85ce0afd3"
+              }
+            ],
+            "type": "button-group-select",
+            "$$id": "345b1ebdb30a"
+          },
+          {
+            "clearable": true,
+            "id": "sousuo",
+            "label": "模糊搜索",
+            "multiple": false,
+            "name": "sousuo",
+            "placeholder": "账号,邮箱,姓名",
+            "type": "input-text",
+            "value": "",
+            "$$id": "1524c787b74c"
+          }
+        ],
+        "canAccessSuperData": true,
+        "columnCount": 5,
+        "feat": "Insert",
+        "id": "u:0fde1f9d4cef",
+        "labelAlign": "left",
+        "submitOnChange": true,
+        "themeCss": {
+          "formControlClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-0)",
+              "marginLeft": "var(--sizes-size-0)",
+              "marginRight": "var(--sizes-size-0)",
+              "marginTop": "var(--sizes-size-0)",
+              "paddingBottom": "var(--sizes-size-0)",
+              "paddingLeft": "var(--sizes-size-0)",
+              "paddingRight": "var(--sizes-size-0)",
+              "paddingTop": "var(--sizes-size-0)",
+              "$$id": "e1c6b720a59e"
+            },
+            "$$id": "0973c7201120"
+          },
+          "itemClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-0)",
+              "marginLeft": "var(--sizes-size-0)",
+              "marginRight": "var(--sizes-size-0)",
+              "marginTop": "var(--sizes-size-0)",
+              "$$id": "c5baa2840611"
+            },
+            "$$id": "e9f993fb33e4"
+          },
+          "itemLabelClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-3)",
+              "marginLeft": "var(--sizes-size-3)",
+              "marginRight": "var(--sizes-size-3)",
+              "marginTop": "var(--sizes-size-3)",
+              "$$id": "3affa6c33aa2"
+            },
+            "$$id": "ba536ded3373"
+          },
+          "$$id": "b90a4c8df13a"
+        },
+        "title": "查询条件",
+        "wrapWithPanel": false,
+        "$$id": "103a9b6c3f2f"
+      },
+      "footerToolbar": [],
+      "headerToolbar": [
+        {
+          "align": "right",
+          "type": "pagination",
+          "$$id": "d02080ef6616"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "statistics",
+          "wrapperComponent": "",
+          "$$id": "0c3edaa68604"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "switch-per-page",
+          "wrapperComponent": "",
+          "$$id": "05639c0e0aa1"
+        }
+      ],
+      "id": "u:d8c8da7be86f",
+      "keepItemSelectionOnPageChange": false,
+      "messages": {
+        "$$id": "aaf85dd48fc4"
+      },
+      "perPageAvailable": [
+        10,
+        15,
+        20,
+        50,
+        100
+      ],
+      "syncLocation": false,
+      "type": "crud",
+      "$$id": "0c04d6ba89c6"
+    }
+  ],
+  "$$id": "41f48bbc6575",
+  "id": "u:089338987a8e",
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "fe412aa42870"
+  },
+  "asideResizor": false
+}

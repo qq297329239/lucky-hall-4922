@@ -1,0 +1,183 @@
+{
+  "asideResizor": false,
+  "data": {
+    "pages": [
+      {
+        "label": "Home",
+        "redirect": "/kucun",
+        "url": "/"
+      },
+      {
+        "children": [
+          {
+            "keepAlive": true,
+            "label": "库存查询",
+            "schemaApi": "get:/pages/kucun.json",
+            "url": "/kucun"
+          },
+          {
+            "children": [
+              {
+                "label": "产品料号",
+                "schemaApi": "get:/pages/chanpin/chanpin.json",
+                "url": "/chanpin/chanpin"
+              },
+              {
+                "label": "型号代码",
+                "schemaApi": "get:/pages/chanpin/xinghao.json",
+                "url": "/chanpin/xinghao"
+              },
+              {
+                "label": "标配信息",
+                "schemaApi": "get:/pages/chanpin/biaopei.json",
+                "url": "/chanpin/biaopei"
+              },
+              {
+                "label": "序列号规则",
+                "schemaApi": "get:/pages/chanpin/sn.json",
+                "url": "/chanpin/sn"
+              },
+              {
+                "label": "SKU规则",
+                "schemaApi": "get:/pages/chanpin/sku.json",
+                "url": "/chanpin/sku"
+              },
+              {
+                "label": "二手sku",
+                "schemaApi": "get:/pages/chanpin/ershou.json",
+                "url": "/chanpin/ershou"
+              },
+              {
+                "label": "规格明细",
+                "schemaApi": "get:/pages/chanpin/guige.json",
+                "url": "/chanpin/guige"
+              },
+              {
+                "label": "金蝶组合料号",
+                "schemaApi": "get:/pages/chanpin/jdzh.json",
+                "url": "/chanpin/jdzh"
+              },
+              {
+                "label": "平台组合料号",
+                "schemaApi": "get:/pages/chanpin/ptzh.json",
+                "url": "/chanpin/ptzh"
+              },
+              {
+                "label": "EAN码",
+                "schemaApi": "get:/pages/chanpin/ean.json",
+                "url": "/chanpin/ean"
+              },
+              {
+                "label": "笔芯搭配",
+                "schemaApi": "get:/pages/chanpin/bixin.json",
+                "url": "/chanpin/bixin"
+              }
+            ],
+            "label": "产品管理"
+          },
+          {
+            "children": [
+              {
+                "label": "要货单",
+                "schemaApi": "get:/pages/toucheng/yaohuodan.json",
+                "url": "/toucheng/yaohuodan"
+              },
+              {
+                "label": "销售订单",
+                "schemaApi": "get:/pages/toucheng/xiaoshoudingdan.json",
+                "url": "/toucheng/xiaoshoudingdan"
+              },
+              {
+                "label": "销售出库单",
+                "schemaApi": "get:/pages/toucheng/xiaoshouchukudan.json",
+                "url": "/toucheng/xiaoshouchukudan"
+              },
+              {
+                "label": "报关单",
+                "schemaApi": "get:/pages/toucheng/baoguandan.json",
+                "url": "/toucheng/baoguandan"
+              }
+            ],
+            "label": "头程管理"
+          },
+          {
+            "children": [
+              {
+                "label": "物流查询",
+                "schemaApi": "get:/pages/wuliu/wuliuchaxun.json",
+                "url": "/wuliu/chaxun"
+              },
+              {
+                "label": "物流统计",
+                "schemaApi": "get:/pages/wuliu/tongji.json",
+                "url": "/wuliu/tongji"
+              },
+              {
+                "label": "查件处理",
+                "schemaApi": "get:/pages/wuliu/chajian.json",
+                "url": "/wuliu/chajian"
+              },
+              {
+                "label": "索赔处理",
+                "schemaApi": "get:/pages/wuliu/suopei.json",
+                "url": "/wuliu/suopei"
+              },
+              {
+                "label": "马帮物流渠道",
+                "schemaApi": "get:/pages/wuliu/qudao.json",
+                "url": "/wuliu/qudao"
+              }
+            ],
+            "label": "尾程管理"
+          },
+          {
+            "label": "teambition订单",
+            "schemaApi": "get:/pages/tb/tblist.json",
+            "url": "/tb/tblist"
+          },
+          {
+            "label": "回邮单管理",
+            "schemaApi": "get:/pages/ReturnLabel.json",
+            "url": "/ReturnLabel"
+          },
+          {
+            "children": [
+              {
+                "label": "个人中心",
+                "schemaApi": "get:/pages/user/user.json",
+                "url": "/user/user"
+              },
+              {
+                "label": "用户管理",
+                "schemaApi": "get:/pages/user/list.json",
+                "url": "/user/list"
+              },
+              {
+                "label": "角色管理",
+                "schemaApi": "get:/pages/user/role.json",
+                "url": "/user/role"
+              },
+              {
+                "label": "权限管理",
+                "schemaApi": "get:/pages/user/purview.json",
+                "url": "/user/purview"
+              }
+            ],
+            "label": "用户管理"
+          },
+          {
+            "label": "更新日志",
+            "schemaApi": "get:/pages/update_log.json",
+            "url": "/update_log"
+          }
+        ],
+        "label": ""
+      }
+    ]
+  },
+  "msg": "",
+  "pullRefresh": {
+    "disabled": true
+  },
+  "status": 0
+}

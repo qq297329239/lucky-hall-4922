@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8" />
+	<title>深圳市鑫众品动漫科技有限公司物流管理系统</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<link rel="stylesheet" title="default" href="/sdk/antd.css" />
+	<link rel="stylesheet" href="/sdk/helper.css" />
+	<link rel="stylesheet" href="/sdk/iconfont.css" />
+	<script src="/sdk/sdk.js"></script>
+	<!-- <script src="/sdk/vue.js"></script> -->
+	<script src="/sdk/history.js"></script>
+	<script src="/sdk/charts.js"></script>
+	<!-- 51.la V6 统计代码 -->
+	<script>
+		(function (p) {
+			"use strict";
+			(function (t) {
+				var s = window;
+				var e = document;
+				var i = p;
+				var c = "".concat("https:" === e.location.protocol ? "https://" : "http://", "sdk.51.la/js-sdk-pro.min.js");
+				var n = e.createElement("script");
+				n.id = "LA_COLLECT";
+				i.d = n;
+				n.type = "text/javascript";
+				n.charset = "UTF-8";
+				n.async = true;
+				n.src = c;
+				var o = function () {
+					s.LA.ids.push(i);
+				};
+				if (s.LA) {
+					if (s.LA.ids) {
+						o();
+					}
+				} else {
+					s.LA = p;
+					s.LA.ids = [];
+					o();
+				}
+				e.getElementsByTagName("script")[0].parentNode.insertBefore(n, e.getElementsByTagName("script")[0]);
+			})({ id: "3PdAZrz1VlnHmntC", ck: "3PdAZrz1VlnHmntC" });
+		})(window);
+	</script>
+
+	<style>
+		html,
+		body,
+		.app-wrapper {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		:root {
+			--Layout-aside-bg: var(--colors-neutral-fill-10);
+			--Layout-asideLink-color: var(--colors-neutral-text-2);
+			--Layout-asideLink-onActive-color: var(--colors-brand-6);
+			--Layout-asideLink-onHover-color: var(--colors-brand-6);
+			--Layout-asideLink-onHover-iconColor: var(--colors-brand-6);
+			--Layout-asideLink-onHover-iconSize: var(--sizes-size-9);
+			--Layout-asideLink-onHover-arrowColor: var(--colors-neutral-text-11);
+			--Layout-brand-bg: var(--colors-neutral-fill-10);
+			--Layout-brand-color: var(--colors-neutral-text-2);
+			--Layout-brandBar-color: #a0a0a0;
+			--Layout-header-bg: var(--colors-neutral-fill-10);
+			--Layout-aside-color: white;
+			--Layout-aside-onAcitve-bg: #e9ecf0;
+			--Layout-aside-onHover-bg: #eff1f4;
+			--Layout-aside-subList-bg: var(--colors-neutral-fill-10);
+			--Layout-aside-onAcitve-onHover-bg: var(--Layout-aside-onAcitve-bg);
+		}
+
+		/* .amis-scope .cxd-AsideNav-itemArrow:empty:before?, */
+		.amis-scope .antd-AsideNav-itemArrow:empty:before {
+			background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48c3ZnIHZpZXdCb3g9IjAgMCA1MTMgMTAyMSIgc3ZnLnNwYWNlVW5pV2lkdGg9IjUxMyIgc3ZnLnNwYWNlVW5pUGhvdG9zaGV0PSIyMDEiIHZlcnNpb249IjEuMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PGcgaWQ9InJpZ2h0LWFycm93IiBmaWxsPSIjMDAwMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjxwYXRoIGQ9Ik01Ni41NTkwNTQsMTAxMy43NzM2OSBMMTUyLjkwODEyLDE1Mi42ODQ1MjQgTTU2LjU1OTA1NCwxMi4yMzQ1MDEgQzQ5LjQxMTQ2NzgsMi45MzQ1NTkxMiAzNy42NjY0MjM4LC0xLjU5MTg4MTc2IDI2LjEyNjIzMjQsMC41MDU5NDgyNDYgQzE0LjU4NjA0MSwyLjYwMzc3ODI1IDUuMTg1NDQ0MDksMTAuOTc0MTcyNyAxLjc2ODE1NTE2LDIyLjE5NDY0NzEgQy0xLjY0OTEzMzc3LDMzLjQxNTEyMTQgMS40ODk4MDIyOCw0NS42MDQ1MzUxIDkuOTAxNTE2LDUzLjc3ODg4NCBMNDI0LjcwNjE5Nyw1MTIuNjg0NTI0IEwxMi40NTgwOTQsOTY5LjY3MjczMSBDMi40NTgyMDU5Niw5ODIuNTUxNDk4IDQuMDEyOTc3MzcsMTAwMC45NDgzIDE2LjAzMjQ0MjIsMTAxMS45NjYxNSBDMjguMDUxOTA3MSwxMDIyLjk4Mzk5IDQ2LjUxNDIzNDYsMTAyMi45MzYxOSA1OC40NzY0ODcsMTAxMS44NTYyNiBMNTYuNTU5MDU0LDEwMTMuNzczNjkgWiIgSWQ9Iui3r+W+hCI+PC9wYXRoPjwvZz48L3N2Zz4=)
+		}
+	</style>
+</head>
+
+<body theme="custom-base" lang="zh-cn" class="center-mode app-background">
+	<div id="root" class="app-background"></div>
+	<script>
+		(function () {
+			let amis = amisRequire('amis/embed');
+			const match = amisRequire('path-to-regexp').match;
+			const history = History.createHashHistory();
+			const app = {
+				type: 'app',
+				brandName: '',
+				logo: '/public/logo.png',
+				header: {
+					type: 'tpl',
+					inline: false,
+					className: 'w-full',
+					tpl: '<div class="flex justify-between"><div>鑫众品物流管理系统</div><div><a href="logout">退出登录</a></div></div>'
+				},
+				//asideAfter: '<div class="p-2 text-center">菜单后面区域</div>',
+				api: '/pages/site.json'
+			};
+
+			function normalizeLink(to, location = history.location) {
+				to = to || '';
+				if (to && to[0] === '#') {
+					to = location.pathname + location.search + to;
+				} else if (to && to[0] === '?') {
+					to = location.pathname + to;
+				}
+				const idx = to.indexOf('?');
+				const idx2 = to.indexOf('#');
+				let pathname = ~idx ? to.substring(0, idx) : ~idx2 ? to.substring(0, idx2) : to;
+				let search = ~idx ? to.substring(idx, ~idx2 ? idx2 : undefined) : '';
+				let hash = ~idx2 ? to.substring(idx2) : location.hash;
+				if (!pathname) {
+					pathname = location.pathname;
+				} else if (pathname[0] != '/' && !/^https?\:\/\//.test(pathname)) {
+					let relativeBase = location.pathname;
+					const paths = relativeBase.split('/');
+					paths.pop();
+					let m;
+					while ((m = /^\.\.?\//.exec(pathname))) {
+						if (m[0] === '../') {
+							paths.pop();
+						}
+						pathname = pathname.substring(m[0].length);
+					}
+					pathname = paths.concat(pathname).join('/');
+				}
+				return pathname + search + hash;
+			}
+
+			function isCurrentUrl(to, ctx) {
+				if (!to) {
+					return false;
+				}
+				const pathname = history.location.pathname;
+				const link = normalizeLink(to, {
+					...location,
+					pathname,
+					hash: ''
+				});
+				if (!~link.indexOf('http') && ~link.indexOf(':')) {
+					let strict = ctx && ctx.strict;
+					return match(link, {
+						decode: decodeURIComponent,
+						strict: typeof strict !== 'undefined' ? strict : true
+					})(pathname);
+				}
+				return decodeURI(pathname) === link;
+			}
+			let amisInstance = amis.embed('#root', app, {
+				location: history.location,
+				data: {},
+				context: {}
+			}, {
+				//全局请求拦截器
+				requestAdaptor(api) {
+					api.headers["Authorization"] = 123;
+					return api;
+				},
+				//antd-AsideNav-list
+				responseAdaptor(api, response, query, request) {
+					if (response.status == -99) {
+						localStorage.clear();
+						location.href = "/login.html";
+					};
+					return response;
+				},
+				updateLocation: (location, replace) => {
+					location = normalizeLink(location);
+					if (location === 'goBack') {
+						return history.goBack();
+					} else if ((!/^https?\:\/\//.test(location) && location === history.location.pathname +
+						history.location.search) || location === history.location.href) {
+						return;
+					} else if (/^https?\:\/\//.test(location) || !history) {
+						return (window.location.href = location);
+					}
+					history[replace ? 'replace' : 'push'](location);
+				},
+				jumpTo: (to, action) => {
+					document.querySelector('div.antd-Layout-offScreenBtn').click();
+					if (to === 'goBack') {
+						return history.goBack();
+					}
+					to = normalizeLink(to);
+					if (isCurrentUrl(to)) {
+						return;
+					}
+					if (action && action.actionType === 'url') {
+						action.blank === false ? (window.location.href = to) : window.open(to, '_blank');
+						return;
+					} else if (action && action.blank) {
+						window.open(to, '_blank');
+						return;
+					}
+					if (/^https?:\/\//.test(to)) {
+						window.location.href = to;
+					} else if ((!/^https?\:\/\//.test(to) && to === history.pathname + history.location
+						.search) || to === history.location.href) { } else {
+						history.push(to);
+					}
+				},
+				isCurrentUrl: isCurrentUrl,
+				theme: 'antd'
+			});
+			history.listen(state => {
+				amisInstance.updateProps({
+					location: state.location || state
+				});
+				try {
+					let url = encodeURIComponent(location.href);
+					let title = encodeURIComponent(document.title);
+					let img = new Image();
+					img.src = "https://collect-v6.51.la/v6/collect?dt=4&url=" + url + "&title=" + title + "&rnd=" + Math.random();
+				} catch (e) { }
+			});
+		})();
+	</script>
+</body>
+
+</html>

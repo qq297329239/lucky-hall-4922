@@ -1,0 +1,809 @@
+{
+  "asideResizor": false,
+  "body": [
+    {
+      "alwaysShowPagination": true,
+      "api": {
+        "adaptor": "",
+        "data": {
+          "LogisticsType": "${LogisticsType|default:undefined}",
+          "myLogisticsChannelName": "${myLogisticsChannelName|default:undefined}",
+          "myLogisticsName": "${myLogisticsName|default:undefined}",
+          "platformId": "${platformId|default:undefined}",
+          "shopName": "${shopName|default:undefined}"
+        },
+        "dataType": "json",
+        "messages": {},
+        "method": "post",
+        "requestAdaptor": "",
+        "url": "/wuliuchaxun?page=${page}\u0026perPage=${perPage}\u0026danhao=${danhao|default:undefined}\u0026shijianfanwei=${shijianfanwei|default:undefined}"
+      },
+      "autoFillHeight": true,
+      "autoJumpToTopOnPagerChange": true,
+      "bulkActions": [],
+      "columns": [
+        {
+          "id": "platformorderid",
+          "label": "订单编号",
+          "name": "platformOrderId",
+          "type": "text"
+        },
+        {
+          "id": "salesrecordnumber",
+          "label": "平台交易号",
+          "name": "salesRecordNumber",
+          "type": "text"
+        },
+        {
+          "id": "tracknumber",
+          "label": "物流跟踪单号",
+          "name": "trackNumber",
+          "type": "text"
+        },
+        {
+          "id": "shopname",
+          "label": "店铺名称",
+          "name": "shopName",
+          "type": "text"
+        },
+        {
+          "id": "logisticstype",
+          "label": "物流状态",
+          "name": "LogisticsType",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "id": "beizhu",
+          "label": "备注",
+          "name": "beizhu",
+          "type": "text"
+        },
+        {
+          "id": "time_tuotou",
+          "label": "妥投时效",
+          "name": "time_tuotou",
+          "type": "text"
+        },
+        {
+          "id": "time_duangeng",
+          "label": "断更天数",
+          "name": "time_duangeng",
+          "type": "text"
+        },
+        {
+          "id": "expresstime",
+          "label": "发货时间",
+          "name": "expressTime",
+          "type": "text"
+        },
+        {
+          "id": "wuliu",
+          "label": "物流渠道",
+          "name": "wuliu",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "align": "center",
+          "buttons": [
+            {
+              "buttons": [
+                {
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "物流",
+                  "level": "link",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "url",
+                          "args": {
+                            "params": {},
+                            "url": "https://t.17track.net/zh-cn#nums=${trackNumber}"
+                          },
+                          "ignoreError": false
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "size": "xs",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginBottom": "var(--sizes-size-1)",
+                        "marginLeft": "var(--sizes-size-1)",
+                        "marginRight": "var(--sizes-size-1)",
+                        "marginTop": "var(--sizes-size-1)",
+                        "paddingBottom": "var(--sizes-size-2)",
+                        "paddingLeft": "var(--sizes-size-2)",
+                        "paddingRight": "var(--sizes-size-2)",
+                        "paddingTop": "var(--sizes-size-2)"
+                      }
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "block": false,
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "马帮",
+                  "level": "link",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "url",
+                          "args": {
+                            "params": {},
+                            "url": "https://901112.private.mabangerp.com/index.php?mod=order.detail\u0026platformOrderId=${platformOrderId}"
+                          },
+                          "ignoreError": false
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "size": "xs",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginBottom": "var(--sizes-size-1)",
+                        "marginLeft": "var(--sizes-size-1)",
+                        "marginRight": "var(--sizes-size-1)",
+                        "marginTop": "var(--sizes-size-1)",
+                        "paddingBottom": "var(--sizes-size-2)",
+                        "paddingLeft": "var(--sizes-size-2)",
+                        "paddingRight": "var(--sizes-size-2)",
+                        "paddingTop": "var(--sizes-size-2)"
+                      }
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "block": false,
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "修改",
+                  "level": "link",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "dialog",
+                          "dialog": {
+                            "actionType": "dialog",
+                            "actions": [
+                              {
+                                "actionType": "cancel",
+                                "id": "",
+                                "label": "取消",
+                                "type": "button"
+                              },
+                              {
+                                "actionType": "confirm",
+                                "disabledOnAction": false,
+                                "id": "",
+                                "label": "确定",
+                                "onEvent": {},
+                                "primary": true,
+                                "type": "button"
+                              }
+                            ],
+                            "allowFullscreen": false,
+                            "body": [
+                              {
+                                "actions": [
+                                  {
+                                    "label": "提交",
+                                    "primary": true,
+                                    "type": "submit"
+                                  }
+                                ],
+                                "affixFooter": true,
+                                "api": "get:/wuliuchaxun_xiugai?postCode=${postCode}\u0026phone1=${phone1}\u0026beizhu=${beizhu}\u0026LogisticsType=${LogisticsType}\u0026platformOrderId=${platformOrderId}",
+                                "autoFocus": false,
+                                "body": [
+                                  {
+                                    "colSize": "1",
+                                    "id": "platformorderid",
+                                    "label": "订单编号",
+                                    "labelAlign": "left",
+                                    "name": "platformOrderId",
+                                    "readOnly": false,
+                                    "row": 0,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "salesrecordnumber",
+                                    "label": "平台交易号",
+                                    "labelAlign": "left",
+                                    "name": "salesRecordNumber",
+                                    "readOnly": false,
+                                    "row": 1,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "disabled": false,
+                                    "id": "tracknumber",
+                                    "label": "物流跟踪号",
+                                    "labelAlign": "left",
+                                    "name": "trackNumber",
+                                    "row": 2,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "mylogisticsname",
+                                    "label": "物流公司",
+                                    "labelAlign": "left",
+                                    "name": "myLogisticsName",
+                                    "row": 3,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "mylogisticschannelname",
+                                    "label": "物流渠道",
+                                    "labelAlign": "left",
+                                    "name": "myLogisticsChannelName",
+                                    "row": 4,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "logisticstype",
+                                    "label": "签收状态",
+                                    "labelAlign": "left",
+                                    "multiple": false,
+                                    "name": "LogisticsType",
+                                    "options": [
+                                      {
+                                        "label": "全部",
+                                        "value": "全部"
+                                      },
+                                      {
+                                        "label": "忽略查询",
+                                        "value": "忽略查询"
+                                      },
+                                      {
+                                        "label": "初始状态",
+                                        "value": "初始状态"
+                                      },
+                                      {
+                                        "label": "查询不到",
+                                        "value": "查询不到"
+                                      },
+                                      {
+                                        "label": "收到信息",
+                                        "value": "收到信息"
+                                      },
+                                      {
+                                        "label": "运输途中",
+                                        "value": "运输途中"
+                                      },
+                                      {
+                                        "label": "运输过久",
+                                        "value": "运输过久"
+                                      },
+                                      {
+                                        "label": "到达待取",
+                                        "value": "到达待取"
+                                      },
+                                      {
+                                        "label": "派送途中",
+                                        "value": "派送途中"
+                                      },
+                                      {
+                                        "label": "投递失败",
+                                        "value": "投递失败"
+                                      },
+                                      {
+                                        "label": "成功签收",
+                                        "value": "成功签收"
+                                      },
+                                      {
+                                        "label": "可能异常",
+                                        "value": "可能异常"
+                                      },
+                                      {
+                                        "label": "异常处理",
+                                        "value": "异常处理"
+                                      },
+                                      {
+                                        "label": "处理完成",
+                                        "value": "处理完成"
+                                      }
+                                    ],
+                                    "row": 5,
+                                    "type": "select"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "phone1",
+                                    "label": "电话",
+                                    "labelAlign": "left",
+                                    "name": "phone1",
+                                    "row": 6,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "postcode",
+                                    "label": "邮编",
+                                    "labelAlign": "left",
+                                    "name": "postCode",
+                                    "row": 7,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "beizhu",
+                                    "label": "备注",
+                                    "labelAlign": "left",
+                                    "maxRows": 20,
+                                    "minRows": 3,
+                                    "name": "beizhu",
+                                    "row": 8,
+                                    "type": "textarea"
+                                  }
+                                ],
+                                "dsType": "api",
+                                "feat": "Edit",
+                                "id": "",
+                                "initApi": "/wuliuchaxun_xiangqing?platformOrderId=${platformOrderId}",
+                                "labelAlign": "top",
+                                "mode": "flex",
+                                "onEvent": {
+                                  "submitSucc": {
+                                    "actions": [
+                                      {
+                                        "actionType": "reload",
+                                        "componentId": "wuliuchaxun__llist",
+                                        "groupType": "component"
+                                      }
+                                    ],
+                                    "weight": 0
+                                  }
+                                },
+                                "preventEnterSubmit": true,
+                                "resetAfterSubmit": false,
+                                "row": 0,
+                                "themeCss": {
+                                  "panelClassName": {
+                                    "padding-and-margin:default": {
+                                      "marginBottom": "var(--sizes-size-0)",
+                                      "marginLeft": "var(--sizes-size-0)",
+                                      "marginRight": "var(--sizes-size-0)",
+                                      "marginTop": "var(--sizes-size-0)"
+                                    }
+                                  }
+                                },
+                                "title": "详情",
+                                "type": "form"
+                              }
+                            ],
+                            "closeOnEsc": false,
+                            "closeOnOutside": false,
+                            "draggable": false,
+                            "hideActions": false,
+                            "id": "wuliuchaxun_wuliuxiugai",
+                            "showCloseButton": true,
+                            "showErrorMsg": false,
+                            "showLoading": false,
+                            "title": "物流修改",
+                            "type": "dialog"
+                          },
+                          "ignoreError": false
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "size": "xs",
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginBottom": "var(--sizes-size-1)",
+                        "marginLeft": "var(--sizes-size-1)",
+                        "marginRight": "var(--sizes-size-1)",
+                        "marginTop": "var(--sizes-size-1)",
+                        "paddingBottom": "var(--sizes-size-2)",
+                        "paddingLeft": "var(--sizes-size-2)",
+                        "paddingRight": "var(--sizes-size-2)",
+                        "paddingTop": "var(--sizes-size-2)"
+                      }
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "confirmText": "确认把订单转入查件状态吗?",
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "查件",
+                  "level": "link",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "ajax",
+                          "api": {
+                            "adaptor": "",
+                            "messages": {
+                              "failed": "失败",
+                              "success": "订单已转入查件"
+                            },
+                            "method": "get",
+                            "requestAdaptor": "",
+                            "url": "/wuliuchaxun_chajian?platformOrderId=${platformOrderId}"
+                          },
+                          "ignoreError": false,
+                          "options": {
+                            "silent": false
+                          },
+                          "outputVar": "responseResult"
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginBottom": "var(--sizes-size-1)",
+                        "marginLeft": "var(--sizes-size-1)",
+                        "marginRight": "var(--sizes-size-1)",
+                        "marginTop": "var(--sizes-size-1)",
+                        "paddingBottom": "var(--sizes-size-2)",
+                        "paddingLeft": "var(--sizes-size-2)",
+                        "paddingRight": "var(--sizes-size-2)",
+                        "paddingTop": "var(--sizes-size-2)"
+                      }
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "confirmText": "确认把订单转入查件状态吗?",
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "索赔",
+                  "level": "link",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "ajax",
+                          "api": {
+                            "adaptor": "",
+                            "messages": {
+                              "failed": "失败",
+                              "success": "订单已转入查件"
+                            },
+                            "method": "get",
+                            "requestAdaptor": "",
+                            "url": "/wuliuchaxun_suopei?platformOrderId=${platformOrderId}"
+                          },
+                          "ignoreError": false,
+                          "options": {},
+                          "outputVar": "responseResult"
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "themeCss": {
+                    "className": {
+                      "padding-and-margin:default": {
+                        "marginBottom": "var(--sizes-size-1)",
+                        "marginLeft": "var(--sizes-size-1)",
+                        "marginRight": "var(--sizes-size-1)",
+                        "marginTop": "var(--sizes-size-1)",
+                        "paddingBottom": "var(--sizes-size-2)",
+                        "paddingLeft": "var(--sizes-size-2)",
+                        "paddingRight": "var(--sizes-size-2)",
+                        "paddingTop": "var(--sizes-size-2)"
+                      }
+                    }
+                  },
+                  "type": "button"
+                }
+              ],
+              "id": "",
+              "type": "button-group"
+            }
+          ],
+          "fixed": "left",
+          "id": "",
+          "label": "操作栏",
+          "placeholder": "-",
+          "textOverflow": "ellipsis",
+          "type": "operation"
+        }
+      ],
+      "defaultParams": {
+        "perPage": "20"
+      },
+      "draggable": false,
+      "dynimicColumnKey": "92d437ad",
+      "filter": {
+        "actions": [],
+        "affixFooter": true,
+        "body": [
+          {
+            "clearable": true,
+            "id": "platformid",
+            "label": "平台",
+            "labelAlign": "left",
+            "labelField": "platformId",
+            "mode": "horizontal",
+            "multiple": false,
+            "name": "platformId",
+            "placeholder": "未选择",
+            "searchable": true,
+            "source": {
+              "adaptor": "",
+              "messages": {},
+              "method": "get",
+              "requestAdaptor": "",
+              "url": "/wuliuchaxun_pingtai"
+            },
+            "type": "select",
+            "valueField": "platformId"
+          },
+          {
+            "clearable": true,
+            "id": "shopname",
+            "label": "店铺",
+            "labelField": "shopName",
+            "multiple": false,
+            "name": "shopName",
+            "searchable": true,
+            "source": {
+              "adaptor": "",
+              "messages": {},
+              "method": "get",
+              "requestAdaptor": "",
+              "url": "/wuliuchaxun_dianpu?platformId=${platformId}"
+            },
+            "type": "select",
+            "valueField": "shopName"
+          },
+          {
+            "clearable": true,
+            "id": "logisticstype",
+            "label": "签收状态",
+            "labelWidth": "var(--sizes-size-1)",
+            "multiple": false,
+            "name": "LogisticsType",
+            "options": [
+              {
+                "label": "全部",
+                "value": "全部"
+              },
+              {
+                "label": "忽略查询",
+                "value": "忽略查询"
+              },
+              {
+                "label": "初始状态",
+                "value": "初始状态"
+              },
+              {
+                "label": "查询不到",
+                "value": "查询不到"
+              },
+              {
+                "label": "收到信息",
+                "value": "收到信息"
+              },
+              {
+                "label": "运输途中",
+                "value": "运输途中"
+              },
+              {
+                "label": "运输过久",
+                "value": "运输过久"
+              },
+              {
+                "label": "到达待取",
+                "value": "到达待取"
+              },
+              {
+                "label": "派送途中",
+                "value": "派送途中"
+              },
+              {
+                "label": "投递失败",
+                "value": "投递失败"
+              },
+              {
+                "label": "成功签收",
+                "value": "成功签收"
+              },
+              {
+                "label": "可能异常",
+                "value": "可能异常"
+              },
+              {
+                "label": "异常处理",
+                "value": "异常处理"
+              },
+              {
+                "label": "处理完成",
+                "value": "处理完成"
+              }
+            ],
+            "type": "select"
+          },
+          {
+            "id": "shijianfanwei",
+            "label": "日期范围",
+            "name": "shijianfanwei",
+            "type": "input-date-range",
+            "valueFormat": "YYYY-MM-DD"
+          },
+          {
+            "clearable": true,
+            "id": "mylogisticsname",
+            "label": "物流商",
+            "labelField": "myLogisticsName",
+            "multiple": false,
+            "name": "myLogisticsName",
+            "searchable": true,
+            "source": "/wuliuchaxun_wuliushang",
+            "type": "select",
+            "valueField": "myLogisticsName"
+          },
+          {
+            "clearable": true,
+            "id": "mylogisticschannelname",
+            "label": "渠道",
+            "labelField": "myLogisticsChannelName",
+            "multiple": false,
+            "name": "myLogisticsChannelName",
+            "searchable": true,
+            "source": {
+              "adaptor": "",
+              "messages": {},
+              "method": "get",
+              "requestAdaptor": "",
+              "url": "/wuliuchaxun_qudao?myLogisticsName=${myLogisticsName}"
+            },
+            "type": "select",
+            "valueField": "myLogisticsChannelName"
+          },
+          {
+            "clearable": true,
+            "id": "danhao",
+            "label": "单号",
+            "name": "danhao",
+            "type": "input-text"
+          }
+        ],
+        "columnCount": 4,
+        "feat": "Insert",
+        "id": "",
+        "labelAlign": "left",
+        "mode": "horizontal",
+        "submitOnChange": true,
+        "themeCss": {
+          "panelClassName": {
+            "padding-and-margin": {}
+          }
+        },
+        "title": "",
+        "wrapWithPanel": false
+      },
+      "filterEnabledList": [
+        {
+          "label": "wuliushang",
+          "value": "wuliushang"
+        },
+        {
+          "label": "cangku",
+          "value": "cangku"
+        },
+        {
+          "label": "sku",
+          "value": "sku"
+        },
+        {
+          "label": "ID",
+          "value": "ID"
+        }
+      ],
+      "filterSettingSource": [
+        "ID",
+        "wuliushang",
+        "sku",
+        "liaohao",
+        "cangku",
+        "name",
+        "tongtoolname",
+        "yewu",
+        "pcs",
+        "ztpcs",
+        "time"
+      ],
+      "footerToolbar": [],
+      "headerToolbar": [
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "pagination",
+          "wrapperComponent": ""
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "statistics",
+          "wrapperComponent": ""
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "switch-per-page",
+          "wrapperComponent": ""
+        },
+        {
+          "align": "left",
+          "disabledOnAction": false,
+          "id": "",
+          "label": "导出当前页",
+          "tpl": "内容",
+          "type": "export-excel",
+          "wrapperComponent": ""
+        },
+        {
+          "align": "left",
+          "api": "GET:http://127.0.0.1:15010/",
+          "disabledOnAction": false,
+          "id": "",
+          "label": "导出所有页",
+          "tpl": "内容",
+          "type": "export-excel",
+          "wrapperComponent": ""
+        }
+      ],
+      "id": "wuliuchaxun__llist",
+      "itemActions": [],
+      "loadingConfig": {
+        "show": true
+      },
+      "messages": {},
+      "perPage": 20,
+      "perPageAvailable": [
+        20,
+        50,
+        100,
+        500,
+        1000
+      ],
+      "primaryField": "id",
+      "syncLocation": true,
+      "type": "crud"
+    }
+  ],
+  "definitions": {},
+  "id": "",
+  "pullRefresh": {
+    "disabled": true
+  },
+  "type": "page"
+}

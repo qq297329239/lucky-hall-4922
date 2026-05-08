@@ -1,0 +1,608 @@
+{
+  "asideResizor": false,
+  "body": [
+    {
+      "alwaysShowPagination": true,
+      "api": {
+        "adaptor": "",
+        "data": {
+          "chajianzhuangtai": "${chajianzhuangtai|default:undefined}",
+          "myLogisticsChannelName": "${myLogisticsChannelName|default:undefined}",
+          "myLogisticsName": "${myLogisticsName|default:undefined}",
+          "platformId": "${platformId|default:undefined}",
+          "shopName": "${shopName|default:undefined}"
+        },
+        "dataType": "json",
+        "messages": {},
+        "method": "post",
+        "requestAdaptor": "",
+        "url": "/wuliuchajian?page=${page}\u0026perPage=${perPage}\u0026danhao=${danhao|default:undefined}\u0026shijianfanwei=${shijianfanwei|default:undefined}"
+      },
+      "autoFillHeight": true,
+      "autoJumpToTopOnPagerChange": true,
+      "bulkActions": [],
+      "columns": [
+        {
+          "id": "platformorderid",
+          "label": "订单编号",
+          "name": "platformOrderId",
+          "type": "text"
+        },
+        {
+          "id": "salesrecordnumber",
+          "label": "平台交易号",
+          "name": "salesRecordNumber",
+          "type": "text"
+        },
+        {
+          "id": "tracknumber",
+          "label": "物流跟踪单号",
+          "name": "trackNumber",
+          "type": "text"
+        },
+        {
+          "id": "shopname",
+          "label": "店铺名称",
+          "name": "shopName",
+          "type": "text"
+        },
+        {
+          "id": "logisticstype",
+          "label": "物流状态",
+          "name": "LogisticsType",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "id": "beizhu",
+          "label": "备注",
+          "name": "beizhu",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "id": "time_tuotou",
+          "label": "妥投时效",
+          "name": "time_tuotou",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "id": "time_duangeng",
+          "label": "断更天数",
+          "name": "time_duangeng",
+          "type": "text"
+        },
+        {
+          "id": "expresstime",
+          "label": "发货时间",
+          "name": "expressTime",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "id": "wuliu",
+          "label": "物流渠道",
+          "name": "wuliu",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "id": "chajianzhuangtai",
+          "label": "查件状态",
+          "name": "chajianzhuangtai",
+          "type": "text"
+        },
+        {
+          "id": "chajianjieguo",
+          "label": "查件备注",
+          "name": "chajianjieguo",
+          "placeholder": "-",
+          "type": "text"
+        },
+        {
+          "buttons": [
+            {
+              "buttons": [
+                {
+                  "disabled": false,
+                  "disabledOnAction": false,
+                  "id": "操作",
+                  "label": "马帮",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "url",
+                          "args": {
+                            "url": "https://901112.private.mabangerp.com/index.php?mod=order.detail\u0026platformOrderId=${platformOrderId}"
+                          },
+                          "ignoreError": false
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "disabledOnAction": false,
+                  "id": "操作",
+                  "label": "物流",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "url",
+                          "args": {
+                            "url": "https://t.17track.net/zh-cn#nums=${trackNumber}"
+                          },
+                          "ignoreError": false
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "disabledOnAction": false,
+                  "id": "操作",
+                  "label": "更新",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "dialog",
+                          "dialog": {
+                            "actionType": "dialog",
+                            "actions": [],
+                            "body": [
+                              {
+                                "actions": [
+                                  {
+                                    "id": "",
+                                    "label": "取消",
+                                    "level": "default",
+                                    "onEvent": {
+                                      "click": {
+                                        "actions": [
+                                          {
+                                            "actionType": "cancel",
+                                            "componentId": "u:3ca465a9dcff"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "type": "button"
+                                  },
+                                  {
+                                    "id": "",
+                                    "label": "提交",
+                                    "level": "primary",
+                                    "onEvent": {
+                                      "click": {
+                                        "actions": [
+                                          {
+                                            "actionType": "submit",
+                                            "componentId": "u:3ca465a9dcff"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "type": "button"
+                                  }
+                                ],
+                                "api": {
+                                  "adaptor": "",
+                                  "data": {
+                                    "chajianjieguo": "${chajianjieguo}",
+                                    "chajianzhuangtai": "${chajianzhuangtai}",
+                                    "platformOrderId": "${platformOrderId}"
+                                  },
+                                  "messages": {},
+                                  "method": "post",
+                                  "requestAdaptor": "",
+                                  "url": "/wuliuchajian_gengxin"
+                                },
+                                "body": [
+                                  {
+                                    "id": "platformorderid",
+                                    "label": "订单编号",
+                                    "name": "platformOrderId",
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "clearable": true,
+                                    "id": "chajianzhuangtai",
+                                    "label": "查件状态",
+                                    "labelWidth": "var(--sizes-size-1)",
+                                    "multiple": false,
+                                    "name": "chajianzhuangtai",
+                                    "options": [
+                                      {
+                                        "label": "等待查件",
+                                        "value": "等待查件"
+                                      },
+                                      {
+                                        "label": "忽略查件",
+                                        "value": "忽略查件"
+                                      },
+                                      {
+                                        "label": "查件中",
+                                        "value": "查件中"
+                                      },
+                                      {
+                                        "label": "索赔中",
+                                        "value": "索赔中"
+                                      },
+                                      {
+                                        "label": "查件完成",
+                                        "value": "查件完成"
+                                      }
+                                    ],
+                                    "type": "select"
+                                  },
+                                  {
+                                    "id": "chajianjieguo",
+                                    "label": "查件备注",
+                                    "name": "chajianjieguo",
+                                    "type": "input-text"
+                                  }
+                                ],
+                                "dsType": "api",
+                                "feat": "Edit",
+                                "id": "",
+                                "initApi": "",
+                                "labelAlign": "left",
+                                "labelWidth": "var(--sizes-size-1)",
+                                "mode": "horizontal",
+                                "onEvent": {
+                                  "submitSucc": {
+                                    "actions": [
+                                      {
+                                        "actionType": "reload",
+                                        "componentId": "u:2aedb302a80a",
+                                        "groupType": "component"
+                                      }
+                                    ],
+                                    "weight": 0
+                                  }
+                                },
+                                "resetAfterSubmit": true,
+                                "themeCss": {
+                                  "bodyControlClassName": {
+                                    "padding-and-margin": {
+                                      "paddingBottom": "var(--sizes-size-0)",
+                                      "paddingLeft": "var(--sizes-size-0)",
+                                      "paddingRight": "var(--sizes-size-0)",
+                                      "paddingTop": "var(--sizes-size-0)"
+                                    }
+                                  },
+                                  "headerControlClassName": {
+                                    "padding-and-margin": {
+                                      "paddingBottom": "var(--sizes-size-0)",
+                                      "paddingLeft": "var(--sizes-size-0)",
+                                      "paddingRight": "var(--sizes-size-0)",
+                                      "paddingTop": "var(--sizes-size-0)"
+                                    }
+                                  },
+                                  "panelClassName": {
+                                    "border": {
+                                      "bottom-border-width": "var(--borders-width-1)",
+                                      "left-border-width": "var(--borders-width-1)",
+                                      "right-border-width": "var(--borders-width-1)",
+                                      "top-border-width": "var(--borders-width-1)"
+                                    },
+                                    "padding-and-margin": {
+                                      "marginBottom": "var(--sizes-size-0)",
+                                      "marginLeft": "var(--sizes-size-0)",
+                                      "marginRight": "var(--sizes-size-0)",
+                                      "marginTop": "var(--sizes-size-0)"
+                                    }
+                                  }
+                                },
+                                "title": "表单",
+                                "type": "form",
+                                "wrapWithPanel": true
+                              }
+                            ],
+                            "closeOnEsc": true,
+                            "closeOnOutside": true,
+                            "draggable": false,
+                            "hideActions": true,
+                            "id": "",
+                            "showCloseButton": true,
+                            "showErrorMsg": true,
+                            "showLoading": true,
+                            "title": "修改查件状态",
+                            "type": "dialog"
+                          },
+                          "ignoreError": false
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "confirmText": "确定将此订单转到索赔中吗?",
+                  "disabledOnAction": false,
+                  "id": "操作",
+                  "label": "索赔",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "ajax",
+                          "api": {
+                            "adaptor": "",
+                            "messages": {
+                              "failed": "失败",
+                              "success": "成功"
+                            },
+                            "method": "get",
+                            "requestAdaptor": "",
+                            "url": "wuliuchaxun_suopei?platformOrderId=${platformOrderId}"
+                          },
+                          "ignoreError": false,
+                          "options": {},
+                          "outputVar": "responseResult"
+                        }
+                      ],
+                      "weight": 0
+                    }
+                  },
+                  "type": "button"
+                }
+              ],
+              "closeOnClick": true,
+              "id": "操作",
+              "label": "操作",
+              "level": "link",
+              "multiple": false,
+              "name": "操作",
+              "options": [
+                {
+                  "label": "马帮",
+                  "value": "马帮"
+                },
+                {
+                  "label": "物流",
+                  "value": "物流"
+                },
+                {
+                  "label": "更新",
+                  "value": "更新"
+                },
+                {
+                  "label": "索赔",
+                  "value": "索赔"
+                }
+              ],
+              "size": "xs",
+              "type": "dropdown-button"
+            }
+          ],
+          "id": "",
+          "label": "操作",
+          "placeholder": "-",
+          "type": "operation"
+        }
+      ],
+      "defaultParams": {
+        "perPage": "20"
+      },
+      "draggable": false,
+      "filter": {
+        "actions": [],
+        "affixFooter": true,
+        "body": [
+          {
+            "clearable": true,
+            "id": "platformid",
+            "label": "平台",
+            "labelAlign": "left",
+            "labelField": "platformId",
+            "mode": "horizontal",
+            "multiple": false,
+            "name": "platformId",
+            "placeholder": "未选择",
+            "searchable": true,
+            "source": {
+              "adaptor": "",
+              "messages": {},
+              "method": "get",
+              "requestAdaptor": "",
+              "url": "/wuliuchaxun_pingtai"
+            },
+            "type": "select",
+            "valueField": "platformId"
+          },
+          {
+            "clearable": true,
+            "id": "shopname",
+            "label": "店铺",
+            "labelField": "shopName",
+            "multiple": false,
+            "name": "shopName",
+            "source": {
+              "adaptor": "",
+              "messages": {},
+              "method": "get",
+              "requestAdaptor": "",
+              "url": "/wuliuchaxun_dianpu?platformId=${platformId}"
+            },
+            "type": "select",
+            "valueField": "shopName"
+          },
+          {
+            "clearable": true,
+            "id": "logisticstype",
+            "label": "查件状态",
+            "labelWidth": "var(--sizes-size-1)",
+            "multiple": false,
+            "name": "LogisticsType",
+            "options": [
+              {
+                "label": "等待查件",
+                "value": "等待查件"
+              },
+              {
+                "label": "忽略查件",
+                "value": "忽略查件"
+              },
+              {
+                "label": "查件中",
+                "value": "查件中"
+              },
+              {
+                "label": "索赔中",
+                "value": "索赔中"
+              },
+              {
+                "label": "查件完成",
+                "value": "查件完成"
+              }
+            ],
+            "type": "select"
+          },
+          {
+            "id": "shijianfanwei",
+            "label": "日期范围",
+            "name": "shijianfanwei",
+            "type": "input-date-range",
+            "valueFormat": "YYYY-MM-DD"
+          },
+          {
+            "clearable": true,
+            "id": "mylogisticsname",
+            "label": "物流商",
+            "labelField": "myLogisticsName",
+            "multiple": false,
+            "name": "myLogisticsName",
+            "source": "/wuliuchaxun_wuliushang",
+            "type": "select",
+            "valueField": "myLogisticsName"
+          },
+          {
+            "clearable": true,
+            "id": "mylogisticschannelname",
+            "label": "渠道",
+            "labelField": "myLogisticsChannelName",
+            "multiple": false,
+            "name": "myLogisticsChannelName",
+            "source": {
+              "adaptor": "",
+              "messages": {},
+              "method": "get",
+              "requestAdaptor": "",
+              "url": "/wuliuchaxun_qudao?myLogisticsName=${myLogisticsName}"
+            },
+            "type": "select",
+            "valueField": "myLogisticsChannelName"
+          },
+          {
+            "clearable": true,
+            "id": "danhao",
+            "label": "单号",
+            "name": "danhao",
+            "type": "input-text"
+          }
+        ],
+        "columnCount": 4,
+        "feat": "Insert",
+        "id": "",
+        "labelAlign": "left",
+        "mode": "horizontal",
+        "submitOnChange": true,
+        "themeCss": {
+          "panelClassName": {
+            "padding-and-margin": {}
+          }
+        },
+        "title": "",
+        "wrapWithPanel": false
+      },
+      "filterEnabledList": [
+        {
+          "label": "wuliushang",
+          "value": "wuliushang"
+        },
+        {
+          "label": "cangku",
+          "value": "cangku"
+        },
+        {
+          "label": "sku",
+          "value": "sku"
+        },
+        {
+          "label": "ID",
+          "value": "ID"
+        }
+      ],
+      "filterSettingSource": [
+        "ID",
+        "wuliushang",
+        "sku",
+        "liaohao",
+        "cangku",
+        "name",
+        "tongtoolname",
+        "yewu",
+        "pcs",
+        "ztpcs",
+        "time"
+      ],
+      "footerToolbar": [],
+      "headerToolbar": [
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "pagination",
+          "wrapperComponent": ""
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "statistics",
+          "wrapperComponent": ""
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "switch-per-page",
+          "wrapperComponent": ""
+        }
+      ],
+      "id": "",
+      "itemActions": [],
+      "loadingConfig": {
+        "show": true
+      },
+      "messages": {},
+      "perPage": 20,
+      "perPageAvailable": [
+        20,
+        50,
+        100,
+        500,
+        1000
+      ],
+      "syncLocation": true,
+      "type": "crud"
+    }
+  ],
+  "definitions": {},
+  "id": "",
+  "pullRefresh": {
+    "disabled": true
+  },
+  "type": "page"
+}

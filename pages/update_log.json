@@ -1,0 +1,155 @@
+{
+  "$$id": "3b1d77f3e907",
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "e66859f0f818"
+  },
+  "body": [
+    {
+      "id": "u:f7bec47b7ad0",
+      "type": "button",
+      "disabledOnAction": false,
+      "label": "添加日志",
+      "level": "link",
+      "size": "xs",
+      "visibleOn": "${xs}",
+      "dialog": {
+        "title": "添加更新日志",
+        "body": [
+          {
+            "actions": [
+              {
+                "label": "提交",
+                "level": "primary",
+                "onEvent": {
+                  "click": {
+                    "actions": [
+                      {
+                        "actionType": "reload",
+                        "componentId": "oa_up_ym",
+                        "$$id": "151d3e5f4bbe"
+                      }
+                    ],
+                    "$$id": "cc8fcf3b2b68"
+                  },
+                  "$$id": "062d7e076d98"
+                },
+                "type": "button",
+                "$$id": "83a9d4dcf933"
+              }
+            ],
+            "api": {
+              "adaptor": "",
+              "data": {
+                "title": "${title}",
+                "$$id": "2356e7760144"
+              },
+              "dataType": "json",
+              "messages": {
+                "$$id": "4452d00e712b"
+              },
+              "method": "post",
+              "requestAdaptor": "",
+              "url": "/oa_up_tianjia",
+              "$$id": "1d6b12e40513"
+            },
+            "body": [
+              {
+                "id": "title",
+                "label": "",
+                "maxRows": 20,
+                "minRows": 5,
+                "mode": "inline",
+                "name": "title",
+                "required": true,
+                "row": 0,
+                "size": "lg",
+                "type": "textarea",
+                "$$id": "ab5143914069"
+              }
+            ],
+            "dsType": "api",
+            "feat": "Insert",
+            "id": "u:115a5973558d",
+            "labelAlign": "top",
+            "onEvent": {
+              "submitSucc": {
+                "actions": [
+                  {
+                    "actionType": "reload",
+                    "$$id": "9353b41a2b31",
+                    "componentId": "oa_up_ym",
+                    "groupType": "component"
+                  }
+                ],
+                "weight": 0,
+                "$$id": "f01af5bba84d"
+              },
+              "$$id": "9873d3215219"
+            },
+            "resetAfterSubmit": true,
+            "title": "表单",
+            "type": "form",
+            "$$id": "e998632f59c3"
+          }
+        ],
+        "type": "dialog",
+        "id": "u:b3afb4592013",
+        "actions": [
+          {
+            "type": "button",
+            "actionType": "cancel",
+            "label": "取消",
+            "id": "u:fb8e89abeb24",
+            "$$id": "78342df4972d"
+          },
+          {
+            "type": "button",
+            "actionType": "confirm",
+            "label": "确定",
+            "primary": true,
+            "id": "u:175ed4581e2d",
+            "$$id": "e5d28178a0e8"
+          }
+        ],
+        "$$id": "389d0c024712",
+        "showCloseButton": true,
+        "closeOnOutside": false,
+        "closeOnEsc": false,
+        "showErrorMsg": true,
+        "showLoading": true,
+        "draggable": true,
+        "allowFullscreen": false
+      },
+      "messages": {
+        "$$id": "78b6783fe9c4"
+      },
+      "actionType": "dialog",
+      "onEvent": {
+        "$$id": "cd0f86eafb8a"
+      },
+      "$$id": "45d7c3d987d0"
+    },
+    {
+      "id": "oa_up_list",
+      "type": "timeline",
+      "reverse": false,
+      "direction": "vertical",
+      "mode": "right",
+      "classname": "white-space-pre",
+      "detailClassName": "white-space-pre",
+      "titleClassName": "white-space-pre",
+      "timeField": "time",
+      "format": "YYYY-MM-DD HH:mm:ss",
+      "$$id": "89f8745c0bd0",
+      "source": "${items}"
+    }
+  ],
+  "id": "oa_up_ym",
+  "type": "page",
+  "regions": [
+    "body"
+  ],
+  "initApi": "/oa_up"
+}

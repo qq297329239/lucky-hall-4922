@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8" />
+		<title>amis demo</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		<link rel="stylesheet" href="sdk.css" />
+		<link rel="stylesheet" href="helper.css" />
+		<link rel="stylesheet" href="iconfont.css" />
+		<!-- 这是默认主题所需的，如果是其他主题则不需要 -->
+		<!-- 从 1.1.0 开始 sdk.css 将不支持 IE 11，如果要支持 IE11 请引用这个 css，并把前面那个删了 -->
+		<!-- <link rel="stylesheet" href="sdk-ie11.css" /> -->
+		<!-- 不过 amis 开发团队几乎没测试过 IE 11 下的效果，所以可能有细节功能用不了，如果发现请报 issue -->
+		<style>
+			html,
+			body,
+			.app-wrapper {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="root" class="app-wrapper"></div>
+		<script src="sdk.js"></script>
+		<script type="text/javascript">
+			(function() {
+				let amis = amisRequire('amis/embed');
+				// 通过替换下面这个配置来生成不同页面
+				let amisJSON = {
+  "type": "page",
+  "id": "u:b63ef15d4cfd",
+  "body": [
+    {
+      "type": "container",
+      "id": "u:b2177a9138fd",
+      "style": {
+        "position": "relative",
+        "display": "flex",
+        "inset": "auto",
+        "flexWrap": "nowrap",
+        "flexDirection": "column",
+        "alignItems": "flex-start",
+        "height": "100%",
+        "overflowY": "visible",
+        "width": "100%",
+        "overflowX": "visible"
+      },
+      "size": "none",
+      "wrapperBody": false,
+      "isFixedHeight": true,
+      "isFixedWidth": true,
+      "body": [
+        {
+          "type": "container",
+          "isFreeContainer": true,
+          "size": "xs",
+          "body": [
+            {
+              "type": "image",
+              "style": {
+                "position": "absolute",
+                "inset": "1px auto auto 1px",
+                "display": "inline-block"
+              },
+              "id": "u:12ef970c06e8",
+              "enlargeAble": false,
+              "maxScale": "30%",
+              "minScale": "30%",
+              "defaultImage": "/public/login-bg.jpg",
+              "imageMode": "thumb",
+              "themeCss": {
+                "imageContentClassName": {
+                  "size:default": {
+                    "width": "100%",
+                    "height": "100%",
+                    "minWidth": ""
+                  }
+                }
+              },
+              "thumbMode": "cover"
+            },
+            {
+              "type": "form",
+              "style": {
+                "position": "absolute",
+                "inset": "50% auto auto 40%",
+                "width": "20%"
+              },
+              "id": "u:b3bb67690196",
+              "title": "用户登录",
+              "mode": "flex",
+              "labelAlign": "left",
+              "dsType": "api",
+              "feat": "Insert",
+              "body": [
+                {
+                  "name": "username",
+                  "label": "用户名",
+                  "row": 0,
+                  "type": "input-text",
+                  "id": "u:ddd9bfb5edbe",
+                  "required": true,
+                  "themeCss": {
+                    "inputControlClassName": {
+                      "background:default": "transparent"
+                    }
+                  },
+                  "validateOnChange": false
+                },
+                {
+                  "name": "password",
+                  "label": "密码",
+                  "row": 1,
+                  "type": "input-password",
+                  "id": "u:38b9d2f2f8f9",
+                  "themeCss": {
+                    "inputControlClassName": {
+                      "background:default": "transparent"
+                    }
+                  },
+                  "showCounter": false,
+                  "required": true,
+                  "validateOnChange": false,
+                  "onEvent": {}
+                }
+              ],
+              "actions": [
+                {
+                  "type": "button",
+                  "label": "注册",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "ignoreError": false,
+                          "actionType": "dialog",
+                          "dialog": {
+                            "type": "dialog",
+                            "title": "未命名弹窗",
+                            "body": [
+                              {
+                                "type": "tpl",
+                                "tpl": "弹窗内容",
+                                "id": "u:6a7a6d830661"
+                              },
+                              {
+                                "id": "u:5e5eff33204a",
+                                "type": "form",
+                                "title": "表单",
+                                "mode": "flex",
+                                "labelAlign": "right",
+                                "dsType": "api",
+                                "feat": "Insert",
+                                "body": [
+                                  {
+                                    "name": "username",
+                                    "label": "用户名",
+                                    "row": 0,
+                                    "type": "input-text",
+                                    "id": "u:2d9764ed366f"
+                                  },
+                                  {
+                                    "name": "password",
+                                    "label": "密码",
+                                    "row": 1,
+                                    "type": "input-text",
+                                    "id": "u:97529c7512c8"
+                                  },
+                                  {
+                                    "name": "password1",
+                                    "label": "确认密码",
+                                    "row": 2,
+                                    "type": "input-text",
+                                    "id": "u:a0e7dfcdd409"
+                                  },
+                                  {
+                                    "name": "mail",
+                                    "label": "邮箱",
+                                    "row": 3,
+                                    "type": "input-text",
+                                    "id": "u:53e7765a15f7"
+                                  },
+                                  {
+                                    "name": "name",
+                                    "label": "姓名",
+                                    "row": 4,
+                                    "type": "input-text",
+                                    "id": "u:05adb1d5e04b"
+                                  }
+                                ],
+                                "api": {
+                                  "url": "/register",
+                                  "method": "post",
+                                  "requestAdaptor": "",
+                                  "adaptor": "",
+                                  "messages": {},
+                                  "data": {
+                                    "&": "$$"
+                                  }
+                                },
+                                "actions": [
+                                  {
+                                    "type": "button",
+                                    "label": "取消",
+                                    "onEvent": {
+                                      "click": {
+                                        "actions": [
+                                          {
+                                            "actionType": "cancel",
+                                            "componentId": "u:5e5eff33204a"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "level": "default"
+                                  },
+                                  {
+                                    "type": "button",
+                                    "label": "提交",
+                                    "onEvent": {
+                                      "click": {
+                                        "actions": [
+                                          {
+                                            "actionType": "submit",
+                                            "componentId": "u:5e5eff33204a"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "level": "primary"
+                                  }
+                                ],
+                                "resetAfterSubmit": true
+                              }
+                            ],
+                            "id": "u:8376c432e14c",
+                            "actions": [
+                              {
+                                "type": "button",
+                                "actionType": "cancel",
+                                "label": "取消",
+                                "id": "u:e90b517eac95"
+                              },
+                              {
+                                "type": "button",
+                                "actionType": "confirm",
+                                "label": "确定",
+                                "primary": true,
+                                "id": "u:2bb863521d20"
+                              }
+                            ],
+                            "showCloseButton": true,
+                            "closeOnOutside": false,
+                            "closeOnEsc": false,
+                            "showErrorMsg": true,
+                            "showLoading": true,
+                            "draggable": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "level": "link",
+                  "id": "u:165034078c0a",
+                  "disabledOnAction": false
+                },
+                {
+                  "type": "button",
+                  "label": "忘记密码",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "submit",
+                          "componentId": "u:b3bb67690196"
+                        }
+                      ]
+                    }
+                  },
+                  "level": "link",
+                  "id": "u:924205d4dffd",
+                  "disabledOnAction": false
+                },
+                {
+                  "type": "button",
+                  "label": "登录",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "submit",
+                          "componentId": "u:b3bb67690196"
+                        }
+                      ]
+                    }
+                  },
+                  "level": "primary",
+                  "id": "u:fc047a748630",
+                  "disabledOnAction": false
+                }
+              ],
+              "resetAfterSubmit": true,
+              "themeCss": {
+                "panelClassName": {
+                  "background": "transparent",
+                  "radius": {
+                    "top-left-border-radius": "var(--borders-radius-5)",
+                    "top-right-border-radius": "var(--borders-radius-5)",
+                    "bottom-left-border-radius": "var(--borders-radius-5)",
+                    "bottom-right-border-radius": "var(--borders-radius-5)"
+                  },
+                  "boxShadow": "var(--shadows-shadow-2xl)",
+                  "padding-and-margin": {
+                    "marginTop": "var(--sizes-size-2)",
+                    "marginRight": "var(--sizes-size-2)",
+                    "marginBottom": "var(--sizes-size-2)",
+                    "marginLeft": "var(--sizes-size-2)"
+                  }
+                },
+                "headerControlClassName": {
+                  "background": "transparent",
+                  "border": {
+                    "top-border-style": "var(--borders-style-2)",
+                    "left-border-style": "var(--borders-style-2)",
+                    "right-border-style": "var(--borders-style-2)",
+                    "bottom-border-style": "var(--borders-style-2)",
+                    "right-border-width": "var(--borders-width-2)",
+                    "top-border-width": "var(--borders-width-2)",
+                    "left-border-width": "var(--borders-width-2)",
+                    "bottom-border-width": "var(--borders-width-2)"
+                  }
+                },
+                "headerTitleControlClassName": {
+                  "font": {
+                    "color": "var(--colors-brand-5)"
+                  }
+                }
+              },
+              "api": {
+                "url": "/login",
+                "method": "post",
+                "requestAdaptor": "",
+                "adaptor": "",
+                "messages": {},
+                "data": {
+                  "username": "${username}",
+                  "password": "${password}"
+                }
+              },
+              "autoFocus": true,
+              "preventEnterSubmit": true,
+              "wrapWithPanel": true,
+              "onEvent": {
+                "submitSucc": {
+                  "weight": 0,
+                  "actions": [
+                    {
+                      "ignoreError": false,
+                      "actionType": "url",
+                      "args": {
+                        "url": "/",
+						"blank": false
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "type": "image",
+              "style": {
+                "position": "auto",
+                "inset": "2% auto auto 2%",
+                "display": "inline"
+              },
+              "id": "u:8c6a57e6d08a",
+              "enlargeAble": false,
+              "maxScale": 200,
+              "minScale": 50,
+              "defaultImage": "/public/logo.png",
+              "thumbMode": "contain",
+              "height": "100%",
+              "width": "100%",
+              "themeCss": {
+                "imageControlClassName": {
+                  "border:default": {
+                    "top-border-style": "var(--borders-style-1)",
+                    "left-border-style": "var(--borders-style-1)",
+                    "right-border-style": "var(--borders-style-1)",
+                    "bottom-border-style": "var(--borders-style-1)"
+                  }
+                }
+              }
+            }
+          ],
+          "wrapperBody": false,
+          "style": {
+            "position": "relative",
+            "minHeight": "200px",
+            "flex": "0 0 150px",
+            "inset": "auto",
+            "width": "100%",
+            "overflowX": "visible",
+            "flexBasis": "100%",
+            "overflowY": "hidden"
+          },
+          "id": "u:a0337c294718",
+          "isFixedWidth": true
+        }
+      ]
+    }
+  ],
+  "definitions": {},
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true
+  },
+  "dsType": "api",
+  "labelAlign": "left",
+  "data": {
+    "login_bg": "/public/login-bg.jpg"
+  },
+  "themeCss": {
+    "panelClassName": {
+      "background": "url('/public/login-bg.jpg')"
+    }
+  }
+};
+				let amisScoped = amis.embed('#root', amisJSON);
+			})();
+		</script>
+	</body>
+</html>

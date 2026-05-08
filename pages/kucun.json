@@ -1,0 +1,1137 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "id": "kucun_list",
+      "type": "crud",
+      "perPageAvailable": [
+        20,
+        50,
+        100
+      ],
+      "messages": {
+        "$$id": "40e42df7f828"
+      },
+      "$$id": "7acaaa82e894",
+      "alwaysShowPagination": true,
+      "api": {
+        "adaptor": "",
+        "messages": {
+          "$$id": "23fbb23dde68"
+        },
+        "method": "get",
+        "requestAdaptor": "",
+        "url": "/kucun?wuliushang=${wuliushang}&quyu=${quyu}&page=${page}&perPage=${perPage}&orderBy=${orderBy}&orderDir=${orderDir}&sousuo=${sousuo}&hulue=${hulue}",
+        "$$id": "bc529df1b99d"
+      },
+      "autoFillHeight": true,
+      "autoJumpToTopOnPagerChange": true,
+      "bulkActions": [],
+      "columns": [
+        {
+          "id": "u:50b96a3410cb",
+          "label": "物流商",
+          "name": "wuliushang",
+          "type": "text",
+          "align": "center",
+          "placeholder": "-",
+          "$$id": "13161100772c"
+        },
+        {
+          "id": "cangku",
+          "label": "仓库",
+          "name": "cangku",
+          "type": "text",
+          "align": "center",
+          "placeholder": "-",
+          "$$id": "86777b1e4d85"
+        },
+        {
+          "id": "tongtoolname",
+          "label": "马帮仓库名",
+          "name": "tongtoolname",
+          "type": "text",
+          "align": "center",
+          "placeholder": "-",
+          "sortable": true,
+          "$$id": "10bb29e3b841"
+        },
+        {
+          "id": "liaohao",
+          "label": "金蝶料号",
+          "name": "liaohao",
+          "type": "text",
+          "align": "center",
+          "placeholder": "-",
+          "sortable": true,
+          "$$id": "5b1f949178b3"
+        },
+        {
+          "id": "name",
+          "label": "名称(物流)",
+          "name": "name",
+          "placeholder": "-",
+          "type": "text",
+          "align": "center",
+          "sortable": true,
+          "$$id": "9b869042c42b"
+        },
+        {
+          "id": "yewu",
+          "label": "名称(业务)",
+          "name": "yewu",
+          "type": "text",
+          "align": "center",
+          "placeholder": "-",
+          "sortable": true,
+          "$$id": "4bebe64c7212"
+        },
+        {
+          "id": "sku",
+          "label": "海外仓SKU",
+          "name": "sku",
+          "type": "text",
+          "align": "center",
+          "placeholder": "-",
+          "sortable": true,
+          "$$id": "8f6c2280cd76"
+        },
+        {
+          "id": "pcs",
+          "label": "可用库存",
+          "name": "pcs",
+          "type": "number",
+          "align": "center",
+          "placeholder": "-",
+          "sortable": true,
+          "$$id": "a7ff9be02a9a"
+        },
+        {
+          "id": "ztpcs",
+          "label": "在途库存",
+          "name": "ztpcs",
+          "placeholder": "-",
+          "type": "text",
+          "align": "center",
+          "sortable": true,
+          "$$id": "b61b83a3d365"
+        },
+        {
+          "align": "center",
+          "id": "time",
+          "label": "更新时间",
+          "name": "time",
+          "placeholder": "-",
+          "sortable": true,
+          "type": "date",
+          "format": "YYYY-MM-DD HH:mm:ss",
+          "$$id": "ed188a5ad2df"
+        },
+        {
+          "buttons": [
+            {
+              "id": "操作",
+              "type": "button",
+              "actionType": "dialog",
+              "dialog": {
+                "actionType": "dialog",
+                "actions": [],
+                "allowFullscreen": false,
+                "body": [
+                  {
+                    "actions": [
+                      {
+                        "label": "提交",
+                        "level": "primary",
+                        "onEvent": {
+                          "click": {
+                            "actions": [
+                              {
+                                "actionType": "submit",
+                                "componentId": "u:6f9833dcafc9",
+                                "$$id": "edd54a84ccbc"
+                              }
+                            ],
+                            "$$id": "2e10ace559c5"
+                          },
+                          "$$id": "a437ff8d74d8"
+                        },
+                        "type": "button",
+                        "id": "u:8c0f665a32d8",
+                        "disabledOnAction": false,
+                        "$$id": "17a2b95b39cd"
+                      }
+                    ],
+                    "body": [
+                      {
+                        "id": "u:9fa677ccc19b",
+                        "type": "input-text",
+                        "name": "ID",
+                        "label": "ID",
+                        "hidden": true,
+                        "$$id": "e22ac3ec0618"
+                      },
+                      {
+                        "name": "liaohao",
+                        "label": "金蝶料号",
+                        "row": 0,
+                        "type": "input-text",
+                        "id": "u:9bb3db795ae8",
+                        "$$id": "7d0969b10827"
+                      },
+                      {
+                        "name": "name",
+                        "label": "物流品名",
+                        "row": 1,
+                        "type": "input-text",
+                        "id": "u:aa8988e9905d",
+                        "$$id": "f0d17793d397"
+                      },
+                      {
+                        "name": "yewu",
+                        "label": "业务品名",
+                        "row": 2,
+                        "type": "input-text",
+                        "id": "u:ff49a4a2fc1d",
+                        "$$id": "ce08df079f22"
+                      },
+                      {
+                        "name": "pcs",
+                        "label": "库存数量",
+                        "row": 3,
+                        "type": "input-number",
+                        "id": "u:b13d8e2d8a52",
+                        "$$id": "721d00f4bfaf"
+                      },
+                      {
+                        "name": "ztpcs",
+                        "label": "在途数量",
+                        "row": 4,
+                        "type": "input-number",
+                        "id": "u:4d5a17c71d80",
+                        "showCounter": false,
+                        "$$id": "554a6bc1bc46"
+                      }
+                    ],
+                    "dsType": "api",
+                    "feat": "Insert",
+                    "id": "u:6f9833dcafc9",
+                    "labelAlign": "left",
+                    "resetAfterSubmit": true,
+                    "title": "",
+                    "type": "form",
+                    "api": {
+                      "url": "/kucun_xiugai",
+                      "method": "post",
+                      "requestAdaptor": "",
+                      "adaptor": "",
+                      "messages": {
+                        "$$id": "9776c410247c"
+                      },
+                      "dataType": "json",
+                      "$$id": "4e51b0a89ef8"
+                    },
+                    "initApi": "",
+                    "autoFocus": true,
+                    "affixFooter": false,
+                    "wrapWithPanel": true,
+                    "$$id": "bb85179cdf0b"
+                  }
+                ],
+                "closeOnEsc": true,
+                "closeOnOutside": true,
+                "dataMapSwitch": false,
+                "draggable": false,
+                "editorSetting": {
+                  "displayName": "",
+                  "$$id": "ad0e969f576b"
+                },
+                "hideActions": false,
+                "id": "chanpinxiugai_tanchuang",
+                "inputParams": {
+                  "properties": {
+                    "$$id": "8cfd7acfa7d5"
+                  },
+                  "required": [],
+                  "type": "object",
+                  "$$id": "8cba411a10fc"
+                },
+                "name": "xiugai_tan",
+                "nametitle": "产品修改",
+                "showCloseButton": true,
+                "showErrorMsg": true,
+                "showLoading": true,
+                "title": "产品修改",
+                "type": "dialog",
+                "withDefaultData": false,
+                "$$id": "7d5dcb691a52"
+              },
+              "disabledOnAction": false,
+              "label": "修改",
+              "level": "default",
+              "size": "xs",
+              "themeCss": {
+                "className": {
+                  "padding-and-margin:default": {
+                    "$$id": "a3b6e8e30f0b"
+                  },
+                  "$$id": "4d6fd55c9d00"
+                },
+                "$$id": "7227403aee4b"
+              },
+              "$$id": "995e416acf15"
+            },
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "$ref": "modal-ref-1",
+                "actions": [],
+                "allowFullscreen": false,
+                "body": [
+                  {
+                    "api": {
+                      "adaptor": "",
+                      "data": {
+                        "sku": "${sku|default:undefined}",
+                        "sousuo": "${sousuo|default:undefined}",
+                        "$$id": "e9e8ef149ac8"
+                      },
+                      "messages": {
+                        "$$id": "914941406564"
+                      },
+                      "method": "post",
+                      "requestAdaptor": "",
+                      "url": "/kucun_peidui",
+                      "$$id": "941c016947e8"
+                    },
+                    "columns": [
+                      {
+                        "id": "kucun_peidui_liaohao",
+                        "inputType": "input-text",
+                        "name": "liaohao",
+                        "placeholder": "-",
+                        "title": "料号",
+                        "type": "tpl",
+                        "$$id": "10cc4e62d86c"
+                      },
+                      {
+                        "id": "kucun_peidui_tijiaowuliu",
+                        "inputType": "input-text",
+                        "name": "name",
+                        "title": "名称(物流)",
+                        "type": "tpl",
+                        "$$id": "bf9a0eefcdc7"
+                      },
+                      {
+                        "id": "kucun_peidui_yewu",
+                        "inputType": "input-text",
+                        "name": "yewu",
+                        "title": "名称(业务)",
+                        "type": "tpl",
+                        "$$id": "6329cb9c2186"
+                      },
+                      {
+                        "actionType": "submit",
+                        "disabledOnAction": false,
+                        "id": "kucun_peidui_tijiao",
+                        "label": "配对",
+                        "onEvent": {
+                          "click": {
+                            "actions": [
+                              {
+                                "actionType": "ajax",
+                                "api": {
+                                  "adaptor": "",
+                                  "data": {
+                                    "ID": "${ID}",
+                                    "liaohao": "${liaohao}",
+                                    "name": "${name}",
+                                    "yewu": "${yewu}",
+                                    "$$id": "c8ec2ac42bad"
+                                  },
+                                  "messages": {
+                                    "$$id": "45ed450275a9"
+                                  },
+                                  "method": "post",
+                                  "requestAdaptor": "",
+                                  "url": "/kucun_peidui",
+                                  "$$id": "a378f7ad0866"
+                                },
+                                "ignoreError": false,
+                                "options": {
+                                  "$$id": "d592a63ceb19"
+                                },
+                                "outputVar": "responseResult",
+                                "$$id": "882215beed4c"
+                              },
+                              {
+                                "actionType": "closeDialog",
+                                "ignoreError": false,
+                                "$$id": "177c4feed0ca"
+                              },
+                              {
+                                "actionType": "reload",
+                                "componentId": "kucun_list",
+                                "ignoreError": false,
+                                "$$id": "d8847a16496b"
+                              }
+                            ],
+                            "weight": 0,
+                            "$$id": "04c74dcbd658"
+                          },
+                          "$$id": "e16e7ee0296e"
+                        },
+                        "placeholder": "-",
+                        "title": "操作",
+                        "type": "button",
+                        "$$id": "53fffd89970c"
+                      }
+                    ],
+                    "dsType": "api",
+                    "editorSetting": {
+                      "mock": {
+                        "enable": true,
+                        "maxDisplayRows": 2,
+                        "$$id": "76da5c0d7c66"
+                      },
+                      "$$id": "766d60db6694"
+                    },
+                    "filter": {
+                      "actions": [
+                        {
+                          "id": "",
+                          "label": "查询",
+                          "level": "primary",
+                          "type": "submit",
+                          "$$id": "0133eeb5e8ed"
+                        }
+                      ],
+                      "affixFooter": false,
+                      "behavior": [
+                        "SimpleQuery"
+                      ],
+                      "body": [
+                        {
+                          "behavior": "SimpleQuery",
+                          "id": "kucun_peidui_sousuo",
+                          "label": "搜索",
+                          "name": "sousuo",
+                          "required": false,
+                          "size": "lg",
+                          "themeCss": {
+                            "labelClassName": {
+                              "padding-and-margin:default": {
+                                "$$id": "480f32080015"
+                              },
+                              "$$id": "7ac93af900d3"
+                            },
+                            "$$id": "f8978ad0c47c"
+                          },
+                          "type": "input-text",
+                          "value": "",
+                          "$$id": "11a8b0a83931"
+                        }
+                      ],
+                      "clearValueOnHidden": true,
+                      "closeDialogOnSubmit": false,
+                      "columnCount": 1,
+                      "feat": "Insert",
+                      "id": "kucun_peidui_biaodan",
+                      "mode": "inline",
+                      "submitOnChange": true,
+                      "title": "",
+                      "type": "form",
+                      "wrapWithPanel": false,
+                      "$$id": "8e1b10b4c874"
+                    },
+                    "footerToolbar": [],
+                    "headerToolbar": [
+                      {
+                        "alignItems": "stretch",
+                        "direction": "row",
+                        "id": "",
+                        "isFixedHeight": false,
+                        "isFixedWidth": false,
+                        "items": [],
+                        "justify": "flex-start",
+                        "style": {
+                          "flexWrap": "nowrap",
+                          "position": "static",
+                          "$$id": "da7c0396b956"
+                        },
+                        "type": "flex",
+                        "$$id": "dd733e4cfd02"
+                      }
+                    ],
+                    "id": "kucun_peidui_list",
+                    "loadType": "pagination",
+                    "mode": "table2",
+                    "primaryField": "id",
+                    "syncLocation": false,
+                    "type": "crud2",
+                    "$$id": "8dc1909e9965"
+                  }
+                ],
+                "closeOnEsc": true,
+                "closeOnOutside": true,
+                "data": {
+                  "ID": "${ID}",
+                  "sousuo": "${sku}",
+                  "$$id": "030fa7d4fbd9"
+                },
+                "dataMap": {
+                  "ID": "${ID}",
+                  "sousuo": "${sku}",
+                  "$$id": "86f0d4d1c64d"
+                },
+                "dataMapSwitch": true,
+                "draggable": false,
+                "hideActions": true,
+                "id": "chanpin_tanchuang_peidui",
+                "inputParams": {
+                  "properties": {
+                    "$$id": "b0f32f777df0"
+                  },
+                  "required": [],
+                  "type": "object",
+                  "$$id": "b0dd54121c8a"
+                },
+                "showCloseButton": true,
+                "showErrorMsg": false,
+                "showLoading": false,
+                "title": "产品配对:${sousuo}",
+                "type": "dialog",
+                "withDefaultData": false,
+                "$$id": "2f0897c52a66"
+              },
+              "disabledOnAction": false,
+              "id": "u:1f0119aed2ae",
+              "label": "配对",
+              "level": "default",
+              "onEvent": {
+                "$$id": "94fad896669c"
+              },
+              "size": "xs",
+              "themeCss": {
+                "className": {
+                  "padding-and-margin:default": {
+                    "$$id": "60b83f93a731"
+                  },
+                  "$$id": "304a80acce0b"
+                },
+                "$$id": "f7860151d9ba"
+              },
+              "type": "button",
+              "$$id": "ea046f073008"
+            },
+            {
+              "disabledOnAction": false,
+              "id": "u:08314e5d33a6",
+              "label": "订阅",
+              "level": "default",
+              "onEvent": {
+                "click": {
+                  "actions": [
+                    {
+                      "actionType": "dialog",
+                      "dialog": {
+                        "actionType": "dialog",
+                        "actions": [
+                          {
+                            "actionType": "cancel",
+                            "disabledOnAction": false,
+                            "id": "kucun_dingyue_quxiao",
+                            "label": "取消",
+                            "type": "button",
+                            "$$id": "9135bdfd07a1"
+                          },
+                          {
+                            "actionType": "confirm",
+                            "disabledOnAction": false,
+                            "id": "kucun_dingyue_queding",
+                            "label": "确定",
+                            "primary": true,
+                            "type": "button",
+                            "$$id": "6c359278a1df"
+                          }
+                        ],
+                        "allowFullscreen": false,
+                        "body": [
+                          {
+                            "actions": [
+                              {
+                                "id": "",
+                                "label": "取消",
+                                "level": "default",
+                                "onEvent": {
+                                  "click": {
+                                    "actions": [
+                                      {
+                                        "actionType": "cancel",
+                                        "componentId": "u:f99b988ee830",
+                                        "$$id": "75c39bd830d7"
+                                      }
+                                    ],
+                                    "$$id": "6939348a762e"
+                                  },
+                                  "$$id": "abf2fb97be27"
+                                },
+                                "type": "button",
+                                "$$id": "a3f3cc6ccbde"
+                              },
+                              {
+                                "id": "",
+                                "label": "提交",
+                                "level": "primary",
+                                "onEvent": {
+                                  "click": {
+                                    "actions": [
+                                      {
+                                        "actionType": "submit",
+                                        "componentId": "u:f99b988ee830",
+                                        "$$id": "711f4fea85b5"
+                                      }
+                                    ],
+                                    "$$id": "350cfe74e0f6"
+                                  },
+                                  "$$id": "45d36ef99c97"
+                                },
+                                "type": "button",
+                                "$$id": "4d1c61669955"
+                              }
+                            ],
+                            "api": {
+                              "adaptor": "",
+                              "messages": {
+                                "$$id": "f5cd3cc9414d"
+                              },
+                              "method": "post",
+                              "requestAdaptor": "",
+                              "url": "/yonghu_dingyue_kucun",
+                              "$$id": "087c6180dc1d"
+                            },
+                            "body": [
+                              {
+                                "id": "kucun_dingyue_wuliushang",
+                                "label": "物流商",
+                                "name": "wuliushang",
+                                "static": true,
+                                "type": "input-text",
+                                "$$id": "9b609177ad35"
+                              },
+                              {
+                                "id": "kucun_dingyue_cangku",
+                                "label": "仓库/区域",
+                                "name": "cangku",
+                                "static": true,
+                                "type": "input-text",
+                                "$$id": "56429b7ed625"
+                              },
+                              {
+                                "id": "kucun_dingyue_liaohao",
+                                "label": "金蝶料号",
+                                "name": "liaohao",
+                                "static": true,
+                                "type": "input-text",
+                                "$$id": "2ab6ea2a5543"
+                              },
+                              {
+                                "id": "kucun_dingyue_wuliu",
+                                "label": "名称(物流)",
+                                "name": "name",
+                                "static": true,
+                                "type": "input-text",
+                                "$$id": "cfae69ff60db"
+                              },
+                              {
+                                "id": "kucun_dingyue_yewu",
+                                "label": "名称(业务)",
+                                "name": "yewu",
+                                "static": true,
+                                "type": "input-text",
+                                "$$id": "7c36b062eb65"
+                              },
+                              {
+                                "id": "kucun_dingyue_shuliang",
+                                "label": "预警数量",
+                                "name": "pcs",
+                                "required": true,
+                                "showCounter": false,
+                                "type": "input-text",
+                                "validateOnChange": true,
+                                "validationErrors": {
+                                  "isNumeric": "只能填写数字",
+                                  "$$id": "cb5a94de8dfd"
+                                },
+                                "validations": {
+                                  "isNumeric": true,
+                                  "maxLength": 4,
+                                  "minLength": 1,
+                                  "$$id": "30aa42ab646e"
+                                },
+                                "$$id": "dc4a32770cfe"
+                              },
+                              {
+                                "id": "kucun_dingyue_beizhu",
+                                "label": "备注",
+                                "name": "beizhu",
+                                "required": true,
+                                "type": "input-text",
+                                "$$id": "9e9cf42884ba"
+                              }
+                            ],
+                            "dsType": "api",
+                            "feat": "Insert",
+                            "id": "kucun_dingyue_tanchuang",
+                            "labelAlign": "left",
+                            "mode": "horizontal",
+                            "resetAfterSubmit": true,
+                            "title": "表单",
+                            "type": "form",
+                            "wrapWithPanel": false,
+                            "$$id": "bd16c47a2acb"
+                          }
+                        ],
+                        "closeOnEsc": false,
+                        "closeOnOutside": false,
+                        "draggable": false,
+                        "id": "kucun_dingyue_tc",
+                        "showCloseButton": true,
+                        "showErrorMsg": true,
+                        "showLoading": true,
+                        "title": "库存订阅",
+                        "type": "dialog",
+                        "$$id": "acf06be88cf9"
+                      },
+                      "ignoreError": false,
+                      "$$id": "3bac1ce05921"
+                    }
+                  ],
+                  "$$id": "2c51b5c939b4"
+                },
+                "$$id": "64a67a9c3ecf"
+              },
+              "size": "xs",
+              "themeCss": {
+                "className": {
+                  "padding-and-margin:default": {
+                    "$$id": "96f59289b1dd"
+                  },
+                  "$$id": "88be49f39b3f"
+                },
+                "$$id": "eba79ba8c802"
+              },
+              "type": "button",
+              "$$id": "60ee79ab7c7d"
+            }
+          ],
+          "id": "kucun_list_caozuo",
+          "label": "操作",
+          "type": "button-group",
+          "name": "操作",
+          "placeholder": "-",
+          "align": "center",
+          "fixed": "right",
+          "$$id": "a0482c4556aa"
+        }
+      ],
+      "defaultParams": {
+        "$$id": "c6d6ceb8e6e1"
+      },
+      "draggable": false,
+      "dynimicColumnKey": "83d43185",
+      "filter": {
+        "body": [
+          {
+            "clearable": true,
+            "id": "u:c598166907d7",
+            "label": "",
+            "multiple": false,
+            "name": "wuliushang",
+            "source": "/wuliushang_list",
+            "type": "list-select",
+            "itemSchema": {
+              "body": [
+                {
+                  "id": "u:c1c8599694c3",
+                  "inline": true,
+                  "themeCss": {
+                    "baseControlClassName": {
+                      "border:default": {
+                        "bottom-border-style": "var(--borders-style-2)",
+                        "bottom-border-width": "var(--borders-width-2)",
+                        "left-border-style": "var(--borders-style-2)",
+                        "left-border-width": "var(--borders-width-2)",
+                        "right-border-style": "var(--borders-style-2)",
+                        "right-border-width": "var(--borders-width-2)",
+                        "top-border-style": "var(--borders-style-2)",
+                        "top-border-width": "var(--borders-width-2)",
+                        "$$id": "1b5a28c34468"
+                      },
+                      "font:default": {
+                        "fontSize": "var(--fonts-size-5)",
+                        "$$id": "e864b3e0bc6a"
+                      },
+                      "padding-and-margin:default": {
+                        "marginBottom": "var(--sizes-size-0)",
+                        "marginLeft": "var(--sizes-size-0)",
+                        "marginRight": "var(--sizes-size-0)",
+                        "marginTop": "var(--sizes-size-0)",
+                        "paddingBottom": "var(--sizes-size-0)",
+                        "paddingLeft": "var(--sizes-size-4)",
+                        "paddingRight": "var(--sizes-size-4)",
+                        "paddingTop": "var(--sizes-size-0)",
+                        "$$id": "c7431285dde8"
+                      },
+                      "radius:default": {
+                        "bottom-left-border-radius": "var(--borders-radius-6)",
+                        "bottom-right-border-radius": "var(--borders-radius-6)",
+                        "top-left-border-radius": "var(--borders-radius-6)",
+                        "top-right-border-radius": "var(--borders-radius-6)",
+                        "$$id": "93c4b21d3b69"
+                      },
+                      "$$id": "79155977815b"
+                    },
+                    "$$id": "aa37ecf8436f"
+                  },
+                  "tpl": "${label}",
+                  "type": "tpl",
+                  "wrapperComponent": "",
+                  "$$id": "4c1b11217abb"
+                }
+              ],
+              "id": "u:27e5f3226415",
+              "type": "container",
+              "$$id": "c82f47a2cf54"
+            },
+            "onEvent": {
+              "$$id": "c3643a874666"
+            },
+            "originPosition": "left-top",
+            "$$id": "94812d5caae7"
+          },
+          {
+            "clearable": true,
+            "id": "quyu",
+            "label": "",
+            "multiple": false,
+            "name": "quyu",
+            "source": "/quyu_list?wuliushang=${wuliushang}",
+            "type": "button-group-select",
+            "btnActiveLevel": "info",
+            "btnLevel": "default",
+            "inline": false,
+            "size": "sm",
+            "tiled": true,
+            "$$id": "23caff8ea6be"
+          },
+          {
+            "type": "grid",
+            "id": "u:ba3fb8ab6490",
+            "columns": [
+              {
+                "body": [
+                  {
+                    "id": "sousuo",
+                    "label": "",
+                    "labelAlign": "inherit",
+                    "name": "sousuo",
+                    "placeholder": "模糊搜索",
+                    "size": "md",
+                    "type": "input-text",
+                    "$$id": "189d6b840452"
+                  }
+                ],
+                "id": "u:37848085aec8",
+                "md": "auto",
+                "$$id": "8662c5ff560a"
+              },
+              {
+                "body": [
+                  {
+                    "falseValue": "N",
+                    "id": "hulue",
+                    "label": "",
+                    "name": "hulue",
+                    "onEvent": {
+                      "change": {
+                        "actions": [
+                          {
+                            "actionType": "ajax",
+                            "api": {
+                              "method": "get",
+                              "url": "/kucun_0kc?hulue=${hulue}",
+                              "$$id": "00f63fdc0c99"
+                            },
+                            "ignoreError": false,
+                            "options": {
+                              "silent": true,
+                              "$$id": "90dd97018462"
+                            },
+                            "outputVar": "responseResult",
+                            "$$id": "1f3199c4a629"
+                          }
+                        ],
+                        "weight": 0,
+                        "$$id": "dab94cc8f496"
+                      },
+                      "$$id": "f93d0c56671d"
+                    },
+                    "option": "忽略0库存",
+                    "optionType": "default",
+                    "trueValue": "Y",
+                    "type": "checkbox",
+                    "value": "${kucun_0}",
+                    "$$id": "3f757280ddb5"
+                  }
+                ],
+                "id": "u:b37dd5a9ce8c",
+                "$$id": "55fbb5bf10a5"
+              }
+            ],
+            "themeCss": {
+              "baseControlClassName": {
+                "padding-and-margin:default": {
+                  "marginLeft": "var(--sizes-size-1)",
+                  "$$id": "2b7e84b87912"
+                },
+                "$$id": "fcb3d6a29829"
+              },
+              "$$id": "d72c4416f752"
+            },
+            "$$id": "3dd6b3df77d9"
+          }
+        ],
+        "columnCount": 1,
+        "feat": "Insert",
+        "id": "u:8fab4d3ac5cd",
+        "labelAlign": "left",
+        "mode": "inline",
+        "submitOnChange": true,
+        "themeCss": {
+          "formControlClassName": {
+            "border": {
+              "bottom-border-style": "var(--borders-style-1)",
+              "left-border-style": "var(--borders-style-1)",
+              "right-border-style": "var(--borders-style-1)",
+              "top-border-style": "var(--borders-style-1)",
+              "$$id": "d9ac3fc791b7"
+            },
+            "$$id": "cccfd8bef623"
+          },
+          "itemClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-2)",
+              "marginLeft": "var(--sizes-size-2)",
+              "marginRight": "var(--sizes-size-2)",
+              "marginTop": "var(--sizes-size-2)",
+              "$$id": "26edc85dfec0"
+            },
+            "$$id": "30df45f9ff82"
+          },
+          "itemLabelClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-0)",
+              "marginLeft": "var(--sizes-size-0)",
+              "marginRight": "var(--sizes-size-0)",
+              "marginTop": "var(--sizes-size-0)",
+              "$$id": "3a3ed7f2d75a"
+            },
+            "$$id": "e4f81597420b"
+          },
+          "$$id": "f9c4bd1c51f0"
+        },
+        "title": "查询条件",
+        "wrapWithPanel": false,
+        "autoFocus": true,
+        "loadingConfig": {
+          "show": false,
+          "$$id": "e4fbc65a4476"
+        },
+        "persistData": false,
+        "$$id": "e1685358fa83"
+      },
+      "filterEnabledList": [
+        {
+          "label": "wuliushang",
+          "value": "wuliushang",
+          "$$id": "d23287e8593a"
+        },
+        {
+          "label": "cangku",
+          "value": "cangku",
+          "$$id": "a373eacb9102"
+        },
+        {
+          "label": "sku",
+          "value": "sku",
+          "$$id": "56314b19d0e6"
+        },
+        {
+          "label": "ID",
+          "value": "ID",
+          "$$id": "9f9a307155a9"
+        }
+      ],
+      "filterSettingSource": [
+        "ID",
+        "wuliushang",
+        "sku",
+        "liaohao",
+        "cangku",
+        "name",
+        "tongtoolname",
+        "yewu",
+        "pcs",
+        "ztpcs",
+        "time"
+      ],
+      "footerToolbar": [],
+      "headerToolbar": [
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "switch-per-page",
+          "wrapperComponent": "",
+          "$$id": "bf63279c3ddf"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "pagination",
+          "wrapperComponent": "",
+          "$$id": "1f55a6fba159"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "statistics",
+          "wrapperComponent": "",
+          "$$id": "4257041e7755"
+        },
+        {
+          "disabledOnAction": false,
+          "id": "u:23278ae4a5cf",
+          "label": "导出当前页",
+          "tpl": "内容",
+          "type": "export-excel",
+          "wrapperComponent": "",
+          "tooltip": "当前看到的这一页数据",
+          "$$id": "a0efee50946c"
+        },
+        {
+          "api": "/kucun?wuliushang=${wuliushang}&quyu=${quyu}&orderBy=${orderBy}&orderDir=${orderDir}&sousuo=${sousuo}&hulue=${hulue}&daochu=1",
+          "disabledOnAction": false,
+          "id": "u:14d2e98e0186",
+          "label": "导出所有页",
+          "type": "export-excel",
+          "tooltip": "当前搜索结果的所有数据",
+          "$$id": "7d684f1f2894"
+        },
+        {
+          "api": "/kucun?&daochu=1",
+          "disabledOnAction": false,
+          "id": "u:7c8c95842a23",
+          "label": "导出全部库存",
+          "tooltip": "忽略所有查询条件,直接导出全部数据",
+          "type": "export-excel",
+          "$$id": "44454a87913a"
+        },
+        {
+          "id": "u:4be2510701b3",
+          "tpl": "<span style='color:#1890ff; margin-right:15px;'>总库存:${pcs}</span><span style='color:#13c2c2; margin-right:15px;'>总在途:${ztpcs}</span><span style='color:#52c41a; margin-right:15px;'>本页库存:${items|pick:pcs|sum}</span><span style='color:#faad14;'>本页在途:${items|pick:ztpcs|sum}</span>",
+          "type": "tpl",
+          "wrapperComponent": "",
+          "$$id": "b26dfa8ea688"
+        },
+        {
+          "align": "right",
+          "draggable": true,
+          "type": "columns-toggler",
+          "$$id": "28acc828e0cb"
+        }
+      ],
+      "itemActions": [],
+      "loadingConfig": {
+        "show": true,
+        "$$id": "bc31afad535b"
+      },
+      "perPage": 20,
+      "syncLocation": true,
+      "style": {
+        "height": "100%",
+        "width": "100%",
+        "overflow": "hidden",
+        "maxWidth": "100vw",
+        "maxHeight": "100vh",
+        "$$id": "5258b5a295d3"
+      },
+      "affixRowClassNameExpr": "text-success",
+      "columnsTogglable": false,
+      "data": {
+        "mysource": {
+          "作废": {
+            "icon": "warning",
+            "label": "作废",
+            "$$id": "2e3ab66bebf7"
+          },
+          "制作中": {
+            "icon": "rolling",
+            "label": "制作中",
+            "$$id": "754ef236a180"
+          },
+          "制作失败": {
+            "icon": "fail",
+            "label": "制作失败",
+            "$$id": "42a769b04586"
+          },
+          "制作完成": {
+            "icon": "success",
+            "label": "制作完成",
+            "$$id": "80765f4b91f3"
+          },
+          "等待制作": {
+            "icon": "schedule",
+            "label": "等待制作",
+            "$$id": "d3da262f2b11"
+          },
+          "$$id": "068ec04647af"
+        },
+        "$$id": "6fb2887e507f"
+      },
+      "footable": true,
+      "keepAlive": true,
+      "lazyRenderAfter": 10,
+      "onEvent": {
+        "$$id": "dde36a93b1db"
+      },
+      "placeholder": "没有数据哦",
+      "rowClassNameExpr": "${index % 2 ? 'bg-gray-100' : ''}"
+    }
+  ],
+  "$$id": "51b0bac0360d",
+  "id": "u:bed6e2de01d1",
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "2913109b6fe2"
+  },
+  "asideResizor": false,
+  "definitions": {
+    "modal-ref-1": {
+      "$$id": "b565a1185ac4",
+      "$ref": "modal-ref-1"
+    },
+    "$$id": "146d7cf79563"
+  },
+  "regions": [
+    "body"
+  ],
+  "config": {
+    "globalVals": [],
+    "$$id": "fe9f55c62736"
+  },
+  "initApi": "/yonghu_ziliao"
+}

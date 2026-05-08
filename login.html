@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>登录</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background: url('/public/login-bg.jpg') no-repeat center center fixed;
+			background-size: cover;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+		}
+
+		.login-box {
+			width: 300px;
+			padding: 20px;
+			background-color: rgba(255, 255, 255, 0.8);
+			border-radius: 5px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		}
+
+		.login-box h3 {
+			font-size: 16px;
+			color: #333;
+			margin-bottom: 15px;
+		}
+
+		.login-box form input,
+		.register-form input {
+			width: 100%;
+			padding: 8px;
+			margin-bottom: 15px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			background-color: white;
+			color: #333;
+		}
+
+		.login-box form button {
+			background-color: #007BFF;
+			color: white;
+			padding: 8px 15px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+
+		.login-box form a {
+			color: #333;
+			text-decoration: none;
+			font-size: 12px;
+		}
+
+		.register-form {
+			display: none;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="login-box">
+		<form id="loginForm">
+			<h3>用户登录</h3> <label for="username">用户名*</label> <input type="text" id="username" placeholder="请输入用户名"
+				required> <label for="password">密码*</label> <input type="password" id="password" placeholder="请输入密码"
+				required> <a href="#" id="registerLink">注册</a> <a href="#" id="forgotPasswordLink">忘记密码</a> <button
+				style="float:right" type="button" id="loginBtn">登录</button>
+		</form>
+		<form class="register-form" id="registerForm">
+			<h3>用户注册</h3> <label for="regUsername">用户名*</label> <input type="text" id="regUsername" placeholder="请输入用户名"
+				required> <label for="realName">姓名*</label> <input type="text" id="realName" placeholder="请输入姓名"
+				required> <label for="email">邮箱*</label> <input type="email" id="email" placeholder="请输入邮箱" required>
+			<label for="tel">手机号*</label> <input type="tel" id="tel" placeholder="请输入手机号" required> <label
+				for="regPassword">密码*</label> <input type="password" id="regPassword" placeholder="请输入密码" required>
+			<label for="confirmPassword">确认密码*</label> <input type="password" id="confirmPassword" placeholder="请再次输入密码"
+				required> <button style="float:right" type="button" id="registerSubmit">注册</button> <a href="#"
+				id="cancelRegister">返回登录</a>
+		</form>
+	</div>
+	<script src="/sdk/md5.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const loginBtn = document.getElementById('loginBtn');
+			const loginForm = document.getElementById('loginForm');
+			const registerLink = document.getElementById('registerLink');
+			const registerForm = document.getElementById('registerForm');
+			const cancelRegister = document.getElementById('cancelRegister');
+			const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+			const registerSubmit = document.getElementById('registerSubmit');
+			const passwordInput = document.getElementById('password');
+			registerLink.addEventListener('click', function (e) {
+				e.preventDefault();
+				registerForm.style.display = 'block';
+				loginForm.style.display = 'none';
+			});
+			cancelRegister.addEventListener('click', function (e) {
+				e.preventDefault();
+				registerForm.style.display = 'none';
+				loginForm.style.display = 'block';
+			});
+			forgotPasswordLink.addEventListener('click', function (e) {
+				e.preventDefault();
+				alert('忘记密码请联系管理员处理');
+			});
+			passwordInput.addEventListener('keydown', function (e) {
+				if (e.key === 'Enter') {
+					e.preventDefault();
+					loginBtn.click();
+				}
+			});
+			loginBtn.addEventListener('click', function () {
+				this.disabled = true;
+				this.textContent = '登录中...';
+				const username = document.getElementById('username').value;
+				const password = md5(document.getElementById('password').value);
+				const data = {
+					username: username,
+					password: password
+				};
+				fetch('/login', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(data)
+				}).then(response => response.json()).then(data => {
+					if (data.status === 0) {
+						localStorage.setItem('yonghuziliao', JSON.stringify(data.data.user));
+						localStorage.setItem('yonghuquanxian', JSON.stringify(data.data.permission));
+						window.location.href = '/';
+					} else {
+						alert(data.msg);
+						console.log('登录失败，错误信息:', data.msg);
+					}
+				}).catch(error => {
+					console.error('Error:', error);
+				}).finally(() => {
+					this.disabled = false;
+					this.textContent = '登录';
+				});
+			});
+			registerSubmit.addEventListener('click', function () {
+				const regUsername = document.getElementById('regUsername').value;
+				const realName = document.getElementById('realName').value;
+				const email = document.getElementById('email').value;
+				const regPassword = md5(document.getElementById('regPassword').value);
+				const confirmPassword = md5(document.getElementById('confirmPassword').value);
+				const tel = document.getElementById('tel').value;
+				if (regPassword != confirmPassword) {
+					alert('两次密码不一致!');
+					return;
+				}
+				const registerData = {
+					username: regUsername,
+					realName: realName,
+					mail: email,
+					password: regPassword,
+					tel: tel
+				};
+				fetch('/register', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify(registerData)
+				}).then(response => response.json()).then(data => {
+					if (data.status === 0) {
+						alert('注册成功! 请联系管理员激活账号!');
+					} else {
+						alert(data.msg);
+						console.log('注册失败，错误信息:', data.msg);
+					}
+				}).catch(error => {
+					console.error('注册请求错误:', error);
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>

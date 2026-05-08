@@ -1,0 +1,28 @@
+{
+  "body": [
+    {
+      "id": "u:d1fd9b0c9d5c",
+      "type": "service",
+      "$$id": "45d7c3d987d0",
+      "body": [],
+      "dsType": "api",
+      "perPageAvailable": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ],
+      "messages": {
+        "$$id": "275230980bc6"
+      }
+    }
+  ],
+  "$$id": "e1ae07cbd73f",
+  "id": "",
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "07b99f083bbe"
+  },
+  "asideResizor": false
+}

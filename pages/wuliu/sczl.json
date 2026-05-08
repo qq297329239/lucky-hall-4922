@@ -1,0 +1,77 @@
+{
+  "asideResizor": false,
+  "body": [
+    {
+      "actions": [
+        {
+          "id": "",
+          "label": "提交",
+          "level": "primary",
+          "onEvent": {
+            "click": {
+              "actions": [
+                {
+                  "actionType": "submit",
+                  "componentId": "u:b32a336f639e"
+                }
+              ]
+            }
+          },
+          "type": "button"
+        }
+      ],
+      "body": [
+        {
+          "id": "erporderid",
+          "label": "订单ID",
+          "name": "erpOrderId",
+          "row": null,
+          "type": "input-text"
+        },
+        {
+          "id": "platformorderid",
+          "label": "订单编号",
+          "name": "platformOrderId",
+          "row": null,
+          "type": "input-text"
+        },
+        {
+          "id": "",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "items": {
+            "id": "text${index}",
+            "label": "Input${item}",
+            "name": "text${index}",
+            "type": "input-text"
+          },
+          "source": "${arr}",
+          "style": {
+            "display": "block"
+          },
+          "type": "each"
+        }
+      ],
+      "dsType": "api",
+      "feat": "Insert",
+      "id": "",
+      "labelAlign": "top",
+      "mode": "flex",
+      "resetAfterSubmit": true,
+      "title": "上传索赔资料",
+      "type": "form"
+    }
+  ],
+  "data": {
+    "arr": [
+      "订单截图",
+      "面单图",
+      "沟通截图"
+    ]
+  },
+  "id": "",
+  "pullRefresh": {
+    "disabled": true
+  },
+  "type": "page"
+}

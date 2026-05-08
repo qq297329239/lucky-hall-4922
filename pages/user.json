@@ -1,0 +1,1290 @@
+{
+  "asideResizor": false,
+  "body": [
+    {
+      "align": "center",
+      "columns": [
+        {
+          "body": [
+            {
+              "body": [
+                {
+                  "fit": "fill",
+                  "icon": "",
+                  "id": "",
+                  "showtype": "image",
+                  "src": "${avatar}",
+                  "style": {
+                    "borderRadius": 20,
+                    "fontFamily": "",
+                    "fontSize": 12,
+                    "height": 80,
+                    "width": 80
+                  },
+                  "type": "avatar"
+                },
+                {
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "修改头像",
+                  "level": "link",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "dialog",
+                          "dialog": {
+                            "actionType": "dialog",
+                            "actions": [
+                              {
+                                "actionType": "cancel",
+                                "id": "",
+                                "label": "取消",
+                                "type": "button"
+                              },
+                              {
+                                "actionType": "confirm",
+                                "disabledOnAction": false,
+                                "id": "",
+                                "label": "确定",
+                                "onEvent": {},
+                                "primary": true,
+                                "type": "button"
+                              }
+                            ],
+                            "body": [
+                              {
+                                "actions": [
+                                  {
+                                    "label": "提交",
+                                    "primary": true,
+                                    "type": "submit"
+                                  }
+                                ],
+                                "api": {
+                                  "data": {
+                                    "avatar": "${avatar}"
+                                  },
+                                  "method": "post",
+                                  "url": "yonghu_ziliao_touxiang"
+                                },
+                                "body": [
+                                  {
+                                    "accept": "image/png",
+                                    "autoUpload": true,
+                                    "bos": "default",
+                                    "crop": {
+                                      "rotatable": true,
+                                      "scalable": true,
+                                      "viewMode": 1
+                                    },
+                                    "cropQuality": 0.7,
+                                    "frameImage": "",
+                                    "hideUploadButton": true,
+                                    "id": "avatar",
+                                    "label": "选择头像(2MB)",
+                                    "limit": true,
+                                    "maxSize": 2097152,
+                                    "multiple": false,
+                                    "name": "avatar",
+                                    "proxy": false,
+                                    "receiver": {
+                                      "adaptor": "",
+                                      "dataType": "form",
+                                      "messages": {},
+                                      "method": "post",
+                                      "requestAdaptor": "",
+                                      "url": "/upload/file?q=1"
+                                    },
+                                    "type": "input-image",
+                                    "uploadType": "fileReceptor"
+                                  }
+                                ],
+                                "feat": "Insert",
+                                "id": "",
+                                "title": "修改头像",
+                                "type": "form"
+                              }
+                            ],
+                            "closeOnEsc": false,
+                            "closeOnOutside": false,
+                            "draggable": false,
+                            "id": "",
+                            "onEvent": {},
+                            "showCloseButton": true,
+                            "showErrorMsg": true,
+                            "showLoading": true,
+                            "title": "修改用户头像",
+                            "type": "dialog"
+                          },
+                          "ignoreError": false,
+                          "waitForAction": true
+                        },
+                        {
+                          "actionType": "reload",
+                          "componentId": "u:f0d642163cc1",
+                          "ignoreError": false
+                        }
+                      ]
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "修改资料",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "dialog",
+                          "dialog": {
+                            "actionType": "dialog",
+                            "actions": [
+                              {
+                                "actionType": "cancel",
+                                "id": "",
+                                "label": "取消",
+                                "type": "button"
+                              },
+                              {
+                                "actionType": "confirm",
+                                "disabledOnAction": false,
+                                "id": "",
+                                "label": "提交",
+                                "primary": true,
+                                "type": "button"
+                              }
+                            ],
+                            "body": [
+                              {
+                                "actions": [
+                                  {
+                                    "label": "提交",
+                                    "level": "primary",
+                                    "onEvent": {
+                                      "click": {
+                                        "actions": [
+                                          {
+                                            "actionType": "submit",
+                                            "componentId": "u:d420cb27e6a2"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    "type": "button"
+                                  }
+                                ],
+                                "affixFooter": true,
+                                "api": {
+                                  "adaptor": "",
+                                  "dataType": "json",
+                                  "messages": {},
+                                  "method": "post",
+                                  "requestAdaptor": "",
+                                  "url": "/yonghu_ziliao_xiugai"
+                                },
+                                "body": [
+                                  {
+                                    "colSize": "1",
+                                    "id": "id",
+                                    "keyboard": true,
+                                    "label": "用户ID",
+                                    "name": "ID",
+                                    "row": 0,
+                                    "showSteps": true,
+                                    "static": true,
+                                    "step": 1,
+                                    "type": "input-number"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "username",
+                                    "label": "用户名",
+                                    "name": "username",
+                                    "row": 1,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "name",
+                                    "label": "姓名",
+                                    "name": "name",
+                                    "row": 2,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "roles_name",
+                                    "label": "身份名称",
+                                    "name": "roles_name",
+                                    "row": 3,
+                                    "static": true,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "mail",
+                                    "label": "邮箱",
+                                    "name": "mail",
+                                    "row": 4,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "vx_id",
+                                    "label": "企业微信ID",
+                                    "name": "vx_ID",
+                                    "row": 5,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "id": "tel",
+                                    "label": "电话",
+                                    "name": "tel",
+                                    "row": 6,
+                                    "type": "input-text"
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "falseValue": 0,
+                                    "id": "mail_t",
+                                    "keyboard": true,
+                                    "label": "邮件订阅",
+                                    "name": "mail_t",
+                                    "optionType": "default",
+                                    "row": 7,
+                                    "showSteps": true,
+                                    "step": 1,
+                                    "trueValue": 1,
+                                    "type": "checkbox",
+                                    "value": 0
+                                  },
+                                  {
+                                    "colSize": "1",
+                                    "falseValue": 0,
+                                    "id": "vx_t",
+                                    "keyboard": true,
+                                    "label": "微信订阅",
+                                    "name": "vx_t",
+                                    "optionType": "default",
+                                    "row": 8,
+                                    "showSteps": true,
+                                    "step": 1,
+                                    "trueValue": 1,
+                                    "type": "checkbox",
+                                    "value": 0
+                                  }
+                                ],
+                                "columnCount": 2,
+                                "dsType": "api",
+                                "feat": "Edit",
+                                "id": "",
+                                "initApi": {
+                                  "adaptor": "",
+                                  "messages": {},
+                                  "method": "get",
+                                  "requestAdaptor": "",
+                                  "url": "/yonghu_ziliao"
+                                },
+                                "labelAlign": "left",
+                                "mode": "flex",
+                                "onEvent": {
+                                  "submitSucc": {
+                                    "actions": [
+                                      {
+                                        "actionType": "reload",
+                                        "componentId": "u:f0d642163cc1",
+                                        "ignoreError": false
+                                      }
+                                    ],
+                                    "weight": 0
+                                  }
+                                },
+                                "resetAfterSubmit": true,
+                                "themeCss": {
+                                  "bodyControlClassName": {
+                                    "padding-and-margin": {}
+                                  },
+                                  "headerControlClassName": {
+                                    "border": {},
+                                    "padding-and-margin": {}
+                                  },
+                                  "itemClassName": {
+                                    "padding-and-margin": {}
+                                  },
+                                  "itemLabelClassName": {
+                                    "padding-and-margin": {}
+                                  },
+                                  "panelClassName": {
+                                    "border": {},
+                                    "padding-and-margin": {}
+                                  }
+                                },
+                                "title": "表单",
+                                "type": "form"
+                              }
+                            ],
+                            "closeOnEsc": false,
+                            "closeOnOutside": false,
+                            "draggable": false,
+                            "id": "",
+                            "showCloseButton": true,
+                            "showErrorMsg": true,
+                            "showLoading": true,
+                            "title": "修改资料",
+                            "type": "dialog"
+                          },
+                          "ignoreError": false
+                        }
+                      ]
+                    }
+                  },
+                  "type": "button"
+                }
+              ],
+              "id": "",
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "size": "none",
+              "style": {
+                "alignItems": "flex-start",
+                "display": "flex",
+                "flexDirection": "column",
+                "flexWrap": "nowrap",
+                "inset": "auto",
+                "position": "relative"
+              },
+              "type": "container",
+              "wrapperBody": false
+            }
+          ],
+          "id": "",
+          "md": "auto"
+        },
+        {
+          "body": [
+            {
+              "actions": [
+                {
+                  "label": "取消",
+                  "level": "default",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "cancel",
+                          "componentId": "u:936d9bda10f5"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "button"
+                },
+                {
+                  "label": "提交",
+                  "level": "primary",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "actionType": "submit",
+                          "componentId": "u:936d9bda10f5"
+                        }
+                      ]
+                    }
+                  },
+                  "type": "button"
+                }
+              ],
+              "body": [
+                {
+                  "colSize": "1/3",
+                  "id": "username",
+                  "label": "用户名",
+                  "name": "username",
+                  "row": 0,
+                  "static": true,
+                  "type": "input-text"
+                },
+                {
+                  "colSize": "1/3",
+                  "id": "mail",
+                  "label": "邮箱",
+                  "name": "mail",
+                  "row": 0,
+                  "type": "input-text"
+                },
+                {
+                  "colSize": "1/3",
+                  "id": "name",
+                  "label": "姓名",
+                  "name": "name",
+                  "row": 0,
+                  "type": "input-text"
+                },
+                {
+                  "colSize": "1/3",
+                  "id": "tel",
+                  "label": "手机号",
+                  "name": "tel",
+                  "row": 1,
+                  "type": "input-text"
+                },
+                {
+                  "colSize": "1/3",
+                  "id": "roles",
+                  "label": "身份",
+                  "name": "roles",
+                  "row": 1,
+                  "type": "input-text"
+                },
+                {
+                  "colSize": "1/3",
+                  "id": "ip",
+                  "label": "登录IP",
+                  "name": "IP",
+                  "row": 1,
+                  "type": "input-text"
+                },
+                {
+                  "colSize": "1/3",
+                  "falseValue": 0,
+                  "id": "mail_t",
+                  "label": "邮件通知",
+                  "name": "mail_t",
+                  "optionType": "default",
+                  "row": 2,
+                  "trueValue": 1,
+                  "type": "checkbox",
+                  "value": 0
+                },
+                {
+                  "colSize": "1/3",
+                  "falseValue": 0,
+                  "id": "vx_t",
+                  "label": "微信通知",
+                  "name": "vx_t",
+                  "optionType": "default",
+                  "row": 2,
+                  "trueValue": 1,
+                  "type": "checkbox",
+                  "value": 0
+                }
+              ],
+              "dsType": "api",
+              "feat": "Edit",
+              "id": "",
+              "initApi": "",
+              "labelAlign": "right",
+              "labelWidth": "var(--sizes-size-1)",
+              "mode": "flex",
+              "resetAfterSubmit": true,
+              "static": true,
+              "submitOnChange": true,
+              "themeCss": {
+                "formControlClassName": {
+                  "border": {
+                    "bottom-border-width": "var(--borders-width-1)",
+                    "left-border-width": "var(--borders-width-1)",
+                    "right-border-width": "var(--borders-width-1)",
+                    "top-border-width": "var(--borders-width-1)"
+                  },
+                  "padding-and-margin": {
+                    "marginBottom": "var(--sizes-size-0)",
+                    "marginLeft": "var(--sizes-size-0)",
+                    "marginRight": "var(--sizes-size-0)",
+                    "marginTop": "var(--sizes-size-0)",
+                    "paddingBottom": "var(--sizes-size-0)",
+                    "paddingLeft": "var(--sizes-size-0)",
+                    "paddingRight": "var(--sizes-size-0)",
+                    "paddingTop": "var(--sizes-size-0)"
+                  }
+                },
+                "itemClassName": {
+                  "padding-and-margin": {
+                    "marginBottom": "var(--sizes-size-0)",
+                    "marginLeft": "var(--sizes-size-0)",
+                    "marginRight": "var(--sizes-size-0)",
+                    "marginTop": "var(--sizes-size-0)"
+                  }
+                },
+                "itemLabelClassName": {
+                  "padding-and-margin": {
+                    "marginBottom": "var(--sizes-size-0)",
+                    "marginLeft": "var(--sizes-size-0)",
+                    "marginRight": "var(--sizes-size-0)",
+                    "marginTop": "var(--sizes-size-0)"
+                  }
+                },
+                "staticClassName": {
+                  "font": {
+                    "fontSize": "var(--fonts-size-6)"
+                  }
+                }
+              },
+              "title": "表单",
+              "type": "form",
+              "wrapWithPanel": false
+            }
+          ],
+          "id": ""
+        },
+        {
+          "body": [],
+          "id": ""
+        }
+      ],
+      "gap": "md",
+      "id": "",
+      "type": "grid",
+      "valign": "middle"
+    },
+    {
+      "$$dragMode": "hv",
+      "id": "",
+      "type": "divider"
+    },
+    {
+      "id": "",
+      "mountOnEnter": true,
+      "tabs": [
+        {
+          "body": [
+            {
+              "api": {
+                "method": "get",
+                "url": "/yonghu_dingyue_kucun_list"
+              },
+              "columns": [
+                {
+                  "id": "id",
+                  "name": "ID",
+                  "placeholder": "-",
+                  "title": "ID",
+                  "type": "tpl"
+                },
+                {
+                  "id": "wuliushang",
+                  "name": "wuliushang",
+                  "placeholder": "-",
+                  "title": "物流商",
+                  "type": "tpl"
+                },
+                {
+                  "id": "sku",
+                  "name": "sku",
+                  "title": "海外仓sku",
+                  "type": "tpl"
+                },
+                {
+                  "id": "liaohao",
+                  "name": "liaohao",
+                  "title": "金蝶料号",
+                  "type": "tpl"
+                },
+                {
+                  "id": "cangku",
+                  "name": "cangku",
+                  "title": "仓库",
+                  "type": "tpl"
+                },
+                {
+                  "id": "name",
+                  "name": "name",
+                  "title": "名称(物流)",
+                  "type": "tpl"
+                },
+                {
+                  "id": "yewu",
+                  "name": "yewu",
+                  "title": "名称(业务)",
+                  "type": "tpl"
+                },
+                {
+                  "id": "pcs",
+                  "name": "pcs",
+                  "title": "订阅库存",
+                  "type": "tpl"
+                },
+                {
+                  "id": "beizhu",
+                  "name": "beizhu",
+                  "title": "备注",
+                  "type": "tpl"
+                },
+                {
+                  "id": "todostatusid",
+                  "name": "ToDoStatusId",
+                  "title": "订阅状态",
+                  "type": "tpl"
+                },
+                {
+                  "id": "time",
+                  "name": "time",
+                  "title": "更新时间",
+                  "type": "tpl"
+                },
+                {
+                  "buttons": [
+                    {
+                      "behavior": "Edit",
+                      "disabledOnAction": false,
+                      "id": "",
+                      "label": "修改订阅",
+                      "level": "link",
+                      "onEvent": {
+                        "click": {
+                          "actions": [
+                            {
+                              "actionType": "dialog",
+                              "dialog": {
+                                "actionType": "dialog",
+                                "actions": [
+                                  {
+                                    "actionType": "cancel",
+                                    "id": "",
+                                    "label": "取消",
+                                    "type": "button"
+                                  },
+                                  {
+                                    "actionType": "confirm",
+                                    "disabledOnAction": false,
+                                    "id": "",
+                                    "label": "确定",
+                                    "primary": true,
+                                    "type": "button"
+                                  }
+                                ],
+                                "body": [
+                                  {
+                                    "actions": [
+                                      {
+                                        "label": "取消",
+                                        "level": "default",
+                                        "onEvent": {
+                                          "click": {
+                                            "actions": [
+                                              {
+                                                "actionType": "cancel",
+                                                "componentId": "u:8a42fffcef6a"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "type": "button"
+                                      },
+                                      {
+                                        "label": "提交",
+                                        "level": "primary",
+                                        "onEvent": {
+                                          "click": {
+                                            "actions": [
+                                              {
+                                                "actionType": "submit",
+                                                "componentId": "u:8a42fffcef6a"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "type": "button"
+                                      }
+                                    ],
+                                    "api": {
+                                      "dataType": "json",
+                                      "method": "post",
+                                      "url": "/yonghu_dingyue_kucun_xiugai"
+                                    },
+                                    "body": [
+                                      {
+                                        "id": "id",
+                                        "label": "ID",
+                                        "name": "ID",
+                                        "row": 0,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "wuliushang",
+                                        "label": "物流商",
+                                        "name": "wuliushang",
+                                        "row": 1,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "sku",
+                                        "label": "海外仓sku",
+                                        "name": "sku",
+                                        "row": 2,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "liaohao",
+                                        "label": "金蝶料号",
+                                        "name": "liaohao",
+                                        "row": 3,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "name",
+                                        "label": "名称(物流)",
+                                        "name": "name",
+                                        "row": 4,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "yewu",
+                                        "label": "名称(业务)",
+                                        "name": "yewu",
+                                        "row": 5,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "pcs",
+                                        "label": "订阅数量",
+                                        "name": "pcs",
+                                        "row": 6,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "beizhu",
+                                        "label": "备注",
+                                        "name": "beizhu",
+                                        "row": 7,
+                                        "type": "textarea"
+                                      }
+                                    ],
+                                    "dsType": "api",
+                                    "feat": "Edit",
+                                    "id": "",
+                                    "initApi": "",
+                                    "labelAlign": "top",
+                                    "mode": "flex",
+                                    "onEvent": {
+                                      "submitSucc": {
+                                        "actions": [
+                                          {
+                                            "actionType": "reload",
+                                            "componentId": "u:59afe9fe11d4",
+                                            "ignoreError": false
+                                          }
+                                        ],
+                                        "weight": 0
+                                      }
+                                    },
+                                    "resetAfterSubmit": true,
+                                    "title": "表单",
+                                    "type": "form"
+                                  }
+                                ],
+                                "closeOnEsc": false,
+                                "closeOnOutside": false,
+                                "draggable": false,
+                                "id": "",
+                                "showCloseButton": true,
+                                "showErrorMsg": true,
+                                "showLoading": true,
+                                "title": "修改库存订阅",
+                                "type": "dialog"
+                              },
+                              "ignoreError": false
+                            }
+                          ]
+                        }
+                      },
+                      "type": "button"
+                    },
+                    {
+                      "behavior": "Delete",
+                      "className": "m-r-xs text-danger",
+                      "confirmText": "确认要删除数据",
+                      "disabledOnAction": false,
+                      "id": "",
+                      "label": "删除",
+                      "level": "link",
+                      "onEvent": {
+                        "click": {
+                          "actions": [
+                            {
+                              "actionType": "ajax",
+                              "api": {
+                                "adaptor": "",
+                                "data": {
+                                  "ID": "${ID}",
+                                  "username": "${username}"
+                                },
+                                "method": "post",
+                                "requestAdaptor": "",
+                                "url": "/yonghu_dingyue_kucun_shanchu"
+                              },
+                              "outputVar": "responseResult"
+                            },
+                            {
+                              "actionType": "reload",
+                              "componentId": "u:59afe9fe11d4",
+                              "groupType": "component"
+                            }
+                          ]
+                        }
+                      },
+                      "type": "button"
+                    }
+                  ],
+                  "id": "",
+                  "title": "操作",
+                  "type": "operation"
+                }
+              ],
+              "dsType": "api",
+              "editorSetting": {
+                "mock": {
+                  "enable": true,
+                  "maxDisplayRows": 5
+                }
+              },
+              "id": "",
+              "loadType": "pagination",
+              "mode": "table2",
+              "primaryField": "id",
+              "syncLocation": true,
+              "type": "crud2"
+            }
+          ],
+          "id": "",
+          "themeCss": {
+            "panelControlClassName": {
+              "border:default": {
+                "bottom-border-style": "var(--borders-style-1)",
+                "left-border-style": "var(--borders-style-1)",
+                "right-border-style": "var(--borders-style-1)",
+                "top-border-style": "var(--borders-style-1)"
+              },
+              "padding-and-margin:default": {
+                "marginBottom": "var(--sizes-size-0)",
+                "marginLeft": "var(--sizes-size-0)",
+                "marginRight": "var(--sizes-size-0)",
+                "marginTop": "var(--sizes-size-0)",
+                "paddingBottom": "var(--sizes-size-0)",
+                "paddingLeft": "var(--sizes-size-0)",
+                "paddingRight": "var(--sizes-size-0)",
+                "paddingTop": "var(--sizes-size-0)"
+              }
+            }
+          },
+          "title": "库存订阅"
+        },
+        {
+          "body": [
+            {
+              "api": {
+                "adaptor": "",
+                "messages": {},
+                "method": "get",
+                "requestAdaptor": "",
+                "url": "/yonghu_dingyue_wuliu_list"
+              },
+              "columns": [
+                {
+                  "id": "id",
+                  "name": "ID",
+                  "placeholder": "-",
+                  "title": "ID",
+                  "type": "tpl"
+                },
+                {
+                  "id": "wuliushang",
+                  "name": "wuliushang",
+                  "placeholder": "-",
+                  "title": "物流商",
+                  "type": "tpl"
+                },
+                {
+                  "id": "sku",
+                  "name": "sku",
+                  "title": "海外仓sku",
+                  "type": "tpl"
+                },
+                {
+                  "id": "liaohao",
+                  "name": "liaohao",
+                  "title": "金蝶料号",
+                  "type": "tpl"
+                },
+                {
+                  "id": "cangku",
+                  "name": "cangku",
+                  "title": "仓库",
+                  "type": "tpl"
+                },
+                {
+                  "id": "name",
+                  "name": "name",
+                  "title": "名称(物流)",
+                  "type": "tpl"
+                },
+                {
+                  "id": "yewu",
+                  "name": "yewu",
+                  "title": "名称(业务)",
+                  "type": "tpl"
+                },
+                {
+                  "id": "pcs",
+                  "name": "pcs",
+                  "title": "订阅库存",
+                  "type": "tpl"
+                },
+                {
+                  "id": "beizhu",
+                  "name": "beizhu",
+                  "title": "备注",
+                  "type": "tpl"
+                },
+                {
+                  "id": "todostatusid",
+                  "name": "ToDoStatusId",
+                  "title": "订阅状态",
+                  "type": "tpl"
+                },
+                {
+                  "id": "time",
+                  "name": "time",
+                  "title": "更新时间",
+                  "type": "tpl"
+                },
+                {
+                  "buttons": [
+                    {
+                      "behavior": "Edit",
+                      "disabledOnAction": false,
+                      "id": "",
+                      "label": "修改订阅",
+                      "level": "link",
+                      "onEvent": {
+                        "click": {
+                          "actions": [
+                            {
+                              "actionType": "dialog",
+                              "dialog": {
+                                "actionType": "dialog",
+                                "actions": [
+                                  {
+                                    "actionType": "cancel",
+                                    "id": "",
+                                    "label": "取消",
+                                    "type": "button"
+                                  },
+                                  {
+                                    "actionType": "confirm",
+                                    "disabledOnAction": false,
+                                    "id": "",
+                                    "label": "确定",
+                                    "primary": true,
+                                    "type": "button"
+                                  }
+                                ],
+                                "body": [
+                                  {
+                                    "actions": [
+                                      {
+                                        "label": "取消",
+                                        "level": "default",
+                                        "onEvent": {
+                                          "click": {
+                                            "actions": [
+                                              {
+                                                "actionType": "cancel",
+                                                "componentId": "u:8a42fffcef6a"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "type": "button"
+                                      },
+                                      {
+                                        "label": "提交",
+                                        "level": "primary",
+                                        "onEvent": {
+                                          "click": {
+                                            "actions": [
+                                              {
+                                                "actionType": "submit",
+                                                "componentId": "u:8a42fffcef6a"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "type": "button"
+                                      }
+                                    ],
+                                    "api": {
+                                      "dataType": "json",
+                                      "method": "post",
+                                      "url": "/yonghu_dingyue_kucun_xiugai"
+                                    },
+                                    "body": [
+                                      {
+                                        "hidden": true,
+                                        "id": "id",
+                                        "label": "ID",
+                                        "name": "ID",
+                                        "row": 0,
+                                        "static": false,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "platformid",
+                                        "label": "平台",
+                                        "name": "platformId",
+                                        "row": 1,
+                                        "static": true,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "shopname",
+                                        "label": "店铺",
+                                        "name": "shopName",
+                                        "row": 2,
+                                        "static": true,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "mylogisticsname",
+                                        "label": "物流商名称",
+                                        "name": "myLogisticsName",
+                                        "row": 3,
+                                        "static": true,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "id": "mylogisticschannelname",
+                                        "label": "渠道名称",
+                                        "name": "myLogisticsChannelName",
+                                        "row": 4,
+                                        "static": true,
+                                        "type": "input-text"
+                                      },
+                                      {
+                                        "colSize": "1",
+                                        "id": "select",
+                                        "label": "订阅内容",
+                                        "multiple": false,
+                                        "name": "select",
+                                        "options": [
+                                          {
+                                            "label": "物流状态",
+                                            "value": "A"
+                                          },
+                                          {
+                                            "label": "断更天数",
+                                            "value": "B"
+                                          }
+                                        ],
+                                        "row": 5,
+                                        "type": "select"
+                                      },
+                                      {
+                                        "colSize": "1",
+                                        "id": "logisticstype",
+                                        "label": "物流状态",
+                                        "name": "LogisticsType",
+                                        "row": 6,
+                                        "type": "input-text",
+                                        "visibleOn": {
+                                          "children": [
+                                            {
+                                              "id": "054ff121a059",
+                                              "left": {
+                                                "field": "select",
+                                                "type": "field"
+                                              },
+                                              "op": "equal",
+                                              "right": "A"
+                                            }
+                                          ],
+                                          "conjunction": "and",
+                                          "id": "52289b6a4399"
+                                        }
+                                      },
+                                      {
+                                        "autoFill": {},
+                                        "id": "time_duangeng",
+                                        "label": "断更天数",
+                                        "maxRows": 20,
+                                        "minRows": 3,
+                                        "name": "time_duangeng",
+                                        "row": 7,
+                                        "type": "input-text",
+                                        "visibleOn": {
+                                          "children": [
+                                            {
+                                              "id": "18f8df34c4a0",
+                                              "left": {
+                                                "field": "select",
+                                                "type": "field"
+                                              },
+                                              "op": "equal",
+                                              "right": "B"
+                                            }
+                                          ],
+                                          "conjunction": "and",
+                                          "id": "0890dbfa381b"
+                                        }
+                                      }
+                                    ],
+                                    "dsType": "api",
+                                    "feat": "Edit",
+                                    "id": "",
+                                    "initApi": "",
+                                    "labelAlign": "top",
+                                    "mode": "flex",
+                                    "onEvent": {
+                                      "submitSucc": {
+                                        "actions": [
+                                          {
+                                            "actionType": "reload",
+                                            "componentId": "u:59afe9fe11d4",
+                                            "ignoreError": false
+                                          }
+                                        ],
+                                        "weight": 0
+                                      }
+                                    },
+                                    "resetAfterSubmit": true,
+                                    "title": "表单",
+                                    "type": "form"
+                                  }
+                                ],
+                                "closeOnEsc": false,
+                                "closeOnOutside": false,
+                                "draggable": false,
+                                "id": "",
+                                "showCloseButton": true,
+                                "showErrorMsg": true,
+                                "showLoading": true,
+                                "title": "修改物流订阅",
+                                "type": "dialog"
+                              },
+                              "ignoreError": false
+                            }
+                          ]
+                        }
+                      },
+                      "type": "button"
+                    },
+                    {
+                      "behavior": "Delete",
+                      "className": "m-r-xs text-danger",
+                      "confirmText": "确认要删除数据",
+                      "disabledOnAction": false,
+                      "id": "",
+                      "label": "删除",
+                      "level": "link",
+                      "onEvent": {
+                        "click": {
+                          "actions": [
+                            {
+                              "actionType": "ajax",
+                              "api": {
+                                "adaptor": "",
+                                "data": {
+                                  "ID": "${ID}",
+                                  "username": "${username}"
+                                },
+                                "messages": {},
+                                "method": "post",
+                                "requestAdaptor": "",
+                                "url": "/yonghu_dingyue_wuliu_shanchu"
+                              },
+                              "options": {},
+                              "outputVar": "responseResult"
+                            },
+                            {
+                              "actionType": "reload",
+                              "args": {},
+                              "componentId": "u:c885bf7552a3",
+                              "groupType": "component"
+                            }
+                          ]
+                        }
+                      },
+                      "type": "button"
+                    }
+                  ],
+                  "id": "",
+                  "title": "操作",
+                  "type": "operation"
+                }
+              ],
+              "dsType": "api",
+              "editorSetting": {
+                "mock": {
+                  "enable": true,
+                  "maxDisplayRows": 5
+                }
+              },
+              "id": "",
+              "loadType": "pagination",
+              "mode": "table2",
+              "primaryField": "id",
+              "syncLocation": true,
+              "type": "crud2"
+            }
+          ],
+          "id": "",
+          "title": "物流订阅"
+        },
+        {
+          "body": [
+            {
+              "inline": false,
+              "tpl": "内容",
+              "type": "tpl"
+            }
+          ],
+          "id": "",
+          "title": "库存推送"
+        },
+        {
+          "body": [
+            {
+              "inline": false,
+              "tpl": "内容",
+              "type": "tpl"
+            }
+          ],
+          "id": "",
+          "title": "物流推送"
+        }
+      ],
+      "tabsMode": "card",
+      "themeCss": {
+        "contentControlClassName": {
+          "border:default": {
+            "bottom-border-style": "var(--borders-style-1)",
+            "left-border-style": "var(--borders-style-1)",
+            "right-border-style": "var(--borders-style-1)",
+            "top-border-style": "var(--borders-style-1)"
+          },
+          "padding-and-margin:default": {}
+        },
+        "titleControlClassName": {
+          "font:default": {
+            "text-align": "center"
+          }
+        }
+      },
+      "type": "tabs"
+    }
+  ],
+  "definitions": {},
+  "id": "",
+  "initApi": "/yonghu_ziliao",
+  "pullRefresh": {
+    "disabled": true
+  },
+  "type": "page"
+}

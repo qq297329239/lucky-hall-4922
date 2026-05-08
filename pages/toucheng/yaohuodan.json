@@ -1,0 +1,519 @@
+{
+  "$$id": "c07000993d55",
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "6769fe567b51"
+  },
+  "type": "page",
+  "body": [
+    {
+      "type": "container",
+      "perPageAvailable": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ],
+      "body": [
+        {
+          "type": "input-text",
+          "id": "sousuo",
+          "name": "sousuo",
+          "label": "单号搜索",
+          "labelAlign": "left",
+          "mode": "horizontal",
+          "size": "lg",
+          "originPosition": "left-top",
+          "style": {
+            "inset": "11px auto auto 286px",
+            "position": "absolute",
+            "$$id": "c497348921c0"
+          },
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "reload",
+                  "componentId": "baoguandan_list",
+                  "$$id": "f4a92cacfca5"
+                }
+              ],
+              "$$id": "c1c64484ba93"
+            },
+            "$$id": "9d4deafa510c"
+          },
+          "$$id": "858f6d1a3c61"
+        },
+        {
+          "type": "input-text",
+          "id": "creator",
+          "name": "creator",
+          "label": "创建人",
+          "labelAlign": "left",
+          "mode": "horizontal",
+          "size": "sm",
+          "originPosition": "left-top",
+          "style": {
+            "inset": "10px auto auto 10px",
+            "position": "absolute",
+            "width": "120px",
+            "$$id": "928c06e6a488"
+          },
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "reload",
+                  "componentId": "baoguandan_list",
+                  "$$id": "7b937dc9cb6b"
+                }
+              ],
+              "$$id": "84363ff2408e"
+            },
+            "$$id": "7d15857a58ed"
+          },
+          "$$id": "9a53bb619aca"
+        },
+        {
+          "type": "input-text",
+          "id": "platform",
+          "name": "platform",
+          "label": "平台",
+          "labelAlign": "left",
+          "mode": "horizontal",
+          "size": "sm",
+          "originPosition": "left-top",
+          "style": {
+            "inset": "10px auto auto 140px",
+            "position": "absolute",
+            "width": "100px",
+            "$$id": "87825c440270"
+          },
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "reload",
+                  "componentId": "baoguandan_list",
+                  "$$id": "183307a2eabc"
+                }
+              ],
+              "$$id": "f94fcc2d8bec"
+            },
+            "$$id": "1c80121f720c"
+          },
+          "$$id": "3ef41c3a0244"
+        },
+        {
+          "type": "input-text",
+          "id": "shop",
+          "name": "shop",
+          "label": "店铺",
+          "labelAlign": "left",
+          "mode": "horizontal",
+          "size": "sm",
+          "originPosition": "left-top",
+          "style": {
+            "inset": "10px auto auto 250px",
+            "position": "absolute",
+            "width": "100px",
+            "$$id": "4e9779728cb2"
+          },
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "reload",
+                  "componentId": "baoguandan_list",
+                  "$$id": "2dbfa7745344"
+                }
+              ],
+              "$$id": "578658e354a0"
+            },
+            "$$id": "2c5a7294f8af"
+          },
+          "$$id": "7ab75af358e2"
+        },
+        {
+          "body": [
+            {
+              "type": "crud",
+              "id": "baoguandan_list",
+              "api": {
+                "method": "get",
+                "url": "/toucheng/yaohuodan/list?creator=${creator}&platform=${platform}&shop=${shop}&orderNumber=${sousuo}",
+                "silent": true,
+                "$$id": "debe1980dd9a"
+              },
+              "syncLocation": false,
+              "autoJumpToTopOnPagerChange": true,
+              "initFetch": true,
+              "perPage": 20,
+              "perPageAvailable": [
+                5,
+                10,
+                20,
+                50,
+                100
+              ],
+              "columns": [
+                {
+                  "label": "ID",
+                  "name": "ID",
+                  "type": "text",
+                  "toggled": true,
+                  "$$id": "eb76c0e186d9",
+                  "id": "u:e2089f2015cd"
+                },
+                {
+                  "label": "单号",
+                  "name": "orderNumber",
+                  "type": "text",
+                  "toggled": true,
+                  "$$id": "dd0942b6d53c",
+                  "id": "u:a1d9a8c0ba5a"
+                },
+                {
+                  "label": "创建人",
+                  "name": "creator",
+                  "type": "text",
+                  "toggled": true,
+                  "$$id": "f4e0d3126ec6",
+                  "id": "u:949e4a8f454f"
+                },
+                {
+                  "label": "平台",
+                  "name": "platform",
+                  "type": "text",
+                  "toggled": true,
+                  "$$id": "7a82481f7b7e",
+                  "id": "u:445063a7351e"
+                },
+                {
+                  "label": "店铺",
+                  "name": "shop",
+                  "type": "text",
+                  "toggled": true,
+                  "$$id": "0666ee35e26d",
+                  "id": "u:92286dc3025a"
+                },
+                {
+                  "label": "创建时间",
+                  "name": "createTime",
+                  "type": "date",
+                  "format": "YYYY-MM-DD HH:mm:ss",
+                  "toggled": true,
+                  "$$id": "e9099252ea0f",
+                  "id": "u:c2121f4977ec"
+                },
+                {
+                  "type": "operation",
+                  "label": "操作",
+                  "toggled": true,
+                  "buttons": [
+                    {
+                      "type": "button",
+                      "label": "详情",
+                      "size": "xs",
+                      "actionType": "dialog",
+                      "dialog": {
+                        "title": "报货单详情",
+                        "size": "custom",
+                        "style": {
+                          "width": "600px",
+                          "$$id": "d9beebb14c59"
+                        },
+                        "body": [
+                          {
+                            "type": "form",
+                            "wrapWithPanel": false,
+                            "mode": "flex",
+                            "labelAlign": "right",
+                            "initApi": {
+                              "method": "get",
+                              "url": "/toucheng/yaohuodan/detail/${ID}",
+                              "$$id": "f8d10070401d"
+                            },
+                            "body": [
+                              {
+                                "type": "input-text",
+                                "label": "ID",
+                                "name": "ID",
+                                "static": true,
+                                "colSize": "1/2",
+                                "$$id": "e298d2acc1ba"
+                              },
+                              {
+                                "type": "input-text",
+                                "label": "单号",
+                                "name": "orderNumber",
+                                "static": true,
+                                "colSize": "1/2",
+                                "$$id": "199b53e766ae"
+                              },
+                              {
+                                "type": "input-text",
+                                "label": "创建人",
+                                "name": "creator",
+                                "static": true,
+                                "colSize": "1/2",
+                                "$$id": "ceef6089958b"
+                              },
+                              {
+                                "type": "input-text",
+                                "label": "平台",
+                                "name": "platform",
+                                "static": true,
+                                "colSize": "1/2",
+                                "$$id": "b4e92700b40d"
+                              },
+                              {
+                                "type": "input-text",
+                                "label": "店铺",
+                                "name": "shop",
+                                "static": true,
+                                "colSize": "1/2",
+                                "$$id": "d3606379dac3"
+                              },
+                              {
+                                "type": "input-date",
+                                "label": "创建时间",
+                                "name": "createTime",
+                                "static": true,
+                                "format": "YYYY-MM-DD HH:mm:ss",
+                                "colSize": "1/2",
+                                "$$id": "25e2c09c9ed0"
+                              }
+                            ],
+                            "$$id": "c3a908019d22"
+                          }
+                        ],
+                        "actions": [],
+                        "hideActions": true,
+                        "showCloseButton": true,
+                        "closeOnOutside": false,
+                        "closeOnEsc": false,
+                        "draggable": true,
+                        "$$id": "62c59e4f6ff6"
+                      },
+                      "$$id": "59c2c30866ec",
+                      "id": "u:8eae1404fcf5"
+                    }
+                  ],
+                  "$$id": "e5a441d5517a",
+                  "id": "u:39b1a624cc48"
+                }
+              ],
+              "footerToolbar": [
+                "statistics",
+                "switch-per-page",
+                "pagination"
+              ],
+              "headerToolbar": [
+                {
+                  "type": "columns-toggler",
+                  "align": "left",
+                  "$$id": "1c7b1881fd82"
+                },
+                {
+                  "type": "button",
+                  "label": "新增",
+                  "level": "info",
+                  "size": "md",
+                  "actionType": "dialog",
+                  "dialog": {
+                    "title": "新建报货单",
+                    "size": "custom",
+                    "style": {
+                      "width": "600px",
+                      "$$id": "aeeae39fafec"
+                    },
+                    "body": [
+                      {
+                        "type": "form",
+                        "id": "baoguandan_create_form",
+                        "mode": "flex",
+                        "labelAlign": "left",
+                        "columnCount": 2,
+                        "resetAfterSubmit": true,
+                        "api": {
+                          "method": "post",
+                          "url": "/toucheng/yaohuodan/create",
+                          "dataType": "json",
+                          "$$id": "a56158eec59b"
+                        },
+                        "onEvent": {
+                          "submitSucc": {
+                            "actions": [
+                              {
+                                "actionType": "reload",
+                                "componentId": "baoguandan_list",
+                                "$$id": "22e0d971a64a"
+                              }
+                            ],
+                            "$$id": "1d6ceac8ed8d"
+                          },
+                          "$$id": "007d62afdd70"
+                        },
+                        "body": [
+                          {
+                            "type": "input-text",
+                            "label": "单号",
+                            "name": "orderNumber",
+                            "required": true,
+                            "colSize": "1/2",
+                            "$$id": "75a4c99dfd04"
+                          },
+                          {
+                            "type": "input-text",
+                            "label": "创建人",
+                            "name": "creator",
+                            "required": true,
+                            "colSize": "1/2",
+                            "$$id": "487b8c3cfb83"
+                          },
+                          {
+                            "type": "input-text",
+                            "label": "平台",
+                            "name": "platform",
+                            "required": true,
+                            "colSize": "1/2",
+                            "$$id": "292886ab0446"
+                          },
+                          {
+                            "type": "input-text",
+                            "label": "店铺",
+                            "name": "shop",
+                            "required": true,
+                            "colSize": "1/2",
+                            "$$id": "dc03128d7b37"
+                          }
+                        ],
+                        "$$id": "458177334287"
+                      }
+                    ],
+                    "actions": [
+                      {
+                        "type": "button",
+                        "actionType": "cancel",
+                        "label": "取消",
+                        "$$id": "3bc572f81ea4"
+                      },
+                      {
+                        "type": "button",
+                        "actionType": "confirm",
+                        "label": "确定",
+                        "primary": true,
+                        "$$id": "fd0f14aa7d97"
+                      }
+                    ],
+                    "showCloseButton": true,
+                    "closeOnOutside": false,
+                    "closeOnEsc": false,
+                    "draggable": true,
+                    "$$id": "599451a49630"
+                  },
+                  "$$id": "bd2b4203a31c",
+                  "id": "u:fd1246c412e2"
+                },
+                {
+                  "type": "button",
+                  "label": "上传",
+                  "level": "primary",
+                  "actionType": "dialog",
+                  "dialog": {
+                    "title": "上传报货单Excel",
+                    "body": [
+                      {
+                        "type": "form",
+                        "api": {
+                          "method": "post",
+                          "url": "/toucheng/yaohuodan/upload",
+                          "dataType": "form-data",
+                          "$$id": "7d89005ad67c"
+                        },
+                        "body": [
+                          {
+                            "type": "input-file",
+                            "label": "上传Excel文件",
+                            "name": "file",
+                            "accept": ".xlsx,.xls",
+                            "asBlob": true,
+                            "required": true,
+                            "$$id": "280d386dfd83"
+                          }
+                        ],
+                        "onEvent": {
+                          "submitSucc": {
+                            "actions": [
+                              {
+                                "actionType": "reload",
+                                "componentId": "baoguandan_list",
+                                "$$id": "3018a6636daa"
+                              }
+                            ],
+                            "$$id": "bf336eb89d02"
+                          },
+                          "$$id": "a5927696499e"
+                        },
+                        "$$id": "b42588c24b90"
+                      }
+                    ],
+                    "actions": [
+                      {
+                        "type": "button",
+                        "actionType": "cancel",
+                        "label": "取消",
+                        "$$id": "f892405ffad8"
+                      },
+                      {
+                        "type": "submit",
+                        "label": "上传",
+                        "primary": true,
+                        "actionType": "submit",
+                        "$$id": "9123c0b0d3e0"
+                      }
+                    ],
+                    "showCloseButton": true,
+                    "closeOnOutside": false,
+                    "closeOnEsc": false,
+                    "draggable": true,
+                    "$$id": "ac9571453b52"
+                  },
+                  "$$id": "5f37d0d9225b",
+                  "id": "u:864d10366232"
+                },
+                {
+                  "type": "pagination",
+                  "$$id": "833696138a46"
+                }
+              ],
+              "$$id": "17795b01f0f7"
+            }
+          ],
+          "type": "container",
+          "style": {
+            "display": "block",
+            "height": "90%",
+            "inset": "47px auto auto -2px",
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "position": "absolute",
+            "width": "100%",
+            "$$id": "06e9e13dc66b"
+          },
+          "wrapperBody": false,
+          "$$id": "0c633adf287e",
+          "id": "u:f073cfe6c683"
+        }
+      ],
+      "$$id": "1a1e3631c779",
+      "id": "u:5197f7ea0566"
+    }
+  ],
+  "regions": [
+    "body"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "body": [
+    {
+      "id": "u:313e835bf042",
+      "type": "button",
+      "$$id": "20e3eec53d66",
+      "disabledOnAction": false,
+      "label": "按钮",
+      "onEvent": {
+        "click": {
+          "actions": [
+            {
+              "actionType": "custom",
+              "ignoreError": false,
+              "script": "document.querySelector('div.antd-Layout-offScreenBtn').click()",
+              "$$id": "1025634a1f58"
+            }
+          ],
+          "$$id": "80a5a40b3285"
+        },
+        "$$id": "c6123b60c4ac"
+      }
+    }
+  ],
+  "$$id": "c6f07d0dc4d6",
+  "id": "u:3037a0b9c9ac",
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "1162b52bd0d1"
+  }
+}

@@ -1,0 +1,2879 @@
+{
+  "type": "page",
+  "body": [
+    {
+      "id": "u:ed1dd978da70",
+      "type": "container",
+      "perPageAvailable": [
+        5,
+        10,
+        20,
+        50,
+        100
+      ],
+      "messages": {},
+      "body": [
+        {
+          "id": "sousuo",
+          "label": "产品搜索",
+          "labelAlign": "left",
+          "mode": "horizontal",
+          "name": "sousuo",
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "reload",
+                  "componentId": "chanpin_list",
+                  "ignoreError": false
+                }
+              ],
+              "weight": 0
+            }
+          },
+          "originPosition": "left-top",
+          "size": "lg",
+          "style": {
+            "inset": "11px auto auto 286px",
+            "position": "absolute"
+          },
+          "type": "input-text"
+        },
+        {
+          "clearable": true,
+          "id": "zhuangtai",
+          "inline": false,
+          "label": "状态",
+          "mode": "horizontal",
+          "multiple": false,
+          "name": "zhuangtai",
+          "onEvent": {
+            "change": {
+              "actions": [
+                {
+                  "actionType": "reload",
+                  "componentId": "chanpin_list",
+                  "ignoreError": false
+                },
+                {
+                  "actionType": "clear",
+                  "componentId": "sousuo",
+                  "groupType": "component",
+                  "args": {}
+                }
+              ],
+              "weight": 0
+            }
+          },
+          "options": [
+            {
+              "label": "可用",
+              "value": "可用"
+            },
+            {
+              "label": "停用",
+              "value": "停用"
+            },
+            {
+              "label": "废弃",
+              "value": "废弃"
+            }
+          ],
+          "originPosition": "left-top",
+          "style": {
+            "inset": "10px auto auto 10px",
+            "position": "absolute"
+          },
+          "type": "button-group-select"
+        },
+        {
+          "body": [
+            {
+              "alwaysShowPagination": true,
+              "api": {
+                "adaptor": "",
+                "dataType": "json",
+                "messages": {},
+                "method": "get",
+                "requestAdaptor": "",
+                "silent": true,
+                "url": "/chanpin?zhuangtai=${zhuangtai}&sousuo=${sousuo}&page=${page}&perPage=${perPage}&orderBy=${orderBy}&orderDir=${orderDir}"
+              },
+              "autoJumpToTopOnPagerChange": true,
+              "bulkActions": [],
+              "checkOnItemClick": false,
+              "columns": [
+                {
+                  "label": "金蝶料号",
+                  "name": "liaohao",
+                  "type": "text",
+                  "toggled": true,
+                  "id": "u:a775b30653f4"
+                },
+                {
+                  "label": "物流SKU",
+                  "name": "name_wuliu",
+                  "type": "text",
+                  "toggled": true,
+                  "id": "u:f317eb0e7011"
+                },
+                {
+                  "label": "产品名称",
+                  "name": "name_caiwu",
+                  "type": "text",
+                  "toggled": true,
+                  "id": "u:6930bc850d13"
+                },
+                {
+                  "label": "产品型号",
+                  "name": "xinghao",
+                  "type": "text",
+                  "toggled": true,
+                  "id": "u:eeb4bbb69834"
+                },
+                {
+                  "label": "产品系列",
+                  "name": "xilie",
+                  "type": "text",
+                  "toggled": false,
+                  "id": "u:779c5ab32fbd"
+                },
+                {
+                  "label": "产品中文名",
+                  "name": "name",
+                  "type": "text",
+                  "toggled": false,
+                  "id": "u:b7fe545b8113"
+                },
+                {
+                  "label": "区分项",
+                  "name": "qufen",
+                  "type": "text",
+                  "toggled": false,
+                  "id": "u:099b47517deb"
+                },
+                {
+                  "label": "电源规格",
+                  "name": "dianyuan",
+                  "toggled": true,
+                  "type": "text",
+                  "id": "u:b5cefe64c8a1"
+                },
+                {
+                  "label": "产品状态",
+                  "name": "zhuangtai",
+                  "toggled": true,
+                  "type": "text",
+                  "id": "u:b48db1a93c44",
+                  "placeholder": "-"
+                },
+                {
+                  "label": "申报中文名",
+                  "name": "hs_name_cn",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:8f7fce5392f9"
+                },
+                {
+                  "label": "申报英文名",
+                  "name": "hs_name_en",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:047d813e94ae"
+                },
+                {
+                  "label": "产品线",
+                  "name": "xian",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:601b62fdc9cc"
+                },
+                {
+                  "label": "主产品",
+                  "name": "zhu",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:38cdbaa7ea2a"
+                },
+                {
+                  "label": "EAN码",
+                  "name": "ean",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:3c424bc329ef"
+                },
+                {
+                  "label": "型号编码",
+                  "name": "sn_id",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:ae2db2ee915f",
+                  "placeholder": "-"
+                },
+                {
+                  "label": "申报价格",
+                  "name": "hs_jiage",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:21676bc3a5fd"
+                },
+                {
+                  "label": "申报币种",
+                  "name": "hs_bizhong",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:bbd44112dfec"
+                },
+                {
+                  "label": "海关编码",
+                  "name": "hs_code",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:4ddba522fcca"
+                },
+                {
+                  "label": "是否带电",
+                  "name": "dianchi",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:2dbb064ebb41"
+                },
+                {
+                  "label": "产品分类",
+                  "name": "fenlei",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:f81c21a4bd1c"
+                },
+                {
+                  "label": "单个彩盒包装长",
+                  "name": "chicun_he_c",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:50697db25c4d"
+                },
+                {
+                  "label": "单个彩盒包装宽",
+                  "name": "chicun_he_k",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:6a6feb1f18cd"
+                },
+                {
+                  "label": "单个彩盒包装高",
+                  "name": "chicun_he_g",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:4ae76c5d41ac"
+                },
+                {
+                  "label": "单个彩盒尺寸",
+                  "name": "chicun",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:0f8d7ebf1974"
+                },
+                {
+                  "label": "彩盒包装毛重",
+                  "name": "zhongliang_dan",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:c2c35869e8ec"
+                },
+                {
+                  "label": "整箱尺寸长",
+                  "name": "chicun_xiang_c",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:aaca7623a11b"
+                },
+                {
+                  "label": "整箱尺寸宽",
+                  "name": "chicun_xiang_k",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:c6a33a9504e8"
+                },
+                {
+                  "label": "整箱尺寸高",
+                  "name": "chicun_xiang_g",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:0195578f2dbb"
+                },
+                {
+                  "label": "单箱净重",
+                  "name": "jingzhong_xiang",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:a9f546b45e7c"
+                },
+                {
+                  "label": "单箱毛重",
+                  "name": "maozhong_xiang",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:f35e78ea6fa3"
+                },
+                {
+                  "label": "单箱体积/5000",
+                  "name": "tiji_xiang_5000",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:0c0125bb6ca0"
+                },
+                {
+                  "label": "单箱体积/6000",
+                  "name": "tiji_xiang_6000",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:4b27a5276fab"
+                },
+                {
+                  "label": "单箱海运立方米",
+                  "name": "fang_xiang",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:52b0c7660597"
+                },
+                {
+                  "label": "装箱数量",
+                  "name": "shuliang_xiang",
+                  "toggled": false,
+                  "type": "text",
+                  "id": "u:0fa19e7af6b6"
+                },
+                {
+                  "label": "备注",
+                  "name": "beizhu",
+                  "toggled": false,
+                  "type": "text"
+                },
+                {
+                  "align": "center",
+                  "buttons": [
+                    {
+                      "actionType": "dialog",
+                      "dialog": {
+                        "type": "dialog",
+                        "body": [
+                          {
+                            "actions": [],
+                            "affixFooter": true,
+                            "body": [
+                              {
+                                "colSize": "4/7",
+                                "label": "料号",
+                                "name": "liaohao",
+                                "row": 0,
+                                "type": "input-text",
+                                "id": "u:b10d4e6da1f7"
+                              },
+                              {
+                                "colSize": "3/7",
+                                "label": "产品型号",
+                                "name": "xinghao",
+                                "row": 0,
+                                "type": "input-text",
+                                "id": "u:1a08a726c839",
+                                "themeCss": {
+                                  "inputControlClassName": {
+                                    "padding-and-margin:default": {}
+                                  }
+                                }
+                              },
+                              {
+                                "colSize": "4/7",
+                                "label": "名称(业务)",
+                                "name": "name_caiwu",
+                                "row": 1,
+                                "type": "input-text",
+                                "id": "u:6c27aa313885"
+                              },
+                              {
+                                "colSize": "3/7",
+                                "label": "名称(物流)",
+                                "name": "name_wuliu",
+                                "row": 1,
+                                "type": "input-text",
+                                "id": "u:dc7a89a7104a"
+                              },
+                              {
+                                "colSize": "1",
+                                "label": "中文名",
+                                "name": "name",
+                                "row": 2,
+                                "type": "input-text",
+                                "id": "u:39f9ec279e77"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "区分项",
+                                "name": "qufen",
+                                "row": 3,
+                                "type": "input-text",
+                                "id": "u:909a179dce20"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "电源",
+                                "name": "dianyuan",
+                                "row": 3,
+                                "type": "input-text",
+                                "id": "u:247ec8af6c3f"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "产品状态",
+                                "name": "zhuangtai",
+                                "row": 4,
+                                "type": "select",
+                                "id": "u:af29d65b9383",
+                                "autoFill": {},
+                                "options": [
+                                  {
+                                    "label": "可用",
+                                    "value": "可用"
+                                  },
+                                  {
+                                    "label": "停用",
+                                    "value": "停用"
+                                  },
+                                  {
+                                    "label": "废弃",
+                                    "value": "废弃"
+                                  }
+                                ],
+                                "multiple": false
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "是否带电",
+                                "name": "dianchi",
+                                "row": 4,
+                                "type": "select",
+                                "id": "u:8b41b434da89",
+                                "options": [
+                                  {
+                                    "label": "是",
+                                    "value": "是"
+                                  },
+                                  {
+                                    "label": "否",
+                                    "value": "否"
+                                  }
+                                ]
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "英文申报名",
+                                "name": "hs_name_en",
+                                "row": 5,
+                                "type": "input-text",
+                                "id": "u:e68d428ea3c3"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "中文申报名",
+                                "name": "hs_name_cn",
+                                "row": 5,
+                                "type": "input-text",
+                                "id": "u:86dfe12d0da9"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "海关编码",
+                                "name": "hs_code",
+                                "row": 6,
+                                "type": "input-text",
+                                "id": "u:4b300d7da3ce"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "出口申报价格",
+                                "name": "hs_jiage",
+                                "row": 6,
+                                "type": "input-text",
+                                "id": "u:a1e21be08063"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "分类",
+                                "name": "fenlei",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:509c8a563c6e"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "单台毛重",
+                                "name": "zhongliang_dan",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:125b293f346d"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "序列号代码",
+                                "name": "sn_id",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:015443f18e58"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "产品线",
+                                "name": "xian",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:a0774950dc77"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "主产品",
+                                "name": "zhu",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:d237e3b86b6d"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "EAN码",
+                                "name": "ean",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:07a4d27346ff"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "包装尺寸(长)",
+                                "name": "chicun_he_c",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:7d912d42190b"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "包装尺寸(宽)",
+                                "name": "chicun_he_k",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:34ad200cbd79"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "包装尺寸(高)",
+                                "name": "chicun_he_g",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:bdd5df4174b8"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱尺寸(长)",
+                                "name": "chicun_xiang_c",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:9dec54739415"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱尺寸(宽)",
+                                "name": "chicun_xiang_k",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:816c1f56ee6f"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱尺寸(高)",
+                                "name": "chicun_xiang_g",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:6f4f2a9a0203"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "装箱数量",
+                                "name": "shuliang_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:faf5b4cefcf2"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱净重",
+                                "name": "jingzhong_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:cbeae80d88f0"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱毛重",
+                                "name": "maozhong_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:b35ecb95b736"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱立方米",
+                                "name": "fang_xiang",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:661dd1446d42"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "材积重(6000)",
+                                "name": "tiji_xiang_6000",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:884ac85978df"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "材积重(5000)",
+                                "name": "tiji_xiang_5000",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:df08fe4dbbf2"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "创建时间",
+                                "name": "time",
+                                "row": 13,
+                                "type": "input-text",
+                                "id": "u:94bd69e212d7",
+                                "static": false,
+                                "readOnly": false,
+                                "disabled": false,
+                                "clearable": false,
+                                "tpl": "${time|replace:'T':' '|substring:0:19}"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "更新时间",
+                                "name": "uptime",
+                                "row": 13,
+                                "type": "input-datetime",
+                                "id": "u:797a124288c5",
+                                "format": "",
+                                "readOnly": true,
+                                "displayFormat": "YYYY-MM-DD HH:mm:ss",
+                                "utc": true
+                              },
+                              {
+                                "colSize": "1",
+                                "label": "备注",
+                                "name": "beizhu",
+                                "row": 14,
+                                "type": "input-text",
+                                "id": "u:ba0a038e2207"
+                              }
+                            ],
+                            "feat": "View",
+                            "id": "u:938c8776edc8",
+                            "initApi": {
+                              "method": "get",
+                              "url": "/chanpin_xiangqing?liaohao=${liaohao}",
+                              "requestAdaptor": "",
+                              "adaptor": "",
+                              "messages": {}
+                            },
+                            "labelAlign": "right",
+                            "labelWidth": "var(--sizes-size-1)",
+                            "mode": "flex",
+                            "title": "表单",
+                            "type": "form",
+                            "wrapWithPanel": false,
+                            "dsType": "api",
+                            "static": false,
+                            "themeCss": {
+                              "formControlClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-2)",
+                                  "marginRight": "var(--sizes-size-2)",
+                                  "marginBottom": "var(--sizes-size-2)",
+                                  "marginLeft": "var(--sizes-size-2)",
+                                  "paddingTop": "var(--sizes-size-2)",
+                                  "paddingRight": "var(--sizes-size-2)",
+                                  "paddingBottom": "var(--sizes-size-2)",
+                                  "paddingLeft": "var(--sizes-size-2)"
+                                }
+                              },
+                              "itemLabelClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-2)",
+                                  "marginRight": "var(--sizes-size-2)",
+                                  "marginBottom": "var(--sizes-size-2)",
+                                  "marginLeft": "var(--sizes-size-2)"
+                                }
+                              },
+                              "itemClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-3)",
+                                  "marginRight": "var(--sizes-size-3)",
+                                  "marginBottom": "var(--sizes-size-3)",
+                                  "marginLeft": "var(--sizes-size-3)"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "title": "产品详情",
+                        "id": "u:49c717ea79e0",
+                        "actions": [
+                          {
+                            "type": "button",
+                            "actionType": "cancel",
+                            "label": "取消",
+                            "id": "u:ec03da10cd85"
+                          },
+                          {
+                            "type": "button",
+                            "actionType": "confirm",
+                            "label": "确定",
+                            "primary": true,
+                            "id": "u:dae4129c6bcd"
+                          }
+                        ],
+                        "showCloseButton": true,
+                        "closeOnOutside": false,
+                        "closeOnEsc": false,
+                        "showErrorMsg": true,
+                        "showLoading": true,
+                        "draggable": true,
+                        "allowFullscreen": false,
+                        "hideActions": true,
+                        "size": "custom",
+                        "style": {
+                          "width": "600px"
+                        }
+                      },
+                      "disabledOnAction": false,
+                      "id": "u:49366f65db8b",
+                      "label": "详情",
+                      "size": "xs",
+                      "type": "button"
+                    },
+                    {
+                      "actionType": "dialog",
+                      "dialog": {
+                        "body": [
+                          {
+                            "actions": [
+                              {
+                                "label": "取消",
+                                "level": "default",
+                                "type": "button",
+                                "onEvent": {
+                                  "click": {
+                                    "actions": [
+                                      {
+                                        "actionType": "cancel",
+                                        "componentId": "u:069d0ebee968"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "id": "u:d622a2c151e9"
+                              },
+                              {
+                                "label": "提交",
+                                "level": "primary",
+                                "type": "button",
+                                "onEvent": {
+                                  "click": {
+                                    "actions": [
+                                      {
+                                        "actionType": "submit",
+                                        "componentId": "u:069d0ebee968"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "id": "u:e48645eb8148"
+                              }
+                            ],
+                            "affixFooter": true,
+                            "api": {
+                              "messages": {},
+                              "method": "post",
+                              "url": "/chanpin_xiugai",
+                              "requestAdaptor": "if(api.data){for(var k in api.data){if(api.data[k]===''){api.data[k]=null}}}return api;",
+                              "adaptor": "",
+                              "dataType": "json"
+                            },
+                            "body": [
+                              {
+                                "label": "料号",
+                                "name": "liaohao",
+                                "row": 0,
+                                "type": "input-text",
+                                "id": "u:e55a4cac6b52",
+                                "colSize": "1/2",
+                                "static": true
+                              },
+                              {
+                                "label": "产品型号",
+                                "name": "xinghao",
+                                "row": 0,
+                                "type": "input-text",
+                                "id": "u:c0769e00847f",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "名称(业务)",
+                                "name": "name_caiwu",
+                                "row": 1,
+                                "type": "input-text",
+                                "id": "u:d72b563ef732",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "名称(物流)",
+                                "name": "name_wuliu",
+                                "row": 1,
+                                "type": "input-text",
+                                "id": "u:44cae944a26a",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "中文名",
+                                "name": "name",
+                                "row": 2,
+                                "type": "input-text",
+                                "id": "u:02f7b4fa28c0",
+                                "colSize": "1"
+                              },
+                              {
+                                "label": "区分项",
+                                "name": "qufen",
+                                "row": 3,
+                                "type": "input-text",
+                                "id": "u:3f5c4f03f291",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "电源",
+                                "name": "dianyuan",
+                                "row": 3,
+                                "type": "input-text",
+                                "id": "u:bf7f465ac89d",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "产品状态",
+                                "name": "zhuangtai",
+                                "row": 4,
+                                "type": "select",
+                                "id": "u:af29d65b9383",
+                                "colSize": "1/2",
+                                "autoFill": {},
+                                "options": [
+                                  {
+                                    "label": "可用",
+                                    "value": "可用"
+                                  },
+                                  {
+                                    "label": "停用",
+                                    "value": "停用"
+                                  },
+                                  {
+                                    "label": "废弃",
+                                    "value": "废弃"
+                                  }
+                                ],
+                                "multiple": false
+                              },
+                              {
+                                "label": "是否带电",
+                                "name": "dianchi",
+                                "row": 4,
+                                "type": "select",
+                                "id": "u:8b41b434da89",
+                                "colSize": "1/2",
+                                "options": [
+                                  {
+                                    "label": "是",
+                                    "value": "是"
+                                  },
+                                  {
+                                    "label": "否",
+                                    "value": "否"
+                                  }
+                                ]
+                              },
+                              {
+                                "label": "英文申报名",
+                                "name": "hs_name_en",
+                                "row": 5,
+                                "type": "input-text",
+                                "id": "u:c561d98f00cf",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "中文申报名",
+                                "name": "hs_name_cn",
+                                "row": 5,
+                                "type": "input-text",
+                                "id": "u:b922482c5910",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "海关编码",
+                                "name": "hs_code",
+                                "row": 6,
+                                "type": "input-text",
+                                "id": "u:9f1cf61ce1d0",
+                                "colSize": "1/2"
+                              },
+                              {
+                                "label": "出口申报价格",
+                                "name": "hs_jiage",
+                                "row": 6,
+                                "type": "input-text",
+                                "id": "u:eb0f8789df7c",
+                                "colSize": "1/2",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "分类",
+                                "name": "fenlei",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:179edd4f9074",
+                                "colSize": "1/3"
+                              },
+                              {
+                                "label": "单台毛重",
+                                "name": "zhongliang_dan",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:b0a56a84164b",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "序列号代码",
+                                "name": "sn_id",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:a978ff69c7f2",
+                                "colSize": "1/3"
+                              },
+                              {
+                                "label": "产品线",
+                                "name": "xian",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:1b237774eb6e",
+                                "colSize": "1/3"
+                              },
+                              {
+                                "label": "主产品",
+                                "name": "zhu",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:70d909de8f1d",
+                                "colSize": "1/3"
+                              },
+                              {
+                                "label": "EAN码",
+                                "name": "ean",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:353215ad75ad",
+                                "colSize": "1/3"
+                              },
+                              {
+                                "label": "包装尺寸(长)",
+                                "name": "chicun_he_c",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:b8e450c9ed54",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "包装尺寸(宽)",
+                                "name": "chicun_he_k",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:6ce58205f2a6",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "包装尺寸(高)",
+                                "name": "chicun_he_g",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:3c771431883f",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "整箱尺寸(长)",
+                                "name": "chicun_xiang_c",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:daa8fe3e4c99",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "整箱尺寸(宽)",
+                                "name": "chicun_xiang_k",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:6b80cf5b51fd",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "整箱尺寸(高)",
+                                "name": "chicun_xiang_g",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:3e651d2f8431",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "装箱数量",
+                                "name": "shuliang_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:b7041c81ea0f",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "整箱净重",
+                                "name": "jingzhong_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:09fb06efa355",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "整箱毛重",
+                                "name": "maozhong_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:34369e0919b4",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "整箱立方米",
+                                "name": "fang_xiang",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:73894722abfc",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "材积重(6000)",
+                                "name": "tiji_xiang_6000",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:6e8762b482b7",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "材积重(5000)",
+                                "name": "tiji_xiang_5000",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:c4c97af5ece7",
+                                "colSize": "1/3",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "label": "备注",
+                                "name": "beizhu",
+                                "row": 13,
+                                "type": "input-text",
+                                "id": "u:d0d0ce74544d",
+                                "colSize": "1"
+                              }
+                            ],
+                            "feat": "Edit",
+                            "id": "u:069d0ebee968",
+                            "initApi": {
+                              "method": "get",
+                              "url": "/chanpin_xiangqing?liaohao=${liaohao}",
+                              "requestAdaptor": "",
+                              "adaptor": "",
+                              "messages": {}
+                            },
+                            "labelAlign": "right",
+                            "labelWidth": "var(--sizes-size-1)",
+                            "mode": "flex",
+                            "onEvent": {
+                              "submitSucc": {
+                                "actions": [
+                                  {
+                                    "actionType": "reload",
+                                    "componentId": "u:fdb0cc7cf76b",
+                                    "groupType": "component"
+                                  }
+                                ],
+                                "weight": 0
+                              }
+                            },
+                            "resetAfterSubmit": true,
+                            "type": "form",
+                            "wrapWithPanel": true,
+                            "title": "",
+                            "dsType": "api",
+                            "static": false,
+                            "themeCss": {
+                              "formControlClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-2)",
+                                  "marginRight": "var(--sizes-size-2)",
+                                  "marginBottom": "var(--sizes-size-2)",
+                                  "marginLeft": "var(--sizes-size-2)",
+                                  "paddingTop": "var(--sizes-size-2)",
+                                  "paddingRight": "var(--sizes-size-2)",
+                                  "paddingBottom": "var(--sizes-size-2)",
+                                  "paddingLeft": "var(--sizes-size-2)"
+                                }
+                              },
+                              "itemLabelClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-2)",
+                                  "marginRight": "var(--sizes-size-2)",
+                                  "marginBottom": "var(--sizes-size-2)",
+                                  "marginLeft": "var(--sizes-size-2)"
+                                }
+                              },
+                              "itemClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-3)",
+                                  "marginRight": "var(--sizes-size-3)",
+                                  "marginBottom": "var(--sizes-size-3)",
+                                  "marginLeft": "var(--sizes-size-3)"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "type": "dialog",
+                        "id": "u:66d96634cfb3",
+                        "actions": [
+                          {
+                            "type": "button",
+                            "actionType": "cancel",
+                            "label": "取消",
+                            "id": "u:6499a96ec36e"
+                          },
+                          {
+                            "type": "button",
+                            "actionType": "confirm",
+                            "label": "确定",
+                            "primary": true,
+                            "id": "u:0d6a8de5b839"
+                          }
+                        ],
+                        "showCloseButton": true,
+                        "closeOnOutside": false,
+                        "closeOnEsc": false,
+                        "showErrorMsg": true,
+                        "showLoading": true,
+                        "draggable": true,
+                        "allowFullscreen": false,
+                        "hideActions": true,
+                        "size": "custom",
+                        "style": {
+                          "width": "600px"
+                        },
+                        "title": "修改产品"
+                      },
+                      "disabledOnAction": false,
+                      "id": "u:6cdf0f2d51ec",
+                      "label": "修改",
+                      "size": "xs",
+                      "type": "button"
+                    },
+                    {
+                      "actionType": "dialog",
+                      "dialog": {
+                        "body": [
+                          {
+                            "actions": [
+                              {
+                                "label": "取消",
+                                "level": "default",
+                                "type": "button",
+                                "onEvent": {
+                                  "click": {
+                                    "actions": [
+                                      {
+                                        "actionType": "cancel",
+                                        "componentId": "tanchuang_chanpin_fuzhi"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "id": "u:d622a2c151e9"
+                              },
+                              {
+                                "disabledOnAction": false,
+                                "label": "提交",
+                                "level": "primary",
+                                "type": "button",
+                                "onEvent": {
+                                  "click": {
+                                    "actions": [
+                                      {
+                                        "actionType": "submit",
+                                        "componentId": "tanchuang_chanpin_fuzhi"
+                                      }
+                                    ]
+                                  }
+                                },
+                                "id": "u:e48645eb8148"
+                              }
+                            ],
+                            "affixFooter": true,
+                            "api": {
+                              "dataType": "json",
+                              "method": "post",
+                              "url": "/chanpin_xinjian",
+                              "requestAdaptor": "if (api.data && typeof api.data === 'object') {\r\n  Object.keys(api.data).forEach(key => {\r\n    const val = api.data[key];\r\n    // 空值 一律删除，不提交\r\n    if (val === '' || val == null) {\r\n      delete api.data[key];\r\n    }\r\n  });\r\n}\r\nreturn api;",
+                              "adaptor": "",
+                              "messages": {}
+                            },
+                            "body": [
+                              {
+                                "colSize": "1/2",
+                                "label": "料号",
+                                "name": "liaohao",
+                                "row": 0,
+                                "type": "input-text",
+                                "id": "u:e55a4cac6b52",
+                                "static": false
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "产品型号",
+                                "name": "xinghao",
+                                "row": 0,
+                                "type": "input-text",
+                                "id": "u:c0769e00847f"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "名称(业务)",
+                                "name": "name_caiwu",
+                                "row": 1,
+                                "type": "input-text",
+                                "id": "u:d72b563ef732"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "名称(物流)",
+                                "name": "name_wuliu",
+                                "row": 1,
+                                "type": "input-text",
+                                "id": "u:44cae944a26a"
+                              },
+                              {
+                                "colSize": "1",
+                                "label": "中文名",
+                                "name": "name",
+                                "row": 2,
+                                "type": "input-text",
+                                "id": "u:65e972e1a1e8"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "区分项",
+                                "name": "qufen",
+                                "row": 3,
+                                "type": "input-text",
+                                "id": "u:3f5c4f03f291"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "电源",
+                                "name": "dianyuan",
+                                "row": 3,
+                                "type": "input-text",
+                                "id": "u:bf7f465ac89d"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "产品状态",
+                                "name": "zhuangtai",
+                                "row": 4,
+                                "type": "select",
+                                "id": "u:af29d65b9383",
+                                "autoFill": {},
+                                "options": [
+                                  {
+                                    "label": "可用",
+                                    "value": "可用"
+                                  },
+                                  {
+                                    "label": "停用",
+                                    "value": "停用"
+                                  },
+                                  {
+                                    "label": "废弃",
+                                    "value": "废弃"
+                                  }
+                                ],
+                                "multiple": false
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "是否带电",
+                                "name": "dianchi",
+                                "row": 4,
+                                "type": "select",
+                                "id": "u:8b41b434da89",
+                                "options": [
+                                  {
+                                    "label": "是",
+                                    "value": "是"
+                                  },
+                                  {
+                                    "label": "否",
+                                    "value": "否"
+                                  }
+                                ]
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "英文申报名",
+                                "name": "hs_name_en",
+                                "row": 5,
+                                "type": "input-text",
+                                "id": "u:c561d98f00cf"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "中文申报名",
+                                "name": "hs_name_cn",
+                                "row": 5,
+                                "type": "input-text",
+                                "id": "u:b922482c5910"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "海关编码",
+                                "name": "hs_code",
+                                "row": 6,
+                                "type": "input-text",
+                                "id": "u:9f1cf61ce1d0"
+                              },
+                              {
+                                "colSize": "1/2",
+                                "label": "出口申报价格",
+                                "name": "hs_jiage",
+                                "row": 6,
+                                "type": "input-text",
+                                "id": "u:eb0f8789df7c",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "分类",
+                                "name": "fenlei",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:179edd4f9074"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "单台毛重",
+                                "name": "zhongliang_dan",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:b0a56a84164b",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "序列号代码",
+                                "name": "sn_id",
+                                "row": 7,
+                                "type": "input-text",
+                                "id": "u:a978ff69c7f2"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "产品线",
+                                "name": "xian",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:1b237774eb6e"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "主产品",
+                                "name": "zhu",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:70d909de8f1d"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "EAN码",
+                                "name": "ean",
+                                "row": 8,
+                                "type": "input-text",
+                                "id": "u:353215ad75ad"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "包装尺寸(长)",
+                                "name": "chicun_he_c",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:b8e450c9ed54",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "包装尺寸(宽)",
+                                "name": "chicun_he_k",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:6ce58205f2a6",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "包装尺寸(高)",
+                                "name": "chicun_he_g",
+                                "row": 9,
+                                "type": "input-text",
+                                "id": "u:3c771431883f",
+                                "keyboard": true,
+                                "step": 1
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱尺寸(长)",
+                                "name": "chicun_xiang_c",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:daa8fe3e4c99"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱尺寸(宽)",
+                                "name": "chicun_xiang_k",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:6b80cf5b51fd"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱尺寸(高)",
+                                "name": "chicun_xiang_g",
+                                "row": 10,
+                                "type": "input-text",
+                                "id": "u:3e651d2f8431"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "装箱数量",
+                                "name": "shuliang_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:b7041c81ea0f"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱净重",
+                                "name": "jingzhong_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:09fb06efa355"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱毛重",
+                                "name": "maozhong_xiang",
+                                "row": 11,
+                                "type": "input-text",
+                                "id": "u:34369e0919b4"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "整箱立方米",
+                                "name": "fang_xiang",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:73894722abfc"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "材积重(6000)",
+                                "name": "tiji_xiang_6000",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:6e8762b482b7"
+                              },
+                              {
+                                "colSize": "1/3",
+                                "label": "材积重(5000)",
+                                "name": "tiji_xiang_5000",
+                                "row": 12,
+                                "type": "input-text",
+                                "id": "u:c4c97af5ece7"
+                              },
+                              {
+                                "colSize": "1",
+                                "label": "备注",
+                                "name": "beizhu",
+                                "row": 13,
+                                "type": "input-text",
+                                "id": "u:d0d0ce74544d"
+                              }
+                            ],
+                            "feat": "Insert",
+                            "id": "tanchuang_chanpin_fuzhi",
+                            "labelAlign": "right",
+                            "labelWidth": "var(--sizes-size-1)",
+                            "mode": "flex",
+                            "onEvent": {
+                              "submitSucc": {
+                                "actions": [
+                                  {
+                                    "actionType": "reload",
+                                    "componentId": "u:fdb0cc7cf76b",
+                                    "groupType": "component"
+                                  }
+                                ],
+                                "weight": 0
+                              }
+                            },
+                            "resetAfterSubmit": true,
+                            "type": "form",
+                            "wrapWithPanel": true,
+                            "title": "",
+                            "dsType": "api",
+                            "static": false,
+                            "themeCss": {
+                              "formControlClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-2)",
+                                  "marginRight": "var(--sizes-size-2)",
+                                  "marginBottom": "var(--sizes-size-2)",
+                                  "marginLeft": "var(--sizes-size-2)",
+                                  "paddingTop": "var(--sizes-size-2)",
+                                  "paddingRight": "var(--sizes-size-2)",
+                                  "paddingBottom": "var(--sizes-size-2)",
+                                  "paddingLeft": "var(--sizes-size-2)"
+                                }
+                              },
+                              "itemLabelClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-2)",
+                                  "marginRight": "var(--sizes-size-2)",
+                                  "marginBottom": "var(--sizes-size-2)",
+                                  "marginLeft": "var(--sizes-size-2)"
+                                }
+                              },
+                              "itemClassName": {
+                                "padding-and-margin": {
+                                  "marginTop": "var(--sizes-size-3)",
+                                  "marginRight": "var(--sizes-size-3)",
+                                  "marginBottom": "var(--sizes-size-3)",
+                                  "marginLeft": "var(--sizes-size-3)"
+                                }
+                              }
+                            }
+                          }
+                        ],
+                        "type": "dialog",
+                        "id": "u:179ecd0cd061",
+                        "actions": [],
+                        "showCloseButton": true,
+                        "closeOnOutside": false,
+                        "closeOnEsc": false,
+                        "showErrorMsg": true,
+                        "showLoading": true,
+                        "draggable": true,
+                        "allowFullscreen": false,
+                        "hideActions": true,
+                        "withDefaultData": false,
+                        "dataMapSwitch": false,
+                        "size": "custom",
+                        "style": {
+                          "width": "600px"
+                        },
+                        "title": "复制产品"
+                      },
+                      "disabledOnAction": false,
+                      "id": "u:76ff62a2ab48",
+                      "label": "复制",
+                      "size": "xs",
+                      "type": "button"
+                    }
+                  ],
+                  "id": "u:89cc77c6a4c6",
+                  "label": "操作",
+                  "name": "操作",
+                  "placeholder": "-",
+                  "type": "button-toolbar",
+                  "toggleable": false,
+                  "toggled": true,
+                  "fixed": "right"
+                }
+              ],
+              "filterEnabledList": [],
+              "filterSettingSource": [
+                "shuliang_xiang",
+                "qufen",
+                "zhuangtai",
+                "hs_code",
+                "liaohao",
+                "name_caiwu",
+                "jingzhong_xiang",
+                "xinghao",
+                "name_wuliu",
+                "dianyuan",
+                "hs_name_cn",
+                "zhongliang_dan",
+                "hs_name_en",
+                "fang_xiang",
+                "xian",
+                "zhu",
+                "ean",
+                "sn_id",
+                "hs_jiage",
+                "chicun",
+                "chicun_xiang_g",
+                "dianchi",
+                "tiji_xiang_6000",
+                "fenlei",
+                "tiji_xiang_5000",
+                "chicun_he_c",
+                "chicun_he_k",
+                "chicun_he_g",
+                "chicun_xiang_c",
+                "chicun_xiang_k",
+                "maozhong_xiang",
+                "beizhu"
+              ],
+              "footable": false,
+              "footerToolbar": [
+                "statistics",
+                "switch-per-page",
+                "pagination"
+              ],
+              "headerToolbar": [
+                {
+                  "align": "left",
+                  "type": "columns-toggler"
+                },
+                {
+                  "actionType": "dialog",
+                  "align": "left",
+                  "dialog": {
+                    "actions": [
+                      {
+                        "actionType": "cancel",
+                        "label": "取消",
+                        "type": "button"
+                      },
+                      {
+                        "actionType": "submit",
+                        "label": "上传",
+                        "primary": true,
+                        "type": "button"
+                      }
+                    ],
+                    "body": [
+                      {
+                        "actions": [
+                          {
+                            "label": "提交",
+                            "primary": true,
+                            "type": "submit"
+                          }
+                        ],
+                        "api": {
+                          "dataType": "form-data",
+                          "method": "post",
+                          "url": "/chanpin_gengxin/upload"
+                        },
+                        "body": [
+                          {
+                            "accept": ".xlsx,.xls",
+                            "asBlob": true,
+                            "label": "上传Excel文件",
+                            "name": "file",
+                            "required": true,
+                            "type": "input-file"
+                          },
+                          {
+                            "label": "模板下载",
+                            "tpl": "<a href=\"/chanpinxinzengmuban\" target=\"_blank\">下载产品新增模板</a>",
+                            "type": "static"
+                          }
+                        ],
+                        "type": "form"
+                      }
+                    ],
+                    "size": "md",
+                    "title": "批量修改产品"
+                  },
+                  "id": "u:1f97906ab0ff",
+                  "label": "批量修改",
+                  "level": "primary",
+                  "type": "button",
+                  "disabledOnAction": false
+                },
+                {
+                  "actionType": "dialog",
+                  "align": "left",
+                  "dialog": {
+                    "actions": [
+                      {
+                        "actionType": "cancel",
+                        "id": "u:830c85dd60ec",
+                        "label": "取消",
+                        "type": "button",
+                        "disabledOnAction": false
+                      },
+                      {
+                        "actionType": "confirm",
+                        "id": "u:ec010223dcb4",
+                        "label": "确定",
+                        "primary": true,
+                        "type": "button",
+                        "disabledOnAction": false
+                      }
+                    ],
+                    "body": [
+                      {
+                        "api": "/chanpin_gengxin/log",
+                        "columns": [
+                          {
+                            "id": "id",
+                            "label": "ID",
+                            "name": "id",
+                            "type": "text",
+                            "placeholder": "-",
+                            "inline": true,
+                            "align": "center"
+                          },
+                          {
+                            "id": "filename",
+                            "label": "文件名",
+                            "name": "filename",
+                            "type": "text",
+                            "placeholder": "-",
+                            "align": "center"
+                          },
+                          {
+                            "id": "status",
+                            "label": "状态",
+                            "name": "status",
+                            "type": "text",
+                            "placeholder": "-",
+                            "align": "center"
+                          },
+                          {
+                            "id": "success_count",
+                            "label": "成功数",
+                            "name": "success_count",
+                            "type": "text",
+                            "placeholder": "-",
+                            "align": "center"
+                          },
+                          {
+                            "id": "fail_count",
+                            "label": "失败数",
+                            "name": "fail_count",
+                            "type": "text",
+                            "placeholder": "-",
+                            "align": "center"
+                          },
+                          {
+                            "id": "add_count",
+                            "label": "新增数",
+                            "name": "add_count",
+                            "type": "text",
+                            "placeholder": "-",
+                            "align": "center"
+                          },
+                          {
+                            "id": "update_count",
+                            "label": "修改数",
+                            "name": "update_count",
+                            "type": "text",
+                            "placeholder": "-",
+                            "align": "center"
+                          },
+                          {
+                            "id": "create_time",
+                            "label": "创建时间",
+                            "name": "create_time",
+                            "type": "date",
+                            "placeholder": "-",
+                            "align": "center",
+                            "format": "YYYY-MM-DD HH:mm:ss"
+                          },
+                          {
+                            "id": "update_time",
+                            "label": "更新时间",
+                            "name": "update_time",
+                            "type": "date",
+                            "placeholder": "-",
+                            "align": "center",
+                            "format": "YYYY-MM-DD HH:mm:ss"
+                          },
+                          {
+                            "id": "u:68323067116e",
+                            "label": "操作",
+                            "type": "operation",
+                            "placeholder": "-",
+                            "align": "center",
+                            "buttons": [
+                              {
+                                "actionType": "url",
+                                "disabledOnAction": false,
+                                "id": "u:4beecf67dfa8",
+                                "label": "下载处理结果",
+                                "level": "primary",
+                                "type": "button",
+                                "blank": true,
+                                "url": "/chanpin_gengxin/log/detail?id=${id}&download=true"
+                              }
+                            ]
+                          }
+                        ],
+                        "footerToolbar": [
+                          {
+                            "type": "statistics"
+                          },
+                          {
+                            "type": "pagination"
+                          }
+                        ],
+                        "headerToolbar": [
+                          "reload"
+                        ],
+                        "id": "u:5a3bee1d66b5",
+                        "syncLocation": false,
+                        "type": "crud",
+                        "perPageAvailable": [],
+                        "messages": {},
+                        "hideQuickSaveBtn": true,
+                        "autoFillHeight": true,
+                        "perPage": 10,
+                        "autoJumpToTopOnPagerChange": true,
+                        "columnsTogglable": false
+                      }
+                    ],
+                    "id": "u:88bbdbf02c61",
+                    "size": "lg",
+                    "title": "产品更新记录",
+                    "type": "dialog",
+                    "showCloseButton": true,
+                    "closeOnOutside": false,
+                    "closeOnEsc": false,
+                    "showErrorMsg": true,
+                    "showLoading": true,
+                    "draggable": true,
+                    "allowFullscreen": false
+                  },
+                  "disabledOnAction": false,
+                  "id": "u:be61a1e21b81",
+                  "label": "修改记录",
+                  "level": "info",
+                  "type": "button"
+                },
+                {
+                  "actionType": "dialog",
+                  "dialog": {
+                    "body": [
+                      {
+                        "actions": [
+                          {
+                            "label": "提交",
+                            "level": "primary",
+                            "type": "button",
+                            "onEvent": {
+                              "click": {
+                                "actions": [
+                                  {
+                                    "actionType": "submit",
+                                    "componentId": "tanchuang_chanpin_xinzeng"
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ],
+                        "body": [
+                          {
+                            "label": "料号",
+                            "name": "liaohao",
+                            "required": true,
+                            "type": "input-text",
+                            "id": "u:5f26fc2eed30"
+                          },
+                          {
+                            "label": "产品型号",
+                            "name": "xinghao",
+                            "required": true,
+                            "type": "input-text",
+                            "id": "u:35d433d0f2d7"
+                          },
+                          {
+                            "label": "名称(业务)",
+                            "name": "name_caiwu",
+                            "required": true,
+                            "type": "input-text",
+                            "id": "u:a4c3e69d7721"
+                          },
+                          {
+                            "label": "名称(物流)",
+                            "name": "name_wuliu",
+                            "required": true,
+                            "type": "input-text",
+                            "id": "u:8e2711d5189b"
+                          },
+                          {
+                            "label": "区分项",
+                            "name": "qufen",
+                            "type": "input-text",
+                            "id": "u:bab8d6528f88"
+                          },
+                          {
+                            "label": "电源",
+                            "name": "dianyuan",
+                            "type": "input-text",
+                            "id": "u:76f09ca5e086"
+                          },
+                          {
+                            "label": "产品状态",
+                            "multiple": false,
+                            "name": "zhuangtai",
+                            "options": [
+                              {
+                                "label": "可用",
+                                "value": "可用"
+                              },
+                              {
+                                "label": "停用",
+                                "value": "停用"
+                              },
+                              {
+                                "label": "禁用",
+                                "value": "禁用"
+                              }
+                            ],
+                            "type": "select",
+                            "id": "u:452c42ca6e47"
+                          },
+                          {
+                            "label": "是否带电",
+                            "multiple": false,
+                            "name": "dianchi",
+                            "options": [
+                              {
+                                "label": "带电",
+                                "value": "带电"
+                              },
+                              {
+                                "label": "不带电",
+                                "value": "不带电"
+                              }
+                            ],
+                            "type": "select",
+                            "id": "u:ebb58e7e807b"
+                          },
+                          {
+                            "label": "英文申报名",
+                            "name": "hs_name_en",
+                            "type": "input-text",
+                            "id": "u:3c9e2e772620"
+                          },
+                          {
+                            "label": "中文申报名",
+                            "name": "hs_name_cn",
+                            "type": "input-text",
+                            "id": "u:3dc45dab7977"
+                          },
+                          {
+                            "label": "海关编码",
+                            "name": "hs_code",
+                            "type": "input-text",
+                            "id": "u:95afed818744"
+                          },
+                          {
+                            "label": "出口申报价格",
+                            "name": "hs_jiage",
+                            "type": "input-text",
+                            "id": "u:7d04b22aa769"
+                          },
+                          {
+                            "label": "分类",
+                            "name": "fenlei",
+                            "type": "input-text",
+                            "id": "u:808779967684"
+                          },
+                          {
+                            "label": "单台毛重",
+                            "name": "zhongliang_dan",
+                            "type": "input-text",
+                            "id": "u:0e4a5312b00c"
+                          },
+                          {
+                            "label": "序列号代码",
+                            "name": "sn_id",
+                            "type": "input-text",
+                            "id": "u:af0f9d3f504a"
+                          },
+                          {
+                            "label": "产品线",
+                            "name": "xian",
+                            "type": "input-text",
+                            "id": "u:df6581890457"
+                          },
+                          {
+                            "label": "主产品",
+                            "name": "zhu",
+                            "type": "input-text",
+                            "id": "u:228a812ac5e9"
+                          },
+                          {
+                            "label": "EAN码",
+                            "name": "ean",
+                            "type": "input-text",
+                            "id": "u:44d258c78310"
+                          },
+                          {
+                            "label": "包装尺寸(长)",
+                            "name": "chicun_he_c",
+                            "type": "input-text",
+                            "id": "u:a22bf427bd5f"
+                          },
+                          {
+                            "label": "包装尺寸(宽)",
+                            "name": "chicun_he_k",
+                            "type": "input-text",
+                            "id": "u:009c7164ae90"
+                          },
+                          {
+                            "label": "包装尺寸(高)",
+                            "name": "chicun_he_g",
+                            "type": "input-text",
+                            "id": "u:24c38be5e628"
+                          },
+                          {
+                            "label": "整箱尺寸(长)",
+                            "name": "chicun_xiang_c",
+                            "type": "input-text",
+                            "id": "u:9dbb552dd249"
+                          },
+                          {
+                            "label": "整箱尺寸(宽)",
+                            "name": "chicun_xiang_k",
+                            "type": "input-text",
+                            "id": "u:6afc35927eb1"
+                          },
+                          {
+                            "label": "整箱尺寸(高)",
+                            "name": "chicun_xiang_g",
+                            "type": "input-text",
+                            "id": "u:c25299b4bc53"
+                          },
+                          {
+                            "label": "装箱数量",
+                            "name": "shuliang_xiang",
+                            "type": "input-text",
+                            "id": "u:5c612372c114"
+                          },
+                          {
+                            "label": "整箱净重",
+                            "name": "jingzhong_xiang",
+                            "type": "input-text",
+                            "id": "u:0152c8457c07"
+                          },
+                          {
+                            "label": "整箱毛重",
+                            "name": "maozhong_xiang",
+                            "type": "input-text",
+                            "id": "u:863f117ebdfd"
+                          },
+                          {
+                            "label": "整箱立方米",
+                            "name": "fang_xiang",
+                            "type": "input-text",
+                            "id": "u:6f94cf38b650"
+                          },
+                          {
+                            "label": "材积重(6000)",
+                            "name": "tiji_xiang_6000",
+                            "type": "input-text",
+                            "id": "u:b2806ae10f78"
+                          },
+                          {
+                            "label": "材积重(5000)",
+                            "name": "tiji_xiang_5000",
+                            "type": "input-text",
+                            "id": "u:97874c0058ea"
+                          },
+                          {
+                            "label": "产品中文名",
+                            "name": "name",
+                            "type": "input-text",
+                            "id": "u:f9761e0d7a78"
+                          },
+                          {
+                            "label": "备注",
+                            "name": "beizhu",
+                            "type": "input-text",
+                            "id": "u:b6e1f67fb0d0"
+                          }
+                        ],
+                        "feat": "Insert",
+                        "id": "tanchuang_chanpin_xinzeng",
+                        "labelAlign": "left",
+                        "resetAfterSubmit": true,
+                        "title": "表单",
+                        "type": "form",
+                        "dsType": "api",
+                        "api": {
+                          "url": "/chanpin_xinjian",
+                          "method": "get"
+                        },
+                        "columnCount": 2,
+                        "mode": "inline"
+                      }
+                    ],
+                    "closeOnEsc": false,
+                    "closeOnOutside": false,
+                    "showCloseButton": true,
+                    "type": "dialog",
+                    "showErrorMsg": true,
+                    "showLoading": true,
+                    "draggable": true,
+                    "allowFullscreen": false,
+                    "id": "u:f713399d23fb",
+                    "actions": [
+                      {
+                        "type": "button",
+                        "actionType": "cancel",
+                        "label": "取消",
+                        "id": "u:9d581c31a252"
+                      },
+                      {
+                        "type": "button",
+                        "actionType": "confirm",
+                        "label": "确定",
+                        "primary": true,
+                        "id": "u:1700299a1f22",
+                        "disabledOnAction": false
+                      }
+                    ]
+                  },
+                  "disabledOnAction": false,
+                  "id": "u:4066c7b459a3",
+                  "label": "新增",
+                  "level": "info",
+                  "size": "md",
+                  "type": "button"
+                },
+                {
+                  "id": "u:8f5bb959be34",
+                  "type": "export-excel",
+                  "disabledOnAction": false,
+                  "api": "/chanpin?&daochu=1",
+                  "label": "导出全部产品",
+                  "tooltip": "忽略所有查询条件,直接导出全部数据",
+                  "exportColumns": [
+                    {
+                      "label": "金蝶料号",
+                      "name": "liaohao"
+                    },
+                    {
+                      "label": "物流SKU",
+                      "name": "name_wuliu"
+                    },
+                    {
+                      "label": "产品名称",
+                      "name": "name_caiwu"
+                    },
+                    {
+                      "label": "产品型号",
+                      "name": "xinghao"
+                    },
+                    {
+                      "label": "产品系列",
+                      "name": "xilie"
+                    },
+                    {
+                      "label": "产品中文名",
+                      "name": "name"
+                    },
+                    {
+                      "label": "区分项",
+                      "name": "qufen"
+                    },
+                    {
+                      "label": "电源规格",
+                      "name": "dianyuan"
+                    },
+                    {
+                      "label": "产品状态",
+                      "name": "zhuangtai"
+                    },
+                    {
+                      "label": "申报中文名",
+                      "name": "hs_name_cn"
+                    },
+                    {
+                      "label": "申报英文名",
+                      "name": "hs_name_en"
+                    },
+                    {
+                      "label": "产品线",
+                      "name": "xian"
+                    },
+                    {
+                      "label": "主产品",
+                      "name": "zhu"
+                    },
+                    {
+                      "label": "EAN码",
+                      "name": "ean"
+                    },
+                    {
+                      "label": "型号编码",
+                      "name": "sn_id"
+                    },
+                    {
+                      "label": "申报价格",
+                      "name": "hs_jiage"
+                    },
+                    {
+                      "label": "申报币种",
+                      "name": "hs_bizhong"
+                    },
+                    {
+                      "label": "海关编码",
+                      "name": "hs_code"
+                    },
+                    {
+                      "label": "是否带电",
+                      "name": "dianchi"
+                    },
+                    {
+                      "label": "产品分类",
+                      "name": "fenlei"
+                    },
+                    {
+                      "label": "单个彩盒包装长",
+                      "name": "chicun_he_c"
+                    },
+                    {
+                      "label": "单个彩盒包装宽",
+                      "name": "chicun_he_k"
+                    },
+                    {
+                      "label": "单个彩盒包装高",
+                      "name": "chicun_he_g"
+                    },
+                    {
+                      "label": "单个彩盒尺寸",
+                      "name": "chicun"
+                    },
+                    {
+                      "label": "彩盒包装毛重",
+                      "name": "zhongliang_dan"
+                    },
+                    {
+                      "label": "整箱尺寸长",
+                      "name": "chicun_xiang_c"
+                    },
+                    {
+                      "label": "整箱尺寸宽",
+                      "name": "chicun_xiang_k"
+                    },
+                    {
+                      "label": "整箱尺寸高",
+                      "name": "chicun_xiang_g"
+                    },
+                    {
+                      "label": "单箱净重",
+                      "name": "jingzhong_xiang"
+                    },
+                    {
+                      "label": "单箱毛重",
+                      "name": "maozhong_xiang"
+                    },
+                    {
+                      "label": "单箱体积/5000",
+                      "name": "tiji_xiang_5000"
+                    },
+                    {
+                      "label": "单箱体积/6000",
+                      "name": "tiji_xiang_6000"
+                    },
+                    {
+                      "label": "单箱海运立方米",
+                      "name": "fang_xiang"
+                    },
+                    {
+                      "label": "装箱数量",
+                      "name": "shuliang_xiang"
+                    },
+                    {
+                      "label": "备注",
+                      "name": "beizhu"
+                    }
+                  ]
+                },
+                {
+                  "type": "pagination"
+                },
+                {
+                  "type": "export-excel",
+                  "tpl": "内容",
+                  "wrapperComponent": "",
+                  "id": "u:722cf7cd6d9c",
+                  "disabledOnAction": false,
+                  "label": "导出当前页"
+                }
+              ],
+              "hideCheckToggler": false,
+              "hideQuickSaveBtn": false,
+              "id": "chanpin_list",
+              "initFetch": true,
+              "itemActions": [],
+              "maxKeepItemSelectionLength": 20,
+              "messages": {},
+              "perPage": 20,
+              "perPageAvailable": [
+                5,
+                10,
+                20,
+                50,
+                100
+              ],
+              "showIndex": false,
+              "syncLocation": true,
+              "type": "crud",
+              "columnsTogglable": true,
+              "dynimicColumnKey": "cbebef1f"
+            }
+          ],
+          "id": "u:de728d5c2d09",
+          "isFixedHeight": true,
+          "isFixedWidth": true,
+          "originPosition": "right-bottom",
+          "size": "none",
+          "style": {
+            "display": "block",
+            "height": "90%",
+            "inset": "47px auto auto -2px",
+            "overflowX": "visible",
+            "overflowY": "visible",
+            "position": "absolute",
+            "width": "100%"
+          },
+          "type": "container",
+          "wrapperBody": false
+        }
+      ]
+    }
+  ],
+  "id": "u:781302f0931c",
+  "pullRefresh": {
+    "disabled": true
+  },
+  "asideResizor": false,
+  "definitions": {
+    "modal-ref-1": {
+      "type": "dialog",
+      "body": [
+        {
+          "actions": [
+            {
+              "label": "提交",
+              "type": "submit",
+              "primary": true
+            }
+          ],
+          "api": {
+            "method": "post",
+            "url": "/chanpin_gengxin/upload",
+            "dataType": "form-data"
+          },
+          "body": [
+            {
+              "label": "上传Excel文件",
+              "name": "file",
+              "type": "input-file",
+              "accept": ".xlsx,.xls",
+              "asBlob": true,
+              "required": true
+            },
+            {
+              "label": "模板下载",
+              "type": "static",
+              "tpl": "<a href=\"/chanpinxinzengmuban\" target=\"_blank\">下载产品新增模板</a>"
+            }
+          ],
+          "type": "form"
+        }
+      ],
+      "title": "批量修改产品",
+      "actionType": "dialog",
+      "actions": [
+        {
+          "actionType": "cancel",
+          "label": "取消",
+          "type": "button"
+        },
+        {
+          "actionType": "submit",
+          "label": "上传",
+          "primary": true,
+          "type": "button"
+        }
+      ],
+      "$$originId": "0dc829e9cf10",
+      "$$ref": "modal-ref-1",
+      "size": "md"
+    },
+    "modal-ref-2": {
+      "$$originId": "a20c2270e1f1",
+      "$$ref": "modal-ref-2",
+      "actionType": "dialog",
+      "body": [
+        {
+          "api": "/chanpin_gengxin/log",
+          "columns": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "文件名",
+              "name": "filename",
+              "type": "text"
+            },
+            {
+              "label": "状态",
+              "name": "status",
+              "type": "text"
+            },
+            {
+              "label": "成功数",
+              "name": "success_count",
+              "type": "text"
+            },
+            {
+              "label": "失败数",
+              "name": "fail_count",
+              "type": "text"
+            },
+            {
+              "label": "新增数",
+              "name": "add_count",
+              "type": "text"
+            },
+            {
+              "label": "修改数",
+              "name": "update_count",
+              "type": "text"
+            },
+            {
+              "label": "消息",
+              "name": "message",
+              "type": "text"
+            },
+            {
+              "label": "创建时间",
+              "name": "create_time",
+              "type": "text"
+            },
+            {
+              "label": "更新时间",
+              "name": "update_time",
+              "type": "text"
+            },
+            {
+              "buttons": [
+                {
+                  "actionType": "dialog",
+                  "dialog": {
+                    "actions": [
+                      {
+                        "actionType": "url",
+                        "blank": true,
+                        "label": "下载处理结果",
+                        "type": "button",
+                        "url": "/chanpin_gengxin/log/detail?id=${id}&download=true"
+                      },
+                      {
+                        "actionType": "cancel",
+                        "label": "关闭",
+                        "type": "button"
+                      }
+                    ],
+                    "body": [
+                      {
+                        "body": [
+                          {
+                            "label": "文件名",
+                            "name": "filename",
+                            "type": "static"
+                          },
+                          {
+                            "label": "状态",
+                            "name": "status",
+                            "type": "static"
+                          },
+                          {
+                            "label": "成功数",
+                            "name": "success_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "失败数",
+                            "name": "fail_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "新增数",
+                            "name": "add_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "修改数",
+                            "name": "update_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "消息",
+                            "name": "message",
+                            "type": "static"
+                          },
+                          {
+                            "label": "错误详情",
+                            "name": "error_details",
+                            "type": "static"
+                          },
+                          {
+                            "label": "创建时间",
+                            "name": "create_time",
+                            "type": "static"
+                          },
+                          {
+                            "label": "更新时间",
+                            "name": "update_time",
+                            "type": "static"
+                          }
+                        ],
+                        "initApi": "/chanpin_gengxin/log/detail?id=${id}",
+                        "type": "form"
+                      }
+                    ],
+                    "size": "md",
+                    "title": "记录详情"
+                  },
+                  "label": "查看详情",
+                  "level": "link",
+                  "type": "button"
+                }
+              ],
+              "label": "操作",
+              "type": "operation"
+            }
+          ],
+          "footerToolbar": [
+            "statistics",
+            "switch-per-page",
+            "pagination"
+          ],
+          "headerToolbar": [],
+          "syncLocation": false,
+          "type": "crud"
+        }
+      ],
+      "size": "lg",
+      "title": "产品更新记录",
+      "type": "dialog"
+    },
+    "modal-ref-3": {
+      "$$originId": "a7fb50659267",
+      "$$ref": "modal-ref-3",
+      "actionType": "dialog",
+      "body": {
+        "api": "put:/chanpin/${ID}",
+        "body": [
+          {
+            "disabled": true,
+            "label": "产品ID",
+            "name": "ID",
+            "type": "input-text"
+          },
+          {
+            "label": "金蝶料号",
+            "name": "liaohao",
+            "type": "input-text"
+          },
+          {
+            "label": "物流品名",
+            "name": "name_wuliu",
+            "type": "input-text"
+          },
+          {
+            "label": "业务品名",
+            "name": "name_caiwu",
+            "type": "input-text"
+          },
+          {
+            "label": "产品型号",
+            "name": "xinghao",
+            "type": "input-text"
+          },
+          {
+            "label": "电源规格",
+            "name": "dianyuan",
+            "type": "input-text"
+          },
+          {
+            "label": "产品状态",
+            "name": "zhuangtai",
+            "type": "input-text"
+          }
+        ],
+        "type": "form"
+      },
+      "title": "编辑产品",
+      "type": "dialog"
+    },
+    "modal-ref-4": {
+      "$$originId": "879406902e09",
+      "actions": [
+        {
+          "actionType": "cancel",
+          "id": "",
+          "label": "取消",
+          "type": "button"
+        },
+        {
+          "actionType": "confirm",
+          "id": "",
+          "label": "确定",
+          "primary": true,
+          "type": "button"
+        }
+      ],
+      "body": [
+        {
+          "api": "/chanpin_gengxin/log",
+          "columns": [
+            {
+              "id": "id",
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "id": "filename",
+              "label": "文件名",
+              "name": "filename",
+              "type": "text"
+            },
+            {
+              "id": "status",
+              "label": "状态",
+              "name": "status",
+              "type": "text"
+            },
+            {
+              "id": "success_count",
+              "label": "成功数",
+              "name": "success_count",
+              "type": "text"
+            },
+            {
+              "id": "fail_count",
+              "label": "失败数",
+              "name": "fail_count",
+              "type": "text"
+            },
+            {
+              "id": "add_count",
+              "label": "新增数",
+              "name": "add_count",
+              "type": "text"
+            },
+            {
+              "id": "update_count",
+              "label": "修改数",
+              "name": "update_count",
+              "type": "text"
+            },
+            {
+              "id": "message",
+              "label": "消息",
+              "name": "message",
+              "type": "text"
+            },
+            {
+              "id": "create_time",
+              "label": "创建时间",
+              "name": "create_time",
+              "type": "text"
+            },
+            {
+              "id": "update_time",
+              "label": "更新时间",
+              "name": "update_time",
+              "type": "text"
+            },
+            {
+              "buttons": [
+                {
+                  "actionType": "dialog",
+                  "dialog": {
+                    "actions": [
+                      {
+                        "actionType": "url",
+                        "blank": true,
+                        "label": "下载处理结果",
+                        "type": "button",
+                        "url": "/chanpin_gengxin/log/detail?id=${id}&download=true"
+                      },
+                      {
+                        "actionType": "cancel",
+                        "label": "关闭",
+                        "type": "button"
+                      }
+                    ],
+                    "body": [
+                      {
+                        "body": [
+                          {
+                            "label": "文件名",
+                            "name": "filename",
+                            "type": "static"
+                          },
+                          {
+                            "label": "状态",
+                            "name": "status",
+                            "type": "static"
+                          },
+                          {
+                            "label": "成功数",
+                            "name": "success_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "失败数",
+                            "name": "fail_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "新增数",
+                            "name": "add_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "修改数",
+                            "name": "update_count",
+                            "type": "static"
+                          },
+                          {
+                            "label": "消息",
+                            "name": "message",
+                            "type": "static"
+                          },
+                          {
+                            "label": "错误详情",
+                            "name": "error_details",
+                            "type": "static"
+                          },
+                          {
+                            "label": "创建时间",
+                            "name": "create_time",
+                            "type": "static"
+                          },
+                          {
+                            "label": "更新时间",
+                            "name": "update_time",
+                            "type": "static"
+                          }
+                        ],
+                        "initApi": "/chanpin_gengxin/log/detail?id=${id}",
+                        "type": "form"
+                      }
+                    ],
+                    "size": "md",
+                    "title": "记录详情"
+                  },
+                  "disabledOnAction": false,
+                  "id": "",
+                  "label": "查看详情",
+                  "level": "link",
+                  "type": "button"
+                }
+              ],
+              "id": "",
+              "label": "操作",
+              "type": "operation"
+            }
+          ],
+          "footerToolbar": [
+            "statistics",
+            "switch-per-page",
+            "pagination"
+          ],
+          "headerToolbar": [],
+          "id": "",
+          "syncLocation": false,
+          "type": "crud"
+        }
+      ],
+      "id": "",
+      "size": "lg",
+      "title": "产品更新记录",
+      "type": "dialog"
+    }
+  }
+}

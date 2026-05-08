@@ -1,0 +1,586 @@
+{
+  "body": [
+    {
+      "id": "chanpin_xinghao_list",
+      "type": "crud",
+      "messages": {
+        "$$id": "226a60e4a9ad"
+      },
+      "perPageAvailable": [
+        15,
+        30,
+        100,
+        500
+      ],
+      "api": {
+        "adaptor": "",
+        "messages": {
+          "$$id": "86a4024b0385"
+        },
+        "method": "post",
+        "requestAdaptor": "",
+        "url": "/chanpin_xinghao",
+        "$$id": "aa930f1a4abb"
+      },
+      "bulkActions": [],
+      "defaultParams": {
+        "perPage": "15",
+        "$$id": "738569b5661c"
+      },
+      "filter": {
+        "actions": [
+          {
+            "id": "",
+            "label": "搜索",
+            "primary": true,
+            "type": "submit",
+            "$$id": "f232807e8bb1"
+          }
+        ],
+        "affixFooter": false,
+        "body": [
+          {
+            "clearable": true,
+            "id": "fenlei",
+            "label": "分类",
+            "labelWidth": "var(--sizes-size-1)",
+            "mode": "horizontal",
+            "multiple": false,
+            "name": "fenlei",
+            "options": [
+              {
+                "label": "数位板",
+                "value": "数位板",
+                "$$id": "d0afc120276c"
+              },
+              {
+                "label": "数位屏",
+                "value": "数位屏",
+                "$$id": "300c1fda18bc"
+              },
+              {
+                "label": "手写笔",
+                "value": "手写笔",
+                "$$id": "37a741514f57"
+              },
+              {
+                "label": "配件",
+                "value": "配件",
+                "$$id": "e92789d142e0"
+              }
+            ],
+            "tiled": true,
+            "type": "button-group-select",
+            "$$id": "d89441608254"
+          },
+          {
+            "clearable": true,
+            "id": "sousuo",
+            "label": "搜索",
+            "labelWidth": "var(--sizes-size-1)",
+            "name": "sousuo",
+            "type": "input-text",
+            "$$id": "dff5f0713dfc"
+          }
+        ],
+        "columnCount": 5,
+        "feat": "Insert",
+        "id": "u:828006e77395",
+        "labelAlign": "left",
+        "mode": "horizontal",
+        "submitOnChange": true,
+        "themeCss": {
+          "formControlClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-5)",
+              "marginLeft": "var(--sizes-size-5)",
+              "marginRight": "var(--sizes-size-5)",
+              "marginTop": "var(--sizes-size-5)",
+              "paddingBottom": "var(--sizes-size-1)",
+              "paddingLeft": "var(--sizes-size-1)",
+              "paddingRight": "var(--sizes-size-1)",
+              "paddingTop": "var(--sizes-size-1)",
+              "$$id": "8692e7b9a805"
+            },
+            "$$id": "e22f6029ff8c"
+          },
+          "itemClassName": {
+            "padding-and-margin": {
+              "$$id": "2a322dc83ce2"
+            },
+            "$$id": "4185d3799808"
+          },
+          "itemLabelClassName": {
+            "padding-and-margin": {
+              "$$id": "d25a242d1134"
+            },
+            "$$id": "23e1614d2a4b"
+          },
+          "$$id": "dee7cf9ff706"
+        },
+        "title": "",
+        "wrapWithPanel": false,
+        "$$id": "3c64f32ed2f5"
+      },
+      "filterEnabledList": [
+        {
+          "label": "fenlei",
+          "value": "fenlei",
+          "$$id": "f45d51746ee1"
+        },
+        {
+          "label": "mingcheng",
+          "value": "mingcheng",
+          "$$id": "a71260f31184"
+        },
+        {
+          "label": "daima",
+          "value": "daima",
+          "$$id": "e2f551534ef2"
+        },
+        {
+          "label": "xinghao",
+          "value": "xinghao",
+          "$$id": "8327a5837d70"
+        },
+        {
+          "label": "shangyongxinghao",
+          "value": "shangyongxinghao",
+          "$$id": "5e681e4a1b45"
+        }
+      ],
+      "filterSettingSource": [
+        "fenlei",
+        "id",
+        "mingcheng",
+        "daima",
+        "xinghao",
+        "shangyongxinghao"
+      ],
+      "itemActions": [],
+      "perPage": 15,
+      "syncLocation": false,
+      "alwaysShowPagination": true,
+      "headerToolbar": [
+        {
+          "actionType": "dialog",
+          "dialog": {
+            "body": {
+              "type": "form",
+              "api": "POST: /chanpin_xinghao_zengjia",
+              "body": [
+                {
+                  "id": "fenlei",
+                  "label": "分类",
+                  "multiple": false,
+                  "name": "fenlei",
+                  "options": [
+                    {
+                      "label": "数位板",
+                      "value": "数位板",
+                      "$$id": "fb728171d334"
+                    },
+                    {
+                      "label": "数位屏",
+                      "value": "数位屏",
+                      "$$id": "3e3523a3fea7"
+                    },
+                    {
+                      "label": "手写笔",
+                      "value": "手写笔",
+                      "$$id": "4c1d301ad245"
+                    },
+                    {
+                      "label": "配件",
+                      "value": "配件",
+                      "$$id": "2328a18888c4"
+                    }
+                  ],
+                  "type": "select",
+                  "$$id": "6b44f5c682a2"
+                },
+                {
+                  "id": "mingcheng",
+                  "label": "名称",
+                  "name": "mingcheng",
+                  "type": "input-text",
+                  "$$id": "9c0d21446e03"
+                },
+                {
+                  "id": "xinghao",
+                  "label": "型号",
+                  "name": "xinghao",
+                  "type": "input-text",
+                  "$$id": "f9feec214917"
+                },
+                {
+                  "id": "shangyongxinghao",
+                  "label": "商用型号",
+                  "name": "shangyongxinghao",
+                  "type": "input-text",
+                  "$$id": "44005f9dacb3"
+                },
+                {
+                  "id": "daima",
+                  "label": "代码",
+                  "name": "daima",
+                  "type": "input-text",
+                  "$$id": "9a8b31326fa6"
+                }
+              ],
+              "$$id": "1bbbbc1d0399"
+            },
+            "title": "新增型号",
+            "$$id": "ec104f81879f"
+          },
+          "label": "新增",
+          "type": "button",
+          "id": "u:2a4bd557ca7b",
+          "disabledOnAction": false,
+          "level": "primary",
+          "$$id": "af022ba31dd6"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "pagination",
+          "wrapperComponent": "",
+          "$$id": "f1a3c24bae8b"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "statistics",
+          "wrapperComponent": "",
+          "$$id": "e778fac4b966"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "switch-per-page",
+          "wrapperComponent": "",
+          "$$id": "a2968975883a"
+        },
+        {
+          "type": "columns-toggler",
+          "align": "right",
+          "draggable": true,
+          "$$id": "dd09f28ea9a5"
+        }
+      ],
+      "footerToolbar": [],
+      "autoFillHeight": true,
+      "rowClassNameExpr": "${index % 2 ? 'bg-gray-100' : ''}",
+      "dynimicColumnKey": "c989a0ec",
+      "columns": [
+        {
+          "id": "id",
+          "label": "id",
+          "name": "id",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "70d3f31a3471"
+        },
+        {
+          "id": "u:d158814c1c84",
+          "label": "分类",
+          "name": "fenlei",
+          "type": "text",
+          "$$id": "1c5ce2c7ad70"
+        },
+        {
+          "id": "xinghao",
+          "label": "型号",
+          "name": "xinghao",
+          "type": "text",
+          "$$id": "af805f0b1fa3"
+        },
+        {
+          "id": "shangyongxinghao",
+          "label": "商用型号",
+          "name": "shangyongxinghao",
+          "type": "text",
+          "$$id": "b4b83a8c17f7"
+        },
+        {
+          "id": "mingcheng",
+          "label": "名称",
+          "name": "mingcheng",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "13f086233779"
+        },
+        {
+          "id": "daima",
+          "label": "代码",
+          "name": "daima",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "f4aacbffd1a9"
+        },
+        {
+          "buttons": [
+            {
+              "actionType": "dialog",
+              "dialog": {
+                "body": [
+                  {
+                    "actions": [
+                      {
+                        "label": "取消",
+                        "level": "default",
+                        "type": "button",
+                        "onEvent": {
+                          "click": {
+                            "actions": [
+                              {
+                                "actionType": "cancel",
+                                "componentId": "u:069d0ebee968",
+                                "$$id": "70ec8ceb18dc"
+                              }
+                            ],
+                            "$$id": "fc7294f7e182"
+                          },
+                          "$$id": "07fb5f1d93a5"
+                        },
+                        "id": "u:5e83c5e5c131",
+                        "$$id": "2e6b1ec43166"
+                      },
+                      {
+                        "label": "提交",
+                        "level": "primary",
+                        "type": "button",
+                        "onEvent": {
+                          "click": {
+                            "actions": [
+                              {
+                                "actionType": "submit",
+                                "componentId": "u:069d0ebee968",
+                                "$$id": "e04c9c05e460"
+                              }
+                            ],
+                            "$$id": "c195fb9d52ba"
+                          },
+                          "$$id": "ac36f3f51501"
+                        },
+                        "id": "u:735d3e614e65",
+                        "$$id": "d09ce98aa80e"
+                      }
+                    ],
+                    "affixFooter": true,
+                    "api": {
+                      "dataType": "json",
+                      "method": "post",
+                      "url": "/chanpin_xinghao_xiugai",
+                      "requestAdaptor": "",
+                      "adaptor": "",
+                      "messages": {
+                        "$$id": "fc8e9db473ef"
+                      },
+                      "$$id": "8fbd7b8ce1bc"
+                    },
+                    "body": [
+                      {
+                        "label": "id",
+                        "name": "id",
+                        "row": 5,
+                        "type": "input-text",
+                        "id": "u:6e92a537f366",
+                        "visible": false,
+                        "$$id": "7b51f31067b4"
+                      },
+                      {
+                        "label": "型号",
+                        "name": "xinghao",
+                        "row": 0,
+                        "type": "input-text",
+                        "id": "u:27fe67cb3d98",
+                        "$$id": "5e9a37d82d83"
+                      },
+                      {
+                        "label": "分类",
+                        "name": "fenlei",
+                        "row": 1,
+                        "type": "input-text",
+                        "id": "u:6174ab223e92",
+                        "$$id": "900d3ddb6177"
+                      },
+                      {
+                        "label": "名称",
+                        "name": "mingcheng",
+                        "row": 2,
+                        "type": "input-text",
+                        "id": "u:ee5d1fc92719",
+                        "$$id": "57a67b1cb1a8"
+                      },
+                      {
+                        "label": "商用型号",
+                        "name": "shangyongxinghao",
+                        "row": 3,
+                        "type": "input-text",
+                        "id": "u:975c9f9e3b08",
+                        "$$id": "e9cc4e265b86"
+                      },
+                      {
+                        "name": "daima",
+                        "label": "型号编码",
+                        "row": 4,
+                        "type": "input-text",
+                        "id": "u:2af3495e58c9",
+                        "$$id": "4e30195a7211"
+                      }
+                    ],
+                    "feat": "Insert",
+                    "id": "u:069d0ebee968",
+                    "labelAlign": "left",
+                    "labelWidth": "var(--sizes-size-1)",
+                    "mode": "flex",
+                    "onEvent": {
+                      "submitSucc": {
+                        "actions": [
+                          {
+                            "actionType": "reload",
+                            "componentId": "u:fdb0cc7cf76b",
+                            "groupType": "component",
+                            "$$id": "63a420ee18b2"
+                          }
+                        ],
+                        "weight": 0,
+                        "$$id": "88d608e95585"
+                      },
+                      "$$id": "59f2c54409aa"
+                    },
+                    "resetAfterSubmit": true,
+                    "type": "form",
+                    "wrapWithPanel": true,
+                    "title": "",
+                    "dsType": "api",
+                    "static": false,
+                    "initApi": "",
+                    "themeCss": {
+                      "formControlClassName": {
+                        "padding-and-margin": {
+                          "marginTop": "var(--sizes-size-2)",
+                          "marginRight": "var(--sizes-size-2)",
+                          "marginBottom": "var(--sizes-size-2)",
+                          "marginLeft": "var(--sizes-size-2)",
+                          "paddingTop": "var(--sizes-size-2)",
+                          "paddingRight": "var(--sizes-size-2)",
+                          "paddingBottom": "var(--sizes-size-2)",
+                          "paddingLeft": "var(--sizes-size-2)",
+                          "$$id": "ce06052a1929"
+                        },
+                        "$$id": "99a49f78987d"
+                      },
+                      "itemLabelClassName": {
+                        "padding-and-margin": {
+                          "marginTop": "var(--sizes-size-2)",
+                          "marginRight": "var(--sizes-size-2)",
+                          "marginBottom": "var(--sizes-size-2)",
+                          "marginLeft": "var(--sizes-size-2)",
+                          "$$id": "501d52863ab4"
+                        },
+                        "$$id": "24ac96d371af"
+                      },
+                      "itemClassName": {
+                        "padding-and-margin": {
+                          "marginTop": "var(--sizes-size-3)",
+                          "marginRight": "var(--sizes-size-3)",
+                          "marginBottom": "var(--sizes-size-3)",
+                          "marginLeft": "var(--sizes-size-3)",
+                          "$$id": "a171ba54dad7"
+                        },
+                        "$$id": "e0f16cf9bc02"
+                      },
+                      "$$id": "b371eeeb1e5b"
+                    },
+                    "$$id": "19762dd0c358"
+                  }
+                ],
+                "type": "dialog",
+                "id": "u:66d96634cfb3",
+                "actions": [
+                  {
+                    "type": "button",
+                    "actionType": "cancel",
+                    "label": "取消",
+                    "id": "u:6499a96ec36e",
+                    "$$id": "74f420477f60"
+                  },
+                  {
+                    "type": "button",
+                    "actionType": "confirm",
+                    "label": "确定",
+                    "primary": true,
+                    "id": "u:0d6a8de5b839",
+                    "$$id": "3f524c478965"
+                  }
+                ],
+                "showCloseButton": true,
+                "closeOnOutside": false,
+                "closeOnEsc": false,
+                "showErrorMsg": true,
+                "showLoading": true,
+                "draggable": true,
+                "allowFullscreen": false,
+                "hideActions": true,
+                "size": "custom",
+                "style": {
+                  "width": "600px",
+                  "$$id": "684119b4ae4b"
+                },
+                "title": "修改产品",
+                "$$id": "06e54bd87acc"
+              },
+              "disabledOnAction": false,
+              "id": "u:6cdf0f2d51ec",
+              "label": "修改",
+              "size": "xs",
+              "type": "button",
+              "level": "primary",
+              "$$id": "3421c0b37fc9"
+            },
+            {
+              "label": "删除",
+              "size": "xs",
+              "type": "button",
+              "disabledOnAction": true,
+              "confirmText": "确认删除这条数据吗?",
+              "id": "u:b51f0430ee4d",
+              "api": "GET:/chanpin_xinghao_shanchu?id=${id}",
+              "reload": "chanpin_xinghao_list",
+              "actionType": "ajax",
+              "onEvent": {
+                "$$id": "06eab17edaf4"
+              },
+              "level": "danger",
+              "$$id": "5f6d3340d784"
+            }
+          ],
+          "id": "u:89cc77c6a4c6",
+          "label": "操作",
+          "placeholder": "-",
+          "type": "button-toolbar",
+          "align": "center",
+          "name": "操作",
+          "toggleable": false,
+          "toggled": true,
+          "fixed": "right",
+          "$$id": "f9d3ad4fdc6d"
+        }
+      ],
+      "name": "chanpin_xinghao_list",
+      "$$id": "67d1127ea7c0"
+    }
+  ],
+  "$$id": "dc4a7100b201",
+  "id": "u:5640d15fbc65",
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "bc9e8e28751b"
+  },
+  "asideResizor": false
+}

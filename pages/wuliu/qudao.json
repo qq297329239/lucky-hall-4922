@@ -1,0 +1,533 @@
+{
+  "body": [
+    {
+      "id": "u:09e3a8002808",
+      "type": "crud",
+      "$$id": "ea3a9c37ece6",
+      "alwaysShowPagination": true,
+      "api": {
+        "adaptor": "",
+        "data": {
+          "myLogisticsChannelName": "${myLogisticsChannelName|default:undefined}",
+          "myLogisticsName": "${myLogisticsName|default:undefined}",
+          "name": "${name|default:undefined}",
+          "name_cn": "${name_cn|default:undefined}",
+          "storehouse_name": "${storehouse_name|default:undefined}",
+          "$$id": "8c63666bd9a7"
+        },
+        "messages": {
+          "$$id": "93edea3aeaf9"
+        },
+        "method": "post",
+        "requestAdaptor": "",
+        "url": "/wuliuqudao?page=${page}&perPage=${perPage}",
+        "$$id": "30bb57eebe07"
+      },
+      "autoFillHeight": true,
+      "autoJumpToTopOnPagerChange": true,
+      "bulkActions": [],
+      "columns": [
+        {
+          "align": "center",
+          "id": "storehouse_name",
+          "label": "仓库名称",
+          "name": "storehouse_name",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "9e711264d99d"
+        },
+        {
+          "align": "center",
+          "id": "mylogisticsid",
+          "label": "物流商ID",
+          "name": "myLogisticsId",
+          "placeholder": "-",
+          "toggled": false,
+          "type": "text",
+          "$$id": "267523697a99"
+        },
+        {
+          "align": "center",
+          "id": "mylogisticsname",
+          "label": "物流商名称",
+          "name": "myLogisticsName",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "cd06f1909ad8"
+        },
+        {
+          "align": "center",
+          "id": "mylogisticschannelid",
+          "label": "物流渠道ID",
+          "name": "myLogisticsChannelId",
+          "placeholder": "-",
+          "toggled": false,
+          "type": "text",
+          "$$id": "4f0cfbcffcf6"
+        },
+        {
+          "align": "center",
+          "id": "mylogisticschannelname",
+          "label": "物流渠道名称",
+          "name": "myLogisticsChannelName",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "ceb72b0d72d5"
+        },
+        {
+          "align": "center",
+          "id": "shixiao",
+          "label": "物流商时效",
+          "name": "shixiao",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "11b6f84b8ca9"
+        },
+        {
+          "align": "center",
+          "id": "track17code",
+          "label": "17track渠道ID",
+          "name": "track17Code",
+          "placeholder": "-",
+          "toggled": false,
+          "type": "text",
+          "$$id": "94d9d7b21f9b"
+        },
+        {
+          "align": "center",
+          "id": "country_iso",
+          "label": "17track渠道国家",
+          "name": "country_iso",
+          "placeholder": "-",
+          "toggled": false,
+          "type": "text",
+          "$$id": "ccc9c17afece"
+        },
+        {
+          "align": "center",
+          "id": "name",
+          "label": "17track渠道英文名",
+          "name": "name",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "23192bed5d67"
+        },
+        {
+          "align": "center",
+          "id": "name_cn",
+          "label": "17track渠道中文名",
+          "name": "name_cn",
+          "placeholder": "-",
+          "type": "text",
+          "$$id": "d5f8fea9f510"
+        },
+        {
+          "align": "center",
+          "id": "url",
+          "label": "17track渠道官网",
+          "name": "url",
+          "placeholder": "-",
+          "textOverflow": "ellipsis",
+          "type": "link",
+          "$$id": "9c37ed07dd71"
+        },
+        {
+          "align": "center",
+          "id": "uptime",
+          "label": "修改时间",
+          "name": "uptime",
+          "placeholder": "-",
+          "textOverflow": "noWrap",
+          "type": "text",
+          "$$id": "a4792a4c5007"
+        },
+        {
+          "align": "center",
+          "buttons": [
+            {
+              "disabledOnAction": false,
+              "id": "u:c07419932bdb",
+              "label": "配对",
+              "level": "link",
+              "onEvent": {
+                "click": {
+                  "actions": [
+                    {
+                      "actionType": "dialog",
+                      "dialog": {
+                        "type": "dialog",
+                        "title": "物流商配对: ${myLogisticsChannelName}",
+                        "body": [
+                          {
+                            "api": {
+                              "adaptor": "",
+                              "messages": {
+                                "$$id": "cab152dba6aa"
+                              },
+                              "method": "get",
+                              "requestAdaptor": "",
+                              "url": "/wuliuqudao_peidui?page=${page}&perPage=${perPage}&sousuo=${sousuo}",
+                              "sendOn": "",
+                              "cache": 3000,
+                              "$$id": "47c376ef5cab"
+                            },
+                            "bulkActions": [],
+                            "columns": [
+                              {
+                                "id": "key_",
+                                "label": "物流商ID",
+                                "name": "key_",
+                                "placeholder": "-",
+                                "type": "text",
+                                "$$id": "6479243a001b"
+                              },
+                              {
+                                "id": "name",
+                                "label": "渠道英文名",
+                                "name": "name",
+                                "type": "text",
+                                "$$id": "4c8eee0849db"
+                              },
+                              {
+                                "id": "name_cn",
+                                "label": "渠道中文名",
+                                "name": "name_cn",
+                                "type": "text",
+                                "$$id": "b8cc064dadd3"
+                              },
+                              {
+                                "buttons": [
+                                  {
+                                    "actionType": "confirm",
+                                    "disabledOnAction": false,
+                                    "id": "u:f26d826192cc",
+                                    "label": "配对",
+                                    "level": "link",
+                                    "onEvent": {
+                                      "click": {
+                                        "actions": [
+                                          {
+                                            "actionType": "ajax",
+                                            "api": {
+                                              "adaptor": "",
+                                              "method": "get",
+                                              "requestAdaptor": "",
+                                              "silent": false,
+                                              "url": "/wuliuqudao_peidui?peidui=1&myLogisticsChannelId=${myLogisticsChannelId}&track17Code=${key_}",
+                                              "$$id": "b0bd7d374457"
+                                            },
+                                            "ignoreError": false,
+                                            "options": {
+                                              "silent": false,
+                                              "$$id": "dbce1dc80024"
+                                            },
+                                            "outputVar": "responseResult",
+                                            "$$id": "dd0c34c58fc1"
+                                          },
+                                          {
+                                            "actionType": "reload",
+                                            "componentId": "u:79563bb4f56c",
+                                            "groupType": "component",
+                                            "$$id": "1b811a86a022"
+                                          }
+                                        ],
+                                        "$$id": "22743c984ccb"
+                                      },
+                                      "$$id": "495107546c63"
+                                    },
+                                    "size": "xs",
+                                    "type": "button",
+                                    "$$id": "f38c2639bf71"
+                                  }
+                                ],
+                                "id": "u:4040ea12e772",
+                                "label": "操作",
+                                "placeholder": "-",
+                                "type": "operation",
+                                "$$id": "d9320fd82a72"
+                              }
+                            ],
+                            "filter": {
+                              "actions": [],
+                              "body": [
+                                {
+                                  "id": "sousuo",
+                                  "label": "搜索",
+                                  "name": "sousuo",
+                                  "type": "input-text",
+                                  "value": "${myLogisticsChannelName}",
+                                  "size": "lg",
+                                  "labelAlign": "inherit",
+                                  "$$id": "98018d2a1d92"
+                                }
+                              ],
+                              "feat": "Insert",
+                              "id": "u:92ca99b37a7e",
+                              "labelAlign": "right",
+                              "submitOnChange": true,
+                              "themeCss": {
+                                "formControlClassName": {
+                                  "padding-and-margin": {
+                                    "$$id": "fbbb68a10ac0"
+                                  },
+                                  "$$id": "a701160ed643"
+                                },
+                                "$$id": "098ea0e2552e"
+                              },
+                              "title": "查询条件",
+                              "wrapWithPanel": false,
+                              "closeDialogOnSubmit": false,
+                              "persistData": false,
+                              "autoFocus": true,
+                              "$$id": "19c03f967f34"
+                            },
+                            "id": "u:82de525b738d",
+                            "itemActions": [],
+                            "messages": {
+                              "$$id": "ec3537fc3bac"
+                            },
+                            "perPageAvailable": [
+                              20,
+                              50,
+                              100
+                            ],
+                            "syncLocation": false,
+                            "type": "crud",
+                            "initFetch": true,
+                            "$$id": "9580c8efb014"
+                          }
+                        ],
+                        "actionType": "dialog",
+                        "actions": [],
+                        "closeOnEsc": true,
+                        "closeOnOutside": true,
+                        "draggable": false,
+                        "hideActions": true,
+                        "id": "u:632276049fa3",
+                        "showCloseButton": true,
+                        "showErrorMsg": true,
+                        "showLoading": true,
+                        "allowFullscreen": false,
+                        "$$id": "6173ff3509f6"
+                      },
+                      "ignoreError": false,
+                      "$$id": "3596420cc184"
+                    }
+                  ],
+                  "$$id": "a2ac72c1d0ca"
+                },
+                "$$id": "93bfa455a0bc"
+              },
+              "size": "xs",
+              "type": "button",
+              "$$id": "7a4d1cadd720"
+            }
+          ],
+          "id": "u:87e9c3400776",
+          "label": "操作",
+          "placeholder": "-",
+          "type": "button-group",
+          "$$id": "559f05e9c1e5"
+        }
+      ],
+      "defaultParams": {
+        "perPage": "20",
+        "$$id": "822a3511be1b"
+      },
+      "draggable": false,
+      "filter": {
+        "actions": [
+          {
+            "id": "",
+            "label": "搜索",
+            "primary": true,
+            "type": "submit",
+            "$$id": "125a8b6695cb"
+          }
+        ],
+        "body": [
+          {
+            "id": "mylogisticsname",
+            "label": "物流商名称",
+            "labelWidth": "var(--sizes-size-1)",
+            "name": "myLogisticsName",
+            "type": "input-text",
+            "$$id": "b7fa62e19439"
+          },
+          {
+            "id": "mylogisticschannelname",
+            "label": "物流渠道名称",
+            "labelWidth": "var(--sizes-size-1)",
+            "name": "myLogisticsChannelName",
+            "type": "input-text",
+            "$$id": "d67f32d8a0a7"
+          },
+          {
+            "id": "storehouse_name",
+            "label": "仓库名称",
+            "labelWidth": "var(--sizes-size-1)",
+            "name": "storehouse_name",
+            "type": "input-text",
+            "$$id": "fc1d579873ff"
+          },
+          {
+            "id": "name",
+            "label": "17track渠道英文名",
+            "labelWidth": "var(--sizes-size-1)",
+            "name": "name",
+            "type": "input-text",
+            "$$id": "88a58683dab5"
+          },
+          {
+            "id": "name_cn",
+            "label": "17track渠道中文名",
+            "labelWidth": "var(--sizes-size-1)",
+            "name": "name_cn",
+            "type": "input-text",
+            "$$id": "46e6ac9974d0"
+          }
+        ],
+        "columnCount": 5,
+        "feat": "Insert",
+        "id": "u:90dbee8ec36b",
+        "labelAlign": "left",
+        "mode": "horizontal",
+        "persistData": false,
+        "submitOnChange": true,
+        "themeCss": {
+          "formControlClassName": {
+            "padding-and-margin": {
+              "marginBottom": "var(--sizes-size-5)",
+              "marginLeft": "var(--sizes-size-5)",
+              "marginRight": "var(--sizes-size-5)",
+              "marginTop": "var(--sizes-size-5)",
+              "$$id": "638b07f14a4d"
+            },
+            "$$id": "420a87729b63"
+          },
+          "$$id": "c7ff5c082741"
+        },
+        "title": "",
+        "wrapWithPanel": false,
+        "$$id": "e69cc7837408"
+      },
+      "filterEnabledList": [
+        {
+          "label": "myLogisticsName",
+          "value": "myLogisticsName",
+          "$$id": "1dea9084c7ef"
+        },
+        {
+          "label": "myLogisticsChannelName",
+          "value": "myLogisticsChannelName",
+          "$$id": "5642a7de4a31"
+        },
+        {
+          "label": "storehouse_name",
+          "value": "storehouse_name",
+          "$$id": "1055c35ba630"
+        },
+        {
+          "label": "name",
+          "value": "name",
+          "$$id": "cc077b4c6bc0"
+        },
+        {
+          "label": "name_cn",
+          "value": "name_cn",
+          "$$id": "6a553f0503f7"
+        }
+      ],
+      "filterSettingSource": [
+        "myLogisticsId",
+        "track17Code",
+        "myLogisticsName",
+        "myLogisticsChannelId",
+        "shixiao",
+        "myLogisticsChannelName",
+        "storehouse_name",
+        "key_",
+        "uptime",
+        "country_iso",
+        "url",
+        "name",
+        "name_cn"
+      ],
+      "footerToolbar": [],
+      "headerToolbar": [
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "pagination",
+          "wrapperComponent": "",
+          "$$id": "c75a2c2a211a"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "statistics",
+          "wrapperComponent": "",
+          "$$id": "324e7f659b50"
+        },
+        {
+          "align": "right",
+          "id": "",
+          "tpl": "内容",
+          "type": "switch-per-page",
+          "wrapperComponent": "",
+          "$$id": "6a25fb86591e"
+        },
+        {
+          "align": "left",
+          "disabledOnAction": false,
+          "filename": "马帮物流渠道表${DATETOSTR(now(),'YYYYMMDD-HHmmss')}",
+          "id": "u:619739451ef1",
+          "label": "导出当前页",
+          "tpl": "内容",
+          "type": "export-excel",
+          "wrapperComponent": "",
+          "$$id": "11188d68cd59"
+        },
+        {
+          "align": "left",
+          "api": "/wuliuqudao?daochu=1",
+          "disabledOnAction": false,
+          "filename": "马帮物流渠道表${DATETOSTR(now(),'YYYYMMDD')}",
+          "id": "u:52da0047a94b",
+          "label": "导出全部数据",
+          "tpl": "内容",
+          "type": "export-excel",
+          "wrapperComponent": "",
+          "$$id": "56d5c4ebeec3"
+        }
+      ],
+      "itemActions": [],
+      "loadingConfig": {
+        "show": true,
+        "$$id": "910a4d6d2de0"
+      },
+      "messages": {
+        "$$id": "b9e3a1ae810b"
+      },
+      "perPage": 20,
+      "perPageAvailable": [
+        20,
+        50,
+        100
+      ],
+      "syncLocation": false
+    }
+  ],
+  "$$id": "0a9e55bf97fe",
+  "id": "u:ae3e5daaba59",
+  "pullRefresh": {
+    "disabled": true,
+    "$$id": "1b4d430add35"
+  },
+  "asideResizor": false,
+  "definitions": {
+    "$$id": "971430e201a1"
+  }
+}
